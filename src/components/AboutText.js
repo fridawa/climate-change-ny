@@ -1,7 +1,7 @@
 const AboutText = () => {
   return (
     <>
-      <div className="mt-5 ">
+      <div className="">
         <h1>Vad är klimat och varför förändras det?</h1>
         <p>
           I Sverige har vi fyra olika årstider där det är kallt på vintern och

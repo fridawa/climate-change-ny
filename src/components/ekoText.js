@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalFootprint from "./ModalFootprint";
+import ModalFootprint from "./Modal";
 
 const EkoText = () => {
   const [modalFootprintShow, setModalFootprintShow] = useState(false);
@@ -8,7 +8,6 @@ const EkoText = () => {
     <>
       <div className="mt-2 ">
         <p className="ekoAvtMening">
-          {" "}
           Du kan påverka klimatförändringarna genom att minska ditt{" "}
           <span
             onClick={() => setModalFootprintShow(true)}

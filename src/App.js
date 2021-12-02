@@ -1,17 +1,18 @@
 import "./App.css";
 
-import Home from "./components/Home";
-import Co2 from "./components/Co2";
-import GlobalTemp from "./components/GlobalTemp";
-import OceanLevels from "./components/OceanLevels";
-import Glaciers from "./components/Glaciers";
-import Test from "./components/test";
-
+import Home from "./screens/Home";
+import Co2 from "./screens/Co2";
+import GlobalTemp from "./screens/GlobalTemp";
+import OceanLevels from "./screens/OceanLevels";
+import Glaciers from "./screens/Glaciers";
+import Menu from "./routes/menu";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      <Menu />
+
       {/* <Test /> */}
       <Routes>
         <Route path="/" element={<Home />}></Route>
