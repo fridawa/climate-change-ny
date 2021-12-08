@@ -54,50 +54,17 @@ const ZoomIn2 = () => {
       .then((res) => setFetchedData(res.data))
       .catch((err) => console.log(err));
   }, []);
-  // const getAxisYDomain = (from, to, ref, offset) => {
-  //   ////
-  //   const refData = data.slice(from - 1, to);
-  //   let [bottom, top] = [refData[0][ref], refData[0][ref]];
-  //   refData.forEach((d) => {
-  //     if (d[ref] > top) top = d[ref];
-  //     if (d[ref] < bottom) bottom = d[ref];
-  //   });
 
-  //   return [(bottom | 0) - offset, (top | 0) + offset];
-  // };
-
+  //Kan man bryta ur dessa och lägga som funktioner i app.js?
+  // Eller måste de vara i varje data-fil?
   const zoom = (e) => {
     let refAreaLeft = refAreaLeft1;
     let refAreaRight = refAreaRight1;
     let zoomData = e;
 
-    // detta kanske hindrar det fårn att hamna åt fel håll?
-    // för fungerar ju utan men går då att dra så att grafen blir tvärtom
-    // if (refAreaLeft === refAreaRight || refAreaRight === "") {
-    //   setRefAreaLeft1("");
-    //   setRefAreaRight1("");
-    //   return;
-    // }
-
-    // // xAxis domain
-    // if (refAreaLeft > refAreaRight) {
-    //   setRefAreaLeft1(refAreaRight);
-    //   setRefAreaRight1(refAreaLeft);
-    // }
-
-    // // yAxis domain
-    // const [bottom, top] = getAxisYDomain(refAreaLeft, refAreaRight, "cost", 1);
-    // const [bottom2, top2] = getAxisYDomain(
-    //   refAreaLeft,
-    //   refAreaRight,
-    //   "impression",
-    //   50
-    // );
-
     setRefAreaLeft1("");
     setRefAreaRight1("");
     setData(zoomData);
-    // setData(zoomData.slice);
     setLeft(refAreaLeft);
     setRight(refAreaRight);
   };
@@ -105,17 +72,11 @@ const ZoomIn2 = () => {
   const zoomOut = (e) => {
     var zoomOutData = e;
     setData(zoomOutData);
-    // setData(zoomOutData.slice);
     setRefAreaLeft1("");
     setRefAreaRight1("");
     setLeft("dataMin");
     setRight("dataMax");
-    // setTop("dataMax+1");
-    // setBottom("dataMin");
-    // setTop2("dataMax+50");
-    // setBottom2("dataMin+50");
   };
-  console.log(fetchedData);
 
   return (
     <div className="highlight-bar-charts" style={{ userSelect: "none" }}>
