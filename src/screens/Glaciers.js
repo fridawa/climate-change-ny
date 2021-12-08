@@ -63,6 +63,7 @@ const Glaciers = () => {
                 tickLine={false}
                 tick={{ fontSize: 20, fill: "#82A1A8" }}
                 stroke="#efefef"
+                unit="unit"
               />
               <Tooltip />
               <Area

@@ -36,7 +36,7 @@ const Co2 = () => {
     return e["Gas Fuel"];
   });
   const liquidFuel = fetchedData.map((e) => {
-    return e["GaLiquids Fuel"];
+    return e["Liquids Fuel"];
   });
   const solidFuel = fetchedData.map((e) => {
     return e["Solid Fuel"];

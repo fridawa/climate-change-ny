@@ -7,6 +7,8 @@ import OceanLevels from "./screens/OceanLevels";
 import Glaciers from "./screens/Glaciers";
 import Menu from "./routes/menu";
 import Zoomin from "./screens/zoomin";
+import Zoomin2 from "./screens/zoomin2";
+
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         <Route path="/ocean-levels" element={<OceanLevels />}></Route>
         <Route path="/glaciers" element={<Glaciers />}></Route>
         <Route path="/zoomin" element={<Zoomin />}></Route>
+        <Route path="/zoomin2" element={<Zoomin2 />}></Route>
       </Routes>
     </div>
   );

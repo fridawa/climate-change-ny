@@ -46,6 +46,11 @@ const Menu = () => {
                     <p>zoomin</p>
                   </NavLink>
                 </Nav.Link>
+                <Nav.Link className="ps-3 pe-3">
+                  <NavLink to="/zoomin2">
+                    <p>zoomin2</p>
+                  </NavLink>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

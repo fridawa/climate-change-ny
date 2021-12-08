@@ -8,32 +8,34 @@ import {
   Tooltip,
   ReferenceArea,
 } from "recharts";
-import { useState } from "react";
+import axios from "axios";
 
-const data = [
-  { name: 1, cost: 4.11, impression: 100 },
-  { name: 2, cost: 2.39, impression: 120 },
-  { name: 3, cost: 1.37, impression: 150 },
-  { name: 4, cost: 1.16, impression: 180 },
-  { name: 5, cost: 2.29, impression: 200 },
-  { name: 6, cost: 3, impression: 499 },
-  { name: 7, cost: 0.53, impression: 50 },
-  { name: 8, cost: 2.52, impression: 100 },
-  { name: 9, cost: 1.79, impression: 200 },
-  { name: 10, cost: 2.94, impression: 222 },
-  { name: 11, cost: 4.3, impression: 210 },
-  { name: 12, cost: 4.41, impression: 300 },
-  { name: 13, cost: 2.1, impression: 50 },
-  { name: 14, cost: 8, impression: 190 },
-  { name: 15, cost: 0, impression: 300 },
-  { name: 16, cost: 9, impression: 400 },
-  { name: 17, cost: 3, impression: 200 },
-  { name: 18, cost: 2, impression: 50 },
-  { name: 19, cost: 3, impression: 100 },
-  { name: 20, cost: 7, impression: 100 },
-];
+import { useState, useEffect } from "react";
 
-const ZoomIn = () => {
+// const data = [
+//   { name: 1, cost: 4.11, impression: 100 },
+//   { name: 2, cost: 2.39, impression: 120 },
+//   { name: 3, cost: 1.37, impression: 150 },
+//   { name: 4, cost: 1.16, impression: 180 },
+//   { name: 5, cost: 2.29, impression: 200 },
+//   { name: 6, cost: 3, impression: 499 },
+//   { name: 7, cost: 0.53, impression: 50 },
+//   { name: 8, cost: 2.52, impression: 100 },
+//   { name: 9, cost: 1.79, impression: 200 },
+//   { name: 10, cost: 2.94, impression: 222 },
+//   { name: 11, cost: 4.3, impression: 210 },
+//   { name: 12, cost: 4.41, impression: 300 },
+//   { name: 13, cost: 2.1, impression: 50 },
+//   { name: 14, cost: 8, impression: 190 },
+//   { name: 15, cost: 0, impression: 300 },
+//   { name: 16, cost: 9, impression: 400 },
+//   { name: 17, cost: 3, impression: 200 },
+//   { name: 18, cost: 2, impression: 50 },
+//   { name: 19, cost: 3, impression: 100 },
+//   { name: 20, cost: 7, impression: 100 },
+// ];
+
+const ZoomIn2 = () => {
   const [data1, setData] = useState({});
   const [left, setLeft] = useState("dataMin");
   const [right, setRight] = useState("dataMax");
@@ -44,6 +46,14 @@ const ZoomIn = () => {
   const [refAreaLeft1, setRefAreaLeft1] = useState("");
   const [refAreaRight1, setRefAreaRight1] = useState("");
 
+  const [fetchedData, setFetchedData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://my.api.mockaroo.com/co2.json?key=8eb9e6f0")
+      .then((res) => setFetchedData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   // const getAxisYDomain = (from, to, ref, offset) => {
   //   ////
   //   const refData = data.slice(from - 1, to);
@@ -105,6 +115,7 @@ const ZoomIn = () => {
     // setTop2("dataMax+50");
     // setBottom2("dataMin+50");
   };
+  console.log(fetchedData);
 
   return (
     <div className="highlight-bar-charts" style={{ userSelect: "none" }}>
@@ -115,7 +126,7 @@ const ZoomIn = () => {
       <LineChart
         width={800}
         height={400}
-        data={data}
+        data={fetchedData}
         onMouseDown={(e) => {
           setRefAreaLeft1(e.activeLabel);
         }}
@@ -127,7 +138,7 @@ const ZoomIn = () => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           allowDataOverflow
-          dataKey="name"
+          dataKey="Year"
           domain={[left, right]}
           type="number"
         />
@@ -148,14 +159,14 @@ const ZoomIn = () => {
         <Line
           yAxisId="1"
           type="natural"
-          dataKey="cost"
+          dataKey="Solid Fuel"
           stroke="#8884d8"
           animationDuration={300}
         />
         <Line
           yAxisId="2"
           type="natural"
-          dataKey="impression"
+          dataKey="Gas Fuel"
           stroke="#82ca9d"
           animationDuration={300}
         />
@@ -173,4 +184,4 @@ const ZoomIn = () => {
   );
 };
 
-export default ZoomIn;
+export default ZoomIn2;
