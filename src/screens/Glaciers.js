@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import bakgrund1 from "../Images/is-bakgrund.png";
+import bakgrund1 from "../Images/back-glaciers.png";
 
 const Glaciers = () => {
   const [fetchedData, setFetchedData] = useState([]);

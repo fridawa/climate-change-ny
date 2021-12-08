@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
+
 import {
   ResponsiveContainer,
   AreaChart,
@@ -10,6 +12,8 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+
+import bakgrund1 from "../Images/back-globaltemp.png";
 
 const GlobalTemp = () => {
   const [fetchedData, setFetchedData] = useState([]);
@@ -23,34 +27,40 @@ const GlobalTemp = () => {
 
   return (
     <>
-      <h1>Global Temperatur</h1>
-      <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
-      {/* OBS denna behöver filtreras om vi bara vill ha en mätning per år */}
-      <div className="wrapper">
-        <ResponsiveContainer width="100%" height="80%">
-          <AreaChart
-            data={fetchedData}
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="Year" />
-            <YAxis />
-            <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="Mean"
-              stackId="1"
-              stroke="#EA733D"
-              fill="#EA733D"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
+      <Container
+        fluid
+        className="data-container p-5"
+        style={{ backgroundImage: `url(${bakgrund1})` }}
+      >
+        <h1>Global Temperatur</h1>
+        <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
+        {/* OBS denna behöver filtreras om vi bara vill ha en mätning per år */}
+        <div className="wrapper">
+          <ResponsiveContainer width="100%" height="80%">
+            <AreaChart
+              data={fetchedData}
+              margin={{
+                top: 10,
+                right: 30,
+                left: 0,
+                bottom: 0,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="Year" />
+              <YAxis />
+              <Tooltip />
+              <Area
+                type="monotone"
+                dataKey="Mean"
+                stackId="1"
+                stroke="#EA733D"
+                fill="#EA733D"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      </Container>
     </>
   );
 };

@@ -39,13 +39,13 @@ Body {
   color: #6ec5d4;
 }
 
-.glacier-container {
-  background-image: ;
-}
-
 .h1-heding {
   color: #1b1b1b !important;
   font-weight: 400;
+}
+
+.data-container {
+  min-height: 100vh;
 }
 
 @media only screen and (min-width: 400px) {
@@ -57,4 +57,8 @@ Body {
   .data-container {
     background-size: 100%;
   }
+}
+.home-about {
+  background-color: rgb(255, 255, 253);
+  height: 100%;
 }

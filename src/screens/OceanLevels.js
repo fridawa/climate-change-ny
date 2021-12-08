@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import bakgrund1 from "../Images/hav-bakgrund.png";
+import bakgrund1 from "../Images/back-ocean.png";
 
 const OceanLevels = () => {
   const [fetchedData, setFetchedData] = useState([]);

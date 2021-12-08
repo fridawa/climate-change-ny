@@ -1,10 +1,10 @@
 import { Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Logo from "../components/Logo";
-import co2img from "../Images/co2-2.png";
-import havimg from "../Images/hav-2.png";
-import solimg from "../Images/sol-2.png";
-import isimg from "../Images/is-2.png";
+import co2img from "../Images/menu-co2.png";
+import havimg from "../Images/menu-ocean.png";
+import solimg from "../Images/menu-globaltemp.png";
+import isimg from "../Images/menu-glaciers.png";
 
 const Menu = () => {
   return (
@@ -39,6 +39,11 @@ const Menu = () => {
                 <Nav.Link className="ps-3 pe-3">
                   <NavLink to="/glaciers">
                     <p>Glaciär</p>
+                  </NavLink>
+                </Nav.Link>
+                <Nav.Link className="ps-3 pe-3">
+                  <NavLink to="/zoomin">
+                    <p>zoomin</p>
                   </NavLink>
                 </Nav.Link>
               </Nav>
