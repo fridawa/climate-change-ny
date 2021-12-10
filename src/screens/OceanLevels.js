@@ -40,8 +40,6 @@ const OceanLevels = () => {
         <div className="wrapper">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
-              width={500}
-              height={300}
               data={fetchedData}
               margin={{
                 top: 5,

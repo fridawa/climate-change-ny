@@ -4,13 +4,13 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import {
   ResponsiveContainer,
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
+  Legend,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 
 import bakgrund1 from "../Images/back-globaltemp.png";
@@ -25,6 +25,20 @@ const GlobalTemp = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  //Vänder på datan så att årtalen går i stigande ordning
+  const reverseData = [...fetchedData];
+  reverseData.reverse();
+
+  //Filtrerar ut bara en av mätningarna
+  reverseData.map((n) => {
+    if (n.Source == "GCAG") {
+      console.log(n);
+      return n;
+    } else {
+      return null;
+    }
+  });
+
   return (
     <>
       <Container
@@ -37,8 +51,8 @@ const GlobalTemp = () => {
         {/* OBS denna behöver filtreras om vi bara vill ha en mätning per år */}
         <div className="wrapper">
           <ResponsiveContainer width="100%" height="80%">
-            <AreaChart
-              data={fetchedData}
+            <LineChart
+              data={reverseData}
               margin={{
                 top: 10,
                 right: 30,
@@ -50,14 +64,14 @@ const GlobalTemp = () => {
               <XAxis dataKey="Year" />
               <YAxis />
               <Tooltip />
-              <Area
+              <Line
                 type="monotone"
                 dataKey="Mean"
                 stackId="1"
                 stroke="#EA733D"
                 fill="#EA733D"
               />
-            </AreaChart>
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </Container>
