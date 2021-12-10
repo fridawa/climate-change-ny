@@ -1,38 +1,10 @@
-import { Container, Row, Col, Navbar, Nav } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { Container, Row, Col, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import Logo from "../components/Logo";
+import navLinksCo2 from "./navlinksco2";
+import navLinks from "./navLinks";
 import co2img from "../Images/menu-co2.png";
-import havimg from "../Images/menu-ocean.png";
-import solimg from "../Images/menu-globaltemp.png";
-import isimg from "../Images/menu-glaciers.png";
-import { height } from "@mui/system";
 
-const navLinks = [
-  {
-    id: 1,
-    title: "Global Temp",
-    path: "/global-temp",
-    img: `${solimg}`,
-  },
-  {
-    id: 2,
-    title: `Co2`,
-    path: `/co2`,
-    img: `${co2img}`,
-  },
-  {
-    id: 3,
-    title: `Havsnivå`,
-    path: `/ocean-levels`,
-    img: `${havimg}`,
-  },
-  {
-    id: 4,
-    title: `Glaciär`,
-    path: `/glaciers`,
-    img: `${isimg}`,
-  },
-];
 const Menu = () => {
   return (
     <>
@@ -50,17 +22,34 @@ const Menu = () => {
             <Col md={9}>
               <Navbar.Toggle aria-controls="responsive-navbar-nav " />
               <Navbar.Collapse id="responsive-navbar-nav ">
-                <Nav className="ms-auto">
+                <Nav className="m-auto pe-5 align-middle d-flex">
+                  <NavDropdown
+                    title={
+                      <>
+                        <img
+                          src={co2img}
+                          style={{ width: 20, height: 20 }}
+                        ></img>
+                        <p>Co2</p>
+                      </>
+                    }
+                    id="nav-dropdown"
+                    className="d-flex"
+                  >
+                    {" "}
+                    <NavDropdown.Item eventKey="4.1">
+                      {navLinksCo2.map(({ title, path }) => (
+                        <NavLink to={path} key={title} className=" ps-3 ">
+                          <p>{title}</p>
+                        </NavLink>
+                      ))}
+                    </NavDropdown.Item>
+                  </NavDropdown>
                   <Nav.Link className="ps-3 pe-3 d-flex">
                     {navLinks.map(({ title, path, img }) => (
                       <NavLink
                         to={path}
                         key={title}
-                        // activeStyle={{
-                        //   backgroundImage: `url(${bgI})`,
-                        //   backgroundSize: "cover",
-                        //   backgroundRepeat: "no-repeat",
-                        // }}
                         className="d-flex flex-row ps-5 "
                       >
                         <img src={img} style={{ width: 20, height: 20 }}></img>

@@ -10,7 +10,6 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
 import bakgrund1 from "../Images/back-glaciers.png";
 
 const Glaciers = () => {
@@ -23,6 +22,7 @@ const Glaciers = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  // Applikationens innehåll med förklarande text samt en area graf
   return (
     <>
       <Container
@@ -55,15 +55,15 @@ const Glaciers = () => {
               <XAxis
                 dataKey="Year"
                 tickLine={false}
-                tick={{ fontSize: 20, fill: "#82A1A8" }}
+                tick={{ fill: "#82A1A8" }}
                 stroke="#efefef"
                 interval={5}
               />
               <YAxis
                 tickLine={false}
-                tick={{ fontSize: 20, fill: "#82A1A8" }}
+                tick={{ fill: "#82A1A8" }}
                 stroke="#efefef"
-                unit="unit"
+                unit=" unit"
               />
               <Tooltip />
               <Area

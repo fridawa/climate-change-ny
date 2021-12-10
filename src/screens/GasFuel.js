@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "react-bootstrap";
 import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  Legend,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  Legend,
 } from "recharts";
 import bakgrund1 from "../Images/back-co2.png";
 
-const Co2 = () => {
+const GasFuel = () => {
   const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
@@ -23,8 +23,7 @@ const Co2 = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // Applikationens innehåll med förklarande text
-  // samt en bar chart där datan staplas på varandra
+  // Applikationens innehåll med förklarande text samt en line chart
   return (
     <>
       <Container
@@ -32,15 +31,18 @@ const Co2 = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <h1>Koldioxidutsläpp</h1>
+        <h1>Gas bränsle</h1>
         <p>
-          CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
-          flygplan. CO2 finns också vid tillverkning av elektronik och
-          livsmedel.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
+          porttitor ante, ut porttitor sapien. Maecenas tincidunt lectus eu
+          imperdiet molestie. Fusce euismod neque sed mi commodo malesuada.
+          Fusce diam dolor, aliquam at nisi nec, eleifend convallis ante.
         </p>
         <div className="wrapper">
           <ResponsiveContainer width="100%" height="80%">
-            <BarChart
+            <LineChart
+              width={500}
+              height={300}
               data={fetchedData}
               margin={{
                 top: 10,
@@ -54,16 +56,13 @@ const Co2 = () => {
               <YAxis unit=" unit" />
               <Tooltip />
               <Legend />
-              <Bar dataKey="Gas Fuel" stackId="a" fill="#E2C7A8" />
-              <Bar dataKey="Liquid Fuel" stackId="a" fill="#C1A47E" />
-              <Bar dataKey="Solid Fuel" stackId="a" fill="#C48A7E" />
-              <Bar dataKey="Cement" stackId="a" fill="#91714D" />
-              <Bar dataKey="Gas Flaring" stackId="a" fill="#6D4B47" />
-            </BarChart>
+
+              <Line dataKey="Gas Fuel" stackId="a" fill="#6D4B47" />
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </Container>
     </>
   );
 };
-export default Co2;
+export default GasFuel;

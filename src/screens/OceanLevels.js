@@ -24,6 +24,7 @@ const OceanLevels = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  // Applikationens innehåll med förklarande text samt en linjegraf
   return (
     <>
       <Container
@@ -42,15 +43,15 @@ const OceanLevels = () => {
             <LineChart
               data={fetchedData}
               margin={{
-                top: 5,
+                top: 10,
                 right: 30,
-                left: 20,
-                bottom: 5,
+                left: 0,
+                bottom: 0,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="Time" />
-              <YAxis />
+              <YAxis unit=" unit" />
               <Tooltip />
               <Legend />
 

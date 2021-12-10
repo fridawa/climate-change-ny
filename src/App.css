@@ -62,3 +62,20 @@ Body {
   background-color: rgb(255, 255, 253);
   height: 100%;
 }
+/* Tar bort pilen i dropdownen */
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgb(255, 255, 253);
+}
+.dropdown-menu {
+  min-width: 50vw;
+}
+.dropdown-item {
+  display: flex;
+}

@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
-
 import {
   ResponsiveContainer,
   LineChart,
   Line,
-  Legend,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
 import bakgrund1 from "../Images/back-globaltemp.png";
 
 const GlobalTemp = () => {
@@ -30,29 +27,32 @@ const GlobalTemp = () => {
   reverseData.reverse();
 
   //Filtrerar ut bara en av mätningarna
+  //pusha in filtrering i ny array
+  const filteredArr = [];
   reverseData.map((n) => {
-    if (n.Source == "GCAG") {
-      console.log(n);
-      return n;
+    if (n.Source == "GISTEMP") {
+      // console.log(n);
+      filteredArr.push(n);
+      return filteredArr;
     } else {
       return null;
     }
   });
 
+  // Applikationens innehåll med förklarande text samt en linjegraf
   return (
     <>
       <Container
         fluid
-        className="data-container p-5"
+        className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <h1>Global Temperatur</h1>
         <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
-        {/* OBS denna behöver filtreras om vi bara vill ha en mätning per år */}
         <div className="wrapper">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
-              data={reverseData}
+              data={filteredArr}
               margin={{
                 top: 10,
                 right: 30,
@@ -62,7 +62,7 @@ const GlobalTemp = () => {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="Year" />
-              <YAxis />
+              <YAxis unit=" unit" />
               <Tooltip />
               <Line
                 type="monotone"
