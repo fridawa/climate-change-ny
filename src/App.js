@@ -9,8 +9,9 @@ import Menu from "./routes/menu";
 import Zoomin from "./screens/zoomin";
 import Zoomin2 from "./screens/zoomin2";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Menu />
