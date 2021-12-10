@@ -8,7 +8,6 @@ import Glaciers from "./screens/Glaciers";
 import Menu from "./routes/menu";
 import Zoomin from "./screens/zoomin";
 import Zoomin2 from "./screens/zoomin2";
-
 import { Routes, Route } from "react-router-dom";
 
 function App() {
