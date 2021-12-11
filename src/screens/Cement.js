@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -31,19 +31,32 @@ const Cement = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <h1>Cement</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
-          porttitor ante, ut porttitor sapien. Maecenas tincidunt lectus eu
-          imperdiet molestie. Fusce euismod neque sed mi commodo malesuada.
-          Fusce diam dolor, aliquam at nisi nec, eleifend convallis ante.
-        </p>
-        <div className="wrapper">
+        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+          <h1>Cement</h1>
+          <p>Cementproduktion är processen som sker när cement tillverkas. </p>
+          <p>
+            Cementindustrin har en stor negativ klimatpåverkan. Cement- och
+            betongproduktion står för åtta procent av världens samlade
+            koldioxidutsläpp.
+          </p>
+          <p>
+            Cement återvinns ur kalksten. Sprickor i kalkstenen kan leda till
+            effekter på grundvattnets rörelser och saltvattenläckor. Detta kan
+            förstöra både dricksvattnet i området och vattenbalansen för växter
+            och natur.
+          </p>
+          <p>
+            Brytning av kalksten till cementproduktionen är också den dålig för
+            klimatet, eftersom en kalkrik berggrund ofta leder till värdefulla
+            naturmiljöer och djurliv.
+          </p>
+        </Col>
+        <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={fetchedData}
               margin={{
-                top: 10,
+                top: 20,
                 right: 30,
                 left: 0,
                 bottom: 0,
@@ -55,7 +68,12 @@ const Cement = () => {
               <Tooltip />
               <Legend />
 
-              <Line dataKey="Cement" stackId="a" fill="#6D4B47" />
+              <Line
+                dataKey="Cement"
+                stackId="a"
+                fill="#6D4B47"
+                type="monotone"
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>

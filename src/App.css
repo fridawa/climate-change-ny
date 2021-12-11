@@ -1,6 +1,8 @@
 /*GLOBAL STYLING*/
 * {
   font-family: "sofia-pro", sans-serif !important;
+  padding: 0;
+  margin: 0;
 }
 Body {
   background-color: rgb(255, 255, 255);
@@ -33,10 +35,17 @@ Body {
   font-weight: 600;
 }
 .navbar-climate p {
-  color: #4b9aa8;
+  color: rgb(100, 97, 72);
+  opacity: 70%;
+  font-weight: 600;
 }
 .navbar-climate p:hover {
-  color: #6ec5d4;
+  opacity: 100%;
+  font-weight: 900;
+}
+.active p {
+  opacity: 100%;
+  font-weight: 900;
 }
 
 .h1-heding {
@@ -78,4 +87,21 @@ Body {
 }
 .dropdown-item {
   display: flex;
+}
+
+/* overlay */
+.overlay-graf,
+.overlay-text {
+  position: absolute;
+}
+.overlay-text {
+  z-index: 10;
+}
+/* .dropdown img,
+.dropdown p {
+  display: inline !important;
+} */
+#nav-dropdown {
+  padding: 0;
+  margin: 0;
 }

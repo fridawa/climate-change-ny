@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import {
   XAxis,
   YAxis,
@@ -23,6 +23,7 @@ const Co2 = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  console.log(fetchedData);
   // Applikationens innehåll med förklarande text
   // samt en bar chart där datan staplas på varandra
   return (
@@ -32,18 +33,20 @@ const Co2 = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <h1>Koldioxidutsläpp</h1>
-        <p>
-          CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
-          flygplan. CO2 finns också vid tillverkning av elektronik och
-          livsmedel.
-        </p>
-        <div className="wrapper">
+        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+          <h1>Koldioxidutsläpp</h1>
+          <p>
+            CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
+            flygplan. CO2 finns också vid tillverkning av elektronik och
+            livsmedel.
+          </p>
+        </Col>
+        <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <BarChart
               data={fetchedData}
               margin={{
-                top: 10,
+                top: 20,
                 right: 30,
                 left: 0,
                 bottom: 0,

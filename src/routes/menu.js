@@ -22,35 +22,41 @@ const Menu = () => {
             <Col md={9}>
               <Navbar.Toggle aria-controls="responsive-navbar-nav " />
               <Navbar.Collapse id="responsive-navbar-nav ">
-                <Nav className="m-auto pe-5 align-middle d-flex">
+                <Nav className="ms-auto d-flex">
                   <NavDropdown
                     title={
                       <>
                         <img
+                          className="d-inline "
                           src={co2img}
                           style={{ width: 20, height: 20 }}
                         ></img>
-                        <p>Co2</p>
+                        <p className="d-inline  align-middle ">Co2</p>
                       </>
                     }
                     id="nav-dropdown"
-                    className="d-flex"
+                    className="p-0 m-0"
                   >
-                    {" "}
                     <NavDropdown.Item eventKey="4.1">
                       {navLinksCo2.map(({ title, path }) => (
-                        <NavLink to={path} key={title} className=" ps-3 ">
+                        <NavLink
+                          to={path}
+                          key={title}
+                          className=" ps-3"
+                          activeClassName="active"
+                        >
                           <p>{title}</p>
                         </NavLink>
                       ))}
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link className="ps-3 pe-3 d-flex">
+                  <Nav.Link className="ps-3 pe-3 pt-1 d-flex">
                     {navLinks.map(({ title, path, img }) => (
                       <NavLink
                         to={path}
                         key={title}
                         className="d-flex flex-row ps-5 "
+                        activeClassName="active"
                       >
                         <img src={img} style={{ width: 20, height: 20 }}></img>
                         <p>{title}</p>

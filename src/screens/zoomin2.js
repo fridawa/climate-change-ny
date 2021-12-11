@@ -1,5 +1,4 @@
 import {
-  Label,
   LineChart,
   Line,
   CartesianGrid,

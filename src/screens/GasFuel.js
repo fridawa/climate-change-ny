@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -31,21 +31,30 @@ const GasFuel = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <h1>Gas bränsle</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
-          porttitor ante, ut porttitor sapien. Maecenas tincidunt lectus eu
-          imperdiet molestie. Fusce euismod neque sed mi commodo malesuada.
-          Fusce diam dolor, aliquam at nisi nec, eleifend convallis ante.
-        </p>
-        <div className="wrapper">
+        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+          <h1>Gas bränsle</h1>
+          <p>Gasbränsle innefattar bränslen i gasform. </p>
+          <p>
+            Exempel på gasbränslen är till exempel fordonsgas vilket är ett
+            drivmedel som består av biogas, naturgas eller kombinationer av de
+            båda.
+          </p>
+          <p>
+            Biogas är ett förnybart bränsle som ger mycket mindre utsläpp av
+            koldioxid än bensin och diesel.
+          </p>
+          <p>
+            Naturgas är ett fossilt (icke förnybart) bränsle som utvinns ur
+            olja. Att köra bil på naturgas ger större utsläpp av växthusgaser än
+            biogas men lägre än bensin och diesel.
+          </p>
+        </Col>
+        <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
-              width={500}
-              height={300}
               data={fetchedData}
               margin={{
-                top: 10,
+                top: 20,
                 right: 30,
                 left: 0,
                 bottom: 0,
@@ -57,7 +66,12 @@ const GasFuel = () => {
               <Tooltip />
               <Legend />
 
-              <Line dataKey="Gas Fuel" stackId="a" fill="#6D4B47" />
+              <Line
+                dataKey="Gas Fuel"
+                stackId="a"
+                fill="#6D4B47"
+                type="monotone"
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>

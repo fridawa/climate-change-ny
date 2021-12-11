@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -31,19 +31,21 @@ const SolidFuel = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <h1>Fast bränsle</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
-          porttitor ante, ut porttitor sapien. Maecenas tincidunt lectus eu
-          imperdiet molestie. Fusce euismod neque sed mi commodo malesuada.
-          Fusce diam dolor, aliquam at nisi nec, eleifend convallis ante.
-        </p>
-        <div className="wrapper">
+        {" "}
+        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+          <h1>Fast bränsle</h1>
+          <p>Fast bränsle innefattar bränslen i fast form.</p>
+          <p>
+            Exempel på fasta bränslen är till exempel ved, pellets, briketter,
+            spån, kol, torv med mera.
+          </p>
+        </Col>
+        <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={fetchedData}
               margin={{
-                top: 10,
+                top: 20,
                 right: 30,
                 left: 0,
                 bottom: 0,
@@ -55,7 +57,12 @@ const SolidFuel = () => {
               <Tooltip />
               <Legend />
 
-              <Line dataKey="Solid Fuel" stackId="a" fill="#6D4B47" />
+              <Line
+                dataKey="Solid Fuel"
+                stackId="a"
+                fill="#6D4B47"
+                type="monotone"
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>
