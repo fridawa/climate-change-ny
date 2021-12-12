@@ -11,17 +11,7 @@ import axios from "axios";
 
 import { useState, useEffect } from "react";
 
-const ZoomIn2 = () => {
-  const [data1, setData] = useState({});
-  const [left, setLeft] = useState("dataMin");
-  const [right, setRight] = useState("dataMax");
-  const [top, setTop] = useState("dataMax+1");
-  const [bottom, setBottom] = useState("dataMin-1");
-  const [top2, setTop2] = useState("dataMax+20");
-  const [bottom2, setBottom2] = useState("dataMin-20");
-  const [refAreaLeft1, setRefAreaLeft1] = useState("");
-  const [refAreaRight1, setRefAreaRight1] = useState("");
-
+const ZoomIn2 = (props) => {
   const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
@@ -31,32 +21,9 @@ const ZoomIn2 = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  //Kan man bryta ur dessa och lägga som funktioner i app.js?
-  // Eller måste de vara i varje data-fil?
-  const zoom = (e) => {
-    let refAreaLeft = refAreaLeft1;
-    let refAreaRight = refAreaRight1;
-    let zoomData = e;
-
-    setRefAreaLeft1("");
-    setRefAreaRight1("");
-    setData(zoomData);
-    setLeft(refAreaLeft);
-    setRight(refAreaRight);
-  };
-
-  const zoomOut = (e) => {
-    var zoomOutData = e;
-    setData(zoomOutData);
-    setRefAreaLeft1("");
-    setRefAreaRight1("");
-    setLeft("dataMin");
-    setRight("dataMax");
-  };
-
   return (
     <div className="highlight-bar-charts" style={{ userSelect: "none" }}>
-      <button className="btn update" onClick={zoomOut}>
+      <button className="btn update" onClick={props.zoomOut}>
         Zoom Out
       </button>
 
@@ -65,30 +32,30 @@ const ZoomIn2 = () => {
         height={400}
         data={fetchedData}
         onMouseDown={(e) => {
-          setRefAreaLeft1(e.activeLabel);
+          props.setRefAreaLeft1(e.activeLabel);
         }}
         onMouseMove={(e) => {
-          setRefAreaRight1(e.activeLabel);
+          props.setRefAreaRight1(e.activeLabel);
         }}
-        onMouseUp={zoom}
+        onMouseUp={props.zoom}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           allowDataOverflow
           dataKey="Year"
-          domain={[left, right]}
+          domain={[props.left, props.right]}
           type="number"
         />
         <YAxis
           allowDataOverflow
-          domain={[bottom, top]}
+          domain={[props.bottom, props.top]}
           type="number"
           yAxisId="1"
         />
         <YAxis
           orientation="right"
           allowDataOverflow
-          domain={[bottom2, top2]}
+          domain={[props.bottom2, props.top2]}
           type="number"
           yAxisId="2"
         />
@@ -108,11 +75,11 @@ const ZoomIn2 = () => {
           animationDuration={300}
         />
 
-        {refAreaLeft1 && refAreaRight1 ? (
+        {props.refAreaLeft1 && props.refAreaRight1 ? (
           <ReferenceArea
             yAxisId="1"
-            x1={refAreaLeft1}
-            x2={refAreaRight1}
+            x1={props.refAreaLeft1}
+            x2={props.refAreaRight1}
             strokeOpacity={0.3}
           />
         ) : null}

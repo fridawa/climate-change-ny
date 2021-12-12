@@ -13,17 +13,7 @@ import {
 } from "recharts";
 import bakgrund1 from "../Images/back-co2.png";
 
-const Co2 = () => {
-  const [fetchedData, setFetchedData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://my.api.mockaroo.com/co2.json?key=8eb9e6f0")
-      .then((res) => setFetchedData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
-  console.log(fetchedData);
+const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
   // samt en bar chart där datan staplas på varandra
   return (
@@ -38,23 +28,23 @@ const Co2 = () => {
           <p>
             CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
             flygplan. CO2 finns också vid tillverkning av elektronik och
-            livsmedel.
+            livsmedel. Utsläppen mäts i miljoner ton (förkortning MT)
           </p>
         </Col>
         <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <BarChart
-              data={fetchedData}
+              data={props.fetchedData}
               margin={{
                 top: 20,
                 right: 30,
-                left: 0,
+                left: 5,
                 bottom: 0,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="Year" />
-              <YAxis unit=" unit" />
+              <YAxis unit=" MT" />
               <Tooltip />
               <Legend />
               <Bar dataKey="Gas Fuel" stackId="a" fill="#E2C7A8" />

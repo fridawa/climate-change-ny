@@ -13,16 +13,7 @@ import {
 } from "recharts";
 import bakgrund1 from "../Images/back-co2.png";
 
-const GasFuel = () => {
-  const [fetchedData, setFetchedData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://my.api.mockaroo.com/co2.json?key=8eb9e6f0")
-      .then((res) => setFetchedData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
+const GasFuel = (props) => {
   // Applikationens innehåll med förklarande text samt en line chart
   return (
     <>
@@ -52,11 +43,11 @@ const GasFuel = () => {
         <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
-              data={fetchedData}
+              data={props.fetchedData}
               margin={{
                 top: 20,
                 right: 30,
-                left: 0,
+                left: 5,
                 bottom: 0,
               }}
             >

@@ -121,7 +121,7 @@ const OceanLevels = () => {
               margin={{
                 top: 20,
                 right: 30,
-                left: 0,
+                left: 5,
                 bottom: 0,
               }}
               onMouseDown={(e) => {
