@@ -3,8 +3,8 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -93,7 +93,7 @@ const GlobalTemp = () => {
           </Col>
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
-              <AreaChart
+              <LineChart
                 data={filteredArr}
                 margin={{
                   top: 20,
@@ -126,12 +126,12 @@ const GlobalTemp = () => {
                   // yAxisId="1"
                 />
                 <Tooltip />
-                <Area
+                <Line
                   type="monotone"
                   dataKey="Mean"
                   stackId="1"
                   stroke="#EA733D"
-                  fill="#EA733D"
+                  strokeWidth={4}
                   animationDuration={300}
                 />
                 {refAreaLeft1 && refAreaRight1 ? (
@@ -142,7 +142,7 @@ const GlobalTemp = () => {
                     strokeOpacity={0.3}
                   />
                 ) : null}
-              </AreaChart>
+              </LineChart>
             </ResponsiveContainer>
           </div>
         </div>
