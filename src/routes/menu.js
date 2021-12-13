@@ -10,19 +10,19 @@ const Menu = () => {
     <>
       <Container
         fluid
-        className="d-flex justify-content-center p-0 navbar-climate"
+        className="d-flex justify-content-center p-md-0 navbar-climate"
       >
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
           <Container>
-            <Col md={3}>
-              <Navbar.Brand href="#/" className="d-flex">
+            <Col md={3} xs={9}>
+              <Navbar.Brand href="#/" className="d-flex ">
                 <Logo />
               </Navbar.Brand>
             </Col>
-            <Col md={9}>
+            <Col md={9} xs={3}>
               <Navbar.Toggle aria-controls="responsive-navbar-nav " />
               <Navbar.Collapse id="responsive-navbar-nav ">
-                <Nav className="ms-auto pe-5 d-flex">
+                <Nav className="m-xs-0 p-xs-0 ms-md-auto pe-md-5 d-flex">
                   <NavDropdown
                     title={
                       <>
@@ -35,7 +35,7 @@ const Menu = () => {
                       </>
                     }
                     id="nav-dropdown"
-                    className="p-0 m-0"
+                    className="p-md-0 m-md-0"
                   >
                     <NavDropdown.Item eventKey="4.1">
                       {navLinksCo2.map(({ title, path }) => (
@@ -50,7 +50,7 @@ const Menu = () => {
                       ))}
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link className="ps-3 pe-3 pt-1 d-flex">
+                  <Nav.Link className="p-xs-0 m-xs-0 ps-md-3 pe-md-3 pt-md-1 d-flex">
                     {navLinks.map(({ title, path, img }) => (
                       <NavLink
                         to={path}

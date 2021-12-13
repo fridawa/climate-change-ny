@@ -97,6 +97,9 @@ Body {
   .navbar-collapse {
     height: 100vh;
   }
+  .nav-link {
+    display: block !important;
+  }
 }
 
 /* .dropdown img,
