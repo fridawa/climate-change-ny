@@ -131,8 +131,9 @@ const GlobalTemp = () => {
                   dataKey="Mean"
                   stackId="1"
                   stroke="#EA733D"
-                  strokeWidth={4}
+                  strokeWidth={3}
                   animationDuration={300}
+                  dot={false}
                 />
                 {refAreaLeft1 && refAreaRight1 ? (
                   <ReferenceArea

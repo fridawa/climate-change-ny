@@ -147,7 +147,8 @@ const OceanLevels = () => {
                   type="monotone"
                   dataKey="GMSL"
                   stroke="#17A2A5"
-                  strokeWidth={4}
+                  strokeWidth={3}
+                  dot={false}
                 />
               </LineChart>
             </ResponsiveContainer>
