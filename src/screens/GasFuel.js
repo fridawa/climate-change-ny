@@ -12,6 +12,7 @@ import {
   Tooltip,
 } from "recharts";
 import bakgrund1 from "../Images/back-co2.png";
+import AboutGasFuel from "../components/About";
 
 const GasFuel = (props) => {
   // Applikationens innehåll med förklarande text samt en line chart

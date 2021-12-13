@@ -3,8 +3,8 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
