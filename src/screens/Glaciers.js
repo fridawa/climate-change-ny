@@ -30,7 +30,10 @@ const Glaciers = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <Col xs={{ span: 6, offset: 6 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 6 }}
+          className="pe-5  mt-4 pt-5 overlay-text "
+        >
           <h1 className="mb-0">Glaciärstorlek</h1>
           <p className="ps-3">
             Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
@@ -38,7 +41,7 @@ const Glaciers = () => {
           </p>
         </Col>
 
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <AreaChart
               data={fetchedData}

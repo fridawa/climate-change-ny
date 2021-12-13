@@ -23,7 +23,10 @@ const LiquidFuel = (props) => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         {" "}
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5  mt-4 pt-5 overlay-text "
+        >
           <h1>Flytande bränsle</h1>
           <p>Flytande bränsle innefattar bränslen i flytande form.</p>
           <p>
@@ -31,7 +34,7 @@ const LiquidFuel = (props) => {
             diesel med mera.
           </p>
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={props.fetchedData}
