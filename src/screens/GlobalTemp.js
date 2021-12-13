@@ -1,3 +1,4 @@
+//import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
@@ -12,6 +13,7 @@ import {
   ReferenceArea,
 } from "recharts";
 
+//import components
 import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
 import bakgrund1 from "../Images/back-globaltemp.png";
 

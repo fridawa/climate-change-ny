@@ -1,3 +1,4 @@
+//import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Col } from "react-bootstrap";
@@ -11,6 +12,7 @@ import {
   Tooltip,
 } from "recharts";
 
+//import components
 import AboutGlaciersText from "../components/AboutTexts/AboutGlaciers";
 import bakgrund1 from "../Images/back-glaciers.png";
 

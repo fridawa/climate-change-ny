@@ -1,3 +1,4 @@
+//import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Col } from "react-bootstrap";
@@ -13,6 +14,7 @@ import {
   ReferenceArea,
 } from "recharts";
 
+//import components
 import AboutOceanLevelsText from "../components/AboutTexts/AboutOceanLevelsText";
 import bakgrund1 from "../Images/back-ocean.png";
 

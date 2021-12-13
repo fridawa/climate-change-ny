@@ -1,3 +1,4 @@
+//import libraries and extentions
 import { Container, Col } from "react-bootstrap";
 import {
   XAxis,
@@ -10,6 +11,7 @@ import {
   Legend,
 } from "recharts";
 
+//import components
 import AboutCo2Text from "../components/AboutTexts/AboutCo2Text";
 import bakgrund1 from "../Images/back-co2.png";
 

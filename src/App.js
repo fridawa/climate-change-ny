@@ -1,7 +1,9 @@
-import "./App.css";
+//import libraries and extentions
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+//import components
+import "./App.css";
 import Home from "./screens/Home";
 import Co2 from "./screens/Co2";
 import GlobalTemp from "./screens/GlobalTemp";

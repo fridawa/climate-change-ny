@@ -1,6 +1,9 @@
+//import libraries and extentions
 import AboutText from "../components/AboutTexts/AboutText";
 import EkoText from "../components/EkoText";
 import { Container, Row, Col } from "react-bootstrap";
+
+//import components
 import bakgrund1 from "../Images/back-index.png";
 
 const Home = () => {

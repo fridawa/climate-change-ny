@@ -1,3 +1,4 @@
+//import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Col } from "react-bootstrap";
@@ -11,6 +12,8 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+
+//import components
 import bakgrund1 from "../Images/back-co2.png";
 import AboutGasFuelText from "../components/AboutTexts/AboutGas";
 
