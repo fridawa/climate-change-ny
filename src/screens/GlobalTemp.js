@@ -12,6 +12,8 @@ import {
   ReferenceArea,
   
 } from "recharts";
+
+import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
 import bakgrund1 from "../Images/back-globaltemp.png";
 
 const GlobalTemp = () => {
@@ -85,8 +87,7 @@ const GlobalTemp = () => {
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
-          <h1>Global Temperatur</h1>
-          <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
+          <AboutGlobalTempText />
           {/* <button className="btn update" onClick={zoomOut}>
             Zoom Out
           </button> */}

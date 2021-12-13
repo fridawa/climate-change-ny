@@ -11,7 +11,10 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+
+
 import bakgrund1 from "../Images/back-co2.png";
+import AboutSolidFuelText from "../components/AboutTexts/AboutSolidFuelText";
 
 const SolidFuel = (props) => {
   // Applikationens innehåll med förklarande text samt en line chart
@@ -27,12 +30,7 @@ const SolidFuel = (props) => {
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
-          <h1>Fast bränsle</h1>
-          <p>Fast bränsle innefattar bränslen i fast form.</p>
-          <p>
-            Exempel på fasta bränslen är till exempel ved, pellets, briketter,
-            spån, kol, torv med mera.
-          </p>
+          <AboutSolidFuelText />
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">

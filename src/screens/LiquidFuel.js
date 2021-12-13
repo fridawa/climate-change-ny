@@ -11,6 +11,8 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+
+import AboutLiquidFuelText from "../components/AboutTexts/AboutLiquidFuelText";
 import bakgrund1 from "../Images/back-co2.png";
 
 const LiquidFuel = (props) => {
@@ -27,12 +29,7 @@ const LiquidFuel = (props) => {
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
-          <h1>Flytande bränsle</h1>
-          <p>Flytande bränsle innefattar bränslen i flytande form.</p>
-          <p>
-            Exempel på flytande bränslen är till exempel etanol, bensin eller
-            diesel med mera.
-          </p>
+         <AboutLiquidFuelText />
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">

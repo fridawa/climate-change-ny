@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from "recharts";
 import bakgrund1 from "../Images/back-co2.png";
-import AboutGasFuel from "../components/About"
+import AboutGasFuelText from "../components/AboutTexts/AboutGas"
 
 const GasFuel = (props) => {
   // Applikationens innehåll med förklarande text samt en line chart
@@ -24,7 +24,7 @@ const GasFuel = (props) => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
-        <AboutGasFuel />
+        <AboutGasFuelText />
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">

@@ -9,6 +9,8 @@ import {
   Bar,
   Legend,
 } from "recharts";
+
+import AboutCo2Text from "../components/AboutTexts/AboutCo2Text"
 import bakgrund1 from "../Images/back-co2.png";
 
 const Co2 = (props) => {
@@ -25,12 +27,8 @@ const Co2 = (props) => {
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
-          <h1>Koldioxidutsläpp</h1>
-          <p>
-            CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
-            flygplan. CO2 finns också vid tillverkning av elektronik och
-            livsmedel. Utsläppen mäts i miljoner ton (förkortning MT)
-          </p>
+        <AboutCo2Text />
+          
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
