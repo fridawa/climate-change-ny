@@ -32,12 +32,26 @@ const Glaciers = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
+<<<<<<< HEAD
         <Col
           xs={{ span: 6, offset: 6 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
          <AboutGlaciersText />
         </Col>
+=======
+        <div className="pt-sm-5 mt-sm-5">
+          <Col
+            xs={{ span: 6, offset: 6 }}
+            className="pe-5  mt-4 pt-5 overlay-text "
+          >
+            <h1 className="mb-0">Glaciärstorlek</h1>
+            <p className="ps-3">
+              Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
+              isbjörnar och sälar, då de är beroende av isen.
+            </p>
+          </Col>
+>>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
 
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

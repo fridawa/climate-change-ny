@@ -105,12 +105,28 @@ const OceanLevels = () => {
         className="data-container p"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
+<<<<<<< HEAD
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5 mt-4 pt-5 overlay-text "
         >
  <AboutOceanLevelsText />
           {/* <button className="btn update" onClick={zoomOut}>
+=======
+        <div className="pt-sm-5 mt-sm-5">
+          <Col
+            xs={{ span: 6, offset: 1 }}
+            className="pe-5 mt-4 pt-5 overlay-text "
+          >
+            <h1>Havsnivå</h1>
+            <p>
+              Klimatförändringar gör så att jordens temperatur ökar. Detta leder
+              till att glaciären och inlandsisen smälter. När isen smälter, höjs
+              havsnivån.
+            </p>
+
+            {/* <button className="btn update" onClick={zoomOut}>
+>>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
             Zoom Out
           </button> */}
           </Col>
@@ -141,7 +157,8 @@ const OceanLevels = () => {
                   type="monotone"
                   dataKey="GMSL"
                   stroke="#17A2A5"
-                  strokeWidth={4}
+                  strokeWidth={3}
+                  dot={false}
                 />
               </LineChart>
             </ResponsiveContainer>

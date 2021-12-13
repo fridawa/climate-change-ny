@@ -82,12 +82,23 @@ const GlobalTemp = () => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
+<<<<<<< HEAD
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
           <AboutGlobalTempText />
           {/* <button className="btn update" onClick={zoomOut}>
+=======
+        <div className="pt-sm-5 mt-sm-5">
+          <Col
+            xs={{ span: 6, offset: 1 }}
+            className="pe-5  mt-4 pt-5 overlay-text "
+          >
+            <h1>Global Temperatur</h1>
+            <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
+            {/* <button className="btn update" onClick={zoomOut}>
+>>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
             Zoom Out
           </button> */}
           </Col>
@@ -131,8 +142,9 @@ const GlobalTemp = () => {
                   dataKey="Mean"
                   stackId="1"
                   stroke="#EA733D"
-                  strokeWidth={4}
+                  strokeWidth={3}
                   animationDuration={300}
+                  dot={false}
                 />
                 {refAreaLeft1 && refAreaRight1 ? (
                   <ReferenceArea
