@@ -80,7 +80,7 @@ const GlobalTemp = () => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-5 mt-5">
+        <div className="pt-sm-5 mt-sm-5">
           <Col
             xs={{ span: 6, offset: 1 }}
             className="pe-5  mt-4 pt-5 overlay-text "

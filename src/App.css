@@ -88,6 +88,17 @@ Body {
 .overlay-text {
   z-index: 10;
 }
+
+@media only screen and (max-width: 767px) {
+  .navbar-collapse,
+  .navbar-climate {
+    background-color: rgb(255, 255, 255);
+  }
+  .navbar-collapse {
+    height: 100vh;
+  }
+}
+
 /* .dropdown img,
 .dropdown p {
   display: inline !important;
