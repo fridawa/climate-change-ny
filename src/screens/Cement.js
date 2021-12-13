@@ -24,30 +24,6 @@ const Cement = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-<<<<<<< HEAD
-        <Col
-          xs={{ span: 6, offset: 1 }}
-          className="pe-5  mt-4 pt-5 overlay-text "
-        >
-          <AboutCementText />
-        </Col>
-        <div className="wrapper overlay-graf pt-5">
-          <ResponsiveContainer width="100%" height="80%">
-            <AreaChart
-              data={props.fetchedData}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 5,
-                bottom: 0,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="Year" />
-              <YAxis unit=" unit" />
-              <Tooltip />
-              <Legend />
-=======
         <div className="pt-sm-5 mt-sm-5">
           <Col
             xs={{ span: 6, offset: 1 }}
@@ -90,7 +66,6 @@ const Cement = (props) => {
                 <YAxis unit=" unit" />
                 <Tooltip />
                 <Legend />
->>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
 
                 <Area
                   dataKey="Cement"
@@ -102,7 +77,7 @@ const Cement = (props) => {
               </AreaChart>
             </ResponsiveContainer>
           </div>
-        
+        </div>
       </Container>
     </>
   );
