@@ -105,3 +105,10 @@ Body {
   padding: 0;
   margin: 0;
 }
+.navbar-climate,
+.data-container {
+  position: absolute;
+}
+.navbar-climate {
+  z-index: 10;
+}
