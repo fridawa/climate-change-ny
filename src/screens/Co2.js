@@ -23,10 +23,12 @@ const Co2 = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
+      <div className="pt-sm-5 mt-sm-5">
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
+
           <AboutCo2Text />
         </Col>
         <div className="wrapper overlay-graf pt-5">
@@ -52,6 +54,7 @@ const Co2 = (props) => {
               <Bar dataKey="Gas Flaring" stackId="a" fill="#6D4B47" />
             </BarChart>
           </ResponsiveContainer>
+        </div>
         </div>
       </Container>
     </>

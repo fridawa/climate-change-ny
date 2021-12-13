@@ -82,6 +82,8 @@ const GlobalTemp = () => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
+
+<div className="pt-sm-5 mt-sm-5">
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
@@ -147,6 +149,7 @@ const GlobalTemp = () => {
               ) : null}
             </LineChart>
           </ResponsiveContainer>
+        </div>
         </div>
       </Container>
     </>

@@ -23,7 +23,9 @@ const GasFuel = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+
+    <div className="pt-sm-5 mt-sm-5">
+        <Col xs={{ span: 6, offset: 1 }} className="pe-5 mt-md-4 pt-5 overlay-text ">
           <AboutGasFuelText />
         </Col>
         <div className="wrapper overlay-graf pt-5">
@@ -52,6 +54,7 @@ const GasFuel = (props) => {
               />
             </AreaChart>
           </ResponsiveContainer>
+        </div>
         </div>
       </Container>
     </>
