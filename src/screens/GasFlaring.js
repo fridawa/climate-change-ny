@@ -24,17 +24,15 @@ const GasFlaring = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-<<<<<<< HEAD
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5 mt-4 pt-5 overlay-text "
         >
           <AboutGasFlaringText />
-
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
-            <LineChart
+            <AreaChart
               data={props.fetchedData}
               margin={{
                 top: 20,
@@ -48,50 +46,16 @@ const GasFlaring = (props) => {
               <YAxis unit=" unit" />
               <Tooltip />
               <Legend />
-=======
-        <div className="pt-sm-5 mt-sm-5">
-          <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5 mt-4 pt-5 overlay-text "
-          >
-            <h1>Gaseldning</h1>
-            <p>
-              Gaseldning används i industrier där gas blir en biprodukt vid
-              tillverkning av något annat.
-            </p>
-            <p>
-              Gaseldningsprocessen sker oftast enbart för att elda upp gasen.
-              Värmeenergin tas alltså inte tillvara på.
-            </p>
-          </Col>
-          <div className="wrapper overlay-graf pt-5">
-            <ResponsiveContainer width="100%" height="80%">
-              <AreaChart
-                data={props.fetchedData}
-                margin={{
-                  top: 20,
-                  right: 70,
-                  left: 10,
-                  bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Year" />
-                <YAxis unit=" unit" />
-                <Tooltip />
-                <Legend />
->>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
 
-                <Area
-                  dataKey="Gas Flaring"
-                  stackId="a"
-                  fill="#6D4B47"
-                  stroke="#6D4B47"
-                  type="monotone"
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
+              <Area
+                dataKey="Gas Flaring"
+                stackId="a"
+                fill="#6D4B47"
+                stroke="#6D4B47"
+                type="monotone"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       </Container>
     </>

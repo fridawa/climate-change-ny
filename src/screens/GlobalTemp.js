@@ -82,81 +82,71 @@ const GlobalTemp = () => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-<<<<<<< HEAD
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
           <AboutGlobalTempText />
+
           {/* <button className="btn update" onClick={zoomOut}>
-=======
-        <div className="pt-sm-5 mt-sm-5">
-          <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
-          >
-            <h1>Global Temperatur</h1>
-            <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
-            {/* <button className="btn update" onClick={zoomOut}>
->>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
             Zoom Out
           </button> */}
-          </Col>
-          <div className="wrapper overlay-graf pt-5">
-            <ResponsiveContainer width="100%" height="80%">
-              <LineChart
-                data={filteredArr}
-                margin={{
-                  top: 20,
-                  right: 70,
-                  left: 10,
-                  bottom: 0,
-                }}
-                width={800}
-                height={400}
-                onMouseDown={(e) => {
-                  setRefAreaLeft1(e.activeLabel);
-                }}
-                onMouseMove={(e) => {
-                  setRefAreaRight1(e.activeLabel);
-                }}
-                onMouseUp={zoom}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis
-                  dataKey="Year"
-                  allowDataOverflow
-                  domain={[left, right]}
-                  type="number"
+        </Col>
+
+        <div className="wrapper overlay-graf pt-5">
+          <ResponsiveContainer width="100%" height="80%">
+            <LineChart
+              data={filteredArr}
+              margin={{
+                top: 20,
+                right: 70,
+                left: 10,
+                bottom: 0,
+              }}
+              width={800}
+              height={400}
+              onMouseDown={(e) => {
+                setRefAreaLeft1(e.activeLabel);
+              }}
+              onMouseMove={(e) => {
+                setRefAreaRight1(e.activeLabel);
+              }}
+              onMouseUp={zoom}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="Year"
+                allowDataOverflow
+                domain={[left, right]}
+                type="number"
+              />
+              <YAxis
+                unit=" unit"
+                // allowDataOverflow
+                // domain={[bottom, top]}
+                // type="number"
+                // yAxisId="1"
+              />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="Mean"
+                stackId="1"
+                stroke="#EA733D"
+                strokeWidth={3}
+                animationDuration={300}
+                dot={false}
+              />
+              {refAreaLeft1 && refAreaRight1 ? (
+                <ReferenceArea
+                  yAxisId="1"
+                  x1={refAreaLeft1}
+                  x2={refAreaRight1}
+                  strokeOpacity={0.3}
                 />
-                <YAxis
-                  unit=" unit"
-                  // allowDataOverflow
-                  // domain={[bottom, top]}
-                  // type="number"
-                  // yAxisId="1"
-                />
-                <Tooltip />
-                <Line
-                  type="monotone"
-                  dataKey="Mean"
-                  stackId="1"
-                  stroke="#EA733D"
-                  strokeWidth={3}
-                  animationDuration={300}
-                  dot={false}
-                />
-                {refAreaLeft1 && refAreaRight1 ? (
-                  <ReferenceArea
-                    yAxisId="1"
-                    x1={refAreaLeft1}
-                    x2={refAreaRight1}
-                    strokeOpacity={0.3}
-                  />
-                ) : null}
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+              ) : null}
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </Container>
     </>

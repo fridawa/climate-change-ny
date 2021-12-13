@@ -10,7 +10,7 @@ import {
   Legend,
 } from "recharts";
 
-import AboutCo2Text from "../components/AboutTexts/AboutCo2Text"
+import AboutCo2Text from "../components/AboutTexts/AboutCo2Text";
 import bakgrund1 from "../Images/back-co2.png";
 
 const Co2 = (props) => {
@@ -23,13 +23,11 @@ const Co2 = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-<<<<<<< HEAD
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
         >
-        <AboutCo2Text />
-          
+          <AboutCo2Text />
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
@@ -54,44 +52,6 @@ const Co2 = (props) => {
               <Bar dataKey="Gas Flaring" stackId="a" fill="#6D4B47" />
             </BarChart>
           </ResponsiveContainer>
-=======
-        <div className="pt-sm-5 mt-sm-5">
-          <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
-          >
-            <h1>Koldioxidutsläpp</h1>
-            <p>
-              CO2 står för koldioxid. Det är utsläpp från till exempel bilar,
-              tåg, flygplan. CO2 finns också vid tillverkning av elektronik och
-              livsmedel. Utsläppen mäts i miljoner ton (förkortning MT)
-            </p>
-          </Col>
-          <div className="wrapper overlay-graf pt-5">
-            <ResponsiveContainer width="100%" height="80%">
-              <BarChart
-                data={props.fetchedData}
-                margin={{
-                  top: 20,
-                  right: 70,
-                  left: 10,
-                  bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Year" />
-                <YAxis unit=" MT" />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Gas Fuel" stackId="a" fill="#E2C7A8" />
-                <Bar dataKey="Liquid Fuel" stackId="a" fill="#C1A47E" />
-                <Bar dataKey="Solid Fuel" stackId="a" fill="#C48A7E" />
-                <Bar dataKey="Cement" stackId="a" fill="#91714D" />
-                <Bar dataKey="Gas Flaring" stackId="a" fill="#6D4B47" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
->>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
         </div>
       </Container>
     </>

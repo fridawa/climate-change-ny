@@ -12,7 +12,6 @@ import {
   Tooltip,
 } from "recharts";
 
-
 import bakgrund1 from "../Images/back-co2.png";
 import AboutSolidFuelText from "../components/AboutTexts/AboutSolidFuelText";
 
@@ -25,8 +24,6 @@ const SolidFuel = (props) => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-<<<<<<< HEAD
-        {" "}
         <Col
           xs={{ span: 6, offset: 1 }}
           className="pe-5  mt-4 pt-5 overlay-text "
@@ -35,7 +32,7 @@ const SolidFuel = (props) => {
         </Col>
         <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
-            <LineChart
+            <AreaChart
               data={props.fetchedData}
               margin={{
                 top: 20,
@@ -49,47 +46,16 @@ const SolidFuel = (props) => {
               <YAxis unit=" unit" />
               <Tooltip />
               <Legend />
-=======
-        <div className="pt-sm-5 mt-sm-5">
-          <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
-          >
-            <h1>Fast bränsle</h1>
-            <p>Fast bränsle innefattar bränslen i fast form.</p>
-            <p>
-              Exempel på fasta bränslen är till exempel ved, pellets, briketter,
-              spån, kol, torv med mera.
-            </p>
-          </Col>
-          <div className="wrapper overlay-graf pt-5">
-            <ResponsiveContainer width="100%" height="80%">
-              <AreaChart
-                data={props.fetchedData}
-                margin={{
-                  top: 20,
-                  right: 30,
-                  left: 5,
-                  bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Year" />
-                <YAxis unit=" unit" />
-                <Tooltip />
-                <Legend />
->>>>>>> 1568cf83e12c4aaaef1e7b265c35892929118e16
 
-                <Area
-                  dataKey="Solid Fuel"
-                  stackId="a"
-                  stroke="#6D4B47"
-                  fill="#6D4B47"
-                  type="monotone"
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
+              <Area
+                dataKey="Solid Fuel"
+                stackId="a"
+                stroke="#6D4B47"
+                fill="#6D4B47"
+                type="monotone"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       </Container>
     </>
