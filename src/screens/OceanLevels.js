@@ -13,6 +13,7 @@ import {
   ReferenceArea,
 } from "recharts";
 
+import AboutOceanLevelsText from "../components/AboutTexts/AboutOceanLevelsText";
 import bakgrund1 from "../Images/back-ocean.png";
 
 const OceanLevels = () => {
@@ -104,19 +105,12 @@ const OceanLevels = () => {
         className="data-container p"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-5 mt-5">
-          <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5 mt-4 pt-5 overlay-text "
-          >
-            <h1>Havsnivå</h1>
-            <p>
-              Klimatförändringar gör så att jordens temperatur ökar. Detta leder
-              till att glaciären och inlandsisen smälter. När isen smälter, höjs
-              havsnivån.
-            </p>
-
-            {/* <button className="btn update" onClick={zoomOut}>
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5 mt-4 pt-5 overlay-text "
+        >
+ <AboutOceanLevelsText />
+          {/* <button className="btn update" onClick={zoomOut}>
             Zoom Out
           </button> */}
           </Col>

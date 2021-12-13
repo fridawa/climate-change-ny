@@ -10,6 +10,8 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+
+import AboutGlaciersText from "../components/AboutTexts/AboutGlaciers";
 import bakgrund1 from "../Images/back-glaciers.png";
 
 const Glaciers = () => {
@@ -30,17 +32,12 @@ const Glaciers = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-5 mt-5">
-          <Col
-            xs={{ span: 6, offset: 6 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
-          >
-            <h1 className="mb-0">Glaciärstorlek</h1>
-            <p className="ps-3">
-              Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
-              isbjörnar och sälar, då de är beroende av isen.
-            </p>
-          </Col>
+        <Col
+          xs={{ span: 6, offset: 6 }}
+          className="pe-5  mt-4 pt-5 overlay-text "
+        >
+         <AboutGlaciersText />
+        </Col>
 
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
