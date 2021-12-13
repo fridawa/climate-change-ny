@@ -6,7 +6,7 @@ const navLinksCo2 = [
   },
   {
     id: 1,
-    title: `Gas Bränsle`,
+    title: `Gasbränsle`,
     path: `/gas-fuel`,
   },
   {

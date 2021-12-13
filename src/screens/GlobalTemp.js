@@ -3,13 +3,14 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ReferenceArea,
+  
 } from "recharts";
 import bakgrund1 from "../Images/back-globaltemp.png";
 
@@ -89,7 +90,7 @@ const GlobalTemp = () => {
         </Col>
         <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
-            <LineChart
+            <AreaChart
               data={filteredArr}
               margin={{
                 top: 20,
@@ -122,7 +123,8 @@ const GlobalTemp = () => {
                 // yAxisId="1"
               />
               <Tooltip />
-              <Line
+             
+              <Area
                 type="monotone"
                 dataKey="Mean"
                 stackId="1"
@@ -138,7 +140,8 @@ const GlobalTemp = () => {
                   strokeOpacity={0.3}
                 />
               ) : null}
-            </LineChart>
+             
+            </AreaChart>
           </ResponsiveContainer>
         </div>
       </Container>

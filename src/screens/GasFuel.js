@@ -23,7 +23,7 @@ const GasFuel = (props) => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
-          <h1>Gas bränsle</h1>
+          <h1>Gasbränsle</h1>
           <p>Gasbränsle innefattar bränslen i gasform. </p>
           <p>
             Exempel på gasbränslen är till exempel fordonsgas vilket är ett
