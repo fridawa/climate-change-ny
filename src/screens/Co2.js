@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { Container, Col } from "react-bootstrap";
 import {
   XAxis,
