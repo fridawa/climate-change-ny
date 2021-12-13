@@ -2,7 +2,6 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-// the different views
 import Home from "./screens/Home";
 import Co2 from "./screens/Co2";
 import GlobalTemp from "./screens/GlobalTemp";
