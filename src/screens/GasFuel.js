@@ -26,7 +26,7 @@ const GasFuel = (props) => {
         <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
         <AboutGasFuel />
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={props.fetchedData}

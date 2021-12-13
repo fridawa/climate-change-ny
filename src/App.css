@@ -59,7 +59,8 @@ Body {
 
 @media only screen and (min-width: 400px) {
   .data-container {
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -83,7 +84,7 @@ Body {
   background-color: rgb(255, 255, 253);
 }
 .dropdown-menu {
-  min-width: 50vw;
+  min-width: 40vw;
 }
 .dropdown-item {
   display: flex;
@@ -111,5 +112,5 @@ Body {
   position: absolute;
 }
 .navbar-climate {
-  z-index: 10;
+  z-index: 20;
 }

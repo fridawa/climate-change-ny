@@ -19,11 +19,14 @@ const SolidFuel = (props) => {
     <>
       <Container
         fluid
-        className="data-container"
+        className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         {" "}
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5  mt-4 pt-5 overlay-text "
+        >
           <h1>Fast bränsle</h1>
           <p>Fast bränsle innefattar bränslen i fast form.</p>
           <p>
@@ -31,7 +34,7 @@ const SolidFuel = (props) => {
             spån, kol, torv med mera.
           </p>
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={props.fetchedData}

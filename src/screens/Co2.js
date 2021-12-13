@@ -21,7 +21,10 @@ const Co2 = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5  mt-4 pt-5 overlay-text "
+        >
           <h1>Koldioxidutsläpp</h1>
           <p>
             CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
@@ -29,7 +32,7 @@ const Co2 = (props) => {
             livsmedel. Utsläppen mäts i miljoner ton (förkortning MT)
           </p>
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <BarChart
               data={props.fetchedData}

@@ -22,7 +22,10 @@ const Cement = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5  mt-4 pt-5 overlay-text "
+        >
           <h1>Cement</h1>
           <p>Cementproduktion är processen som sker när cement tillverkas. </p>
           <p>
@@ -42,7 +45,7 @@ const Cement = (props) => {
             naturmiljöer och djurliv.
           </p>
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={props.fetchedData}

@@ -22,7 +22,7 @@ const Menu = () => {
             <Col md={9}>
               <Navbar.Toggle aria-controls="responsive-navbar-nav " />
               <Navbar.Collapse id="responsive-navbar-nav ">
-                <Nav className="ms-auto d-flex">
+                <Nav className="ms-auto pe-5 d-flex">
                   <NavDropdown
                     title={
                       <>

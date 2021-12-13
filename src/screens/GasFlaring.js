@@ -22,7 +22,10 @@ const GasFlaring = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5 mt-4 pt-5 overlay-text "
+        >
           <h1>Gaseldning</h1>
           <p>
             Gaseldning används i industrier där gas blir en biprodukt vid
@@ -33,7 +36,7 @@ const GasFlaring = (props) => {
             Värmeenergin tas alltså inte tillvara på.
           </p>
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={props.fetchedData}
