@@ -1,17 +1,17 @@
 import AboutText from "../components/AboutText";
 import EkoText from "../components/EkoText";
-import bakgrund1 from "../Images/back-index.png";
 import { Container, Row, Col } from "react-bootstrap";
+import bakgrund1 from "../Images/back-index.png";
 
 const Home = () => {
   return (
     <Container
       fluid
-      className="data-container p-5"
+      className="  data-container p-5 "
       style={{ backgroundImage: `url(${bakgrund1})` }}
     >
       <Col sm={{ span: 8, offset: 2 }} lg={{ span: 6, offset: 3 }}>
-        <Row className="home-about p-5">
+        <Row className="home-about p-4 p-md-5 mt-5">
           <AboutText />
           <EkoText />
         </Row>

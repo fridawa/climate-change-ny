@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -10,7 +10,6 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
 import bakgrund1 from "../Images/back-glaciers.png";
 
 const Glaciers = () => {
@@ -23,6 +22,7 @@ const Glaciers = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  // Applikationens innehåll med förklarande text samt en area graf
   return (
     <>
       <Container
@@ -30,19 +30,22 @@ const Glaciers = () => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <h1 className="text-center h">Glaciärstorlek</h1>
-        <p>
-          Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
-          isbjörnar och sälar, då de är beroende av isen.
-        </p>
-        <div className="wrapper">
+        <Col xs={{ span: 6, offset: 6 }} className="pe-5 pt-4 overlay-text ">
+          <h1 className="mb-0">Glaciärstorlek</h1>
+          <p className="ps-3">
+            Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
+            isbjörnar och sälar, då de är beroende av isen.
+          </p>
+        </Col>
+
+        <div className="wrapper overlay-graf">
           <ResponsiveContainer width="100%" height="80%">
             <AreaChart
               data={fetchedData}
               margin={{
-                top: 10,
+                top: 20,
                 right: 30,
-                left: 0,
+                left: 5,
                 bottom: 0,
               }}
             >
@@ -55,15 +58,15 @@ const Glaciers = () => {
               <XAxis
                 dataKey="Year"
                 tickLine={false}
-                tick={{ fontSize: 20, fill: "#82A1A8" }}
+                tick={{ fill: "#82A1A8" }}
                 stroke="#efefef"
                 interval={5}
               />
               <YAxis
                 tickLine={false}
-                tick={{ fontSize: 20, fill: "#82A1A8" }}
+                tick={{ fill: "#82A1A8" }}
                 stroke="#efefef"
-                unit="unit"
+                unit=" unit"
               />
               <Tooltip />
               <Area

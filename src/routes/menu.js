@@ -1,10 +1,9 @@
-import { Container, Row, Col, Navbar, Nav } from "react-bootstrap";
+import { Container, Row, Col, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Logo from "../components/Logo";
+import navLinksCo2 from "./navlinksco2";
+import navLinks from "./navLinks";
 import co2img from "../Images/menu-co2.png";
-import havimg from "../Images/menu-ocean.png";
-import solimg from "../Images/menu-globaltemp.png";
-import isimg from "../Images/menu-glaciers.png";
 
 const Menu = () => {
   return (
@@ -15,44 +14,58 @@ const Menu = () => {
       >
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
           <Container>
-            <Navbar.Brand href="#/">
-              <Logo />
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link className="ps-3 pe-3">
-                  <NavLink to="/global-temp">
-                    <p>Global Temp</p>
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link className="ps-3 pe-3">
-                  <NavLink to="/co2">
-                    <p>Co2</p>
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link className="ps-3 pe-3">
-                  <NavLink to="/ocean-levels">
-                    <p>Hav</p>
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link className="ps-3 pe-3">
-                  <NavLink to="/glaciers">
-                    <p>Glaciär</p>
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link className="ps-3 pe-3">
-                  <NavLink to="/zoomin">
-                    <p>zoomin</p>
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link className="ps-3 pe-3">
-                  <NavLink to="/zoomin2">
-                    <p>zoomin2</p>
-                  </NavLink>
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
+            <Col md={3}>
+              <Navbar.Brand href="#/" className="d-flex">
+                <Logo />
+              </Navbar.Brand>
+            </Col>
+            <Col md={9}>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav " />
+              <Navbar.Collapse id="responsive-navbar-nav ">
+                <Nav className="ms-auto d-flex">
+                  <NavDropdown
+                    title={
+                      <>
+                        <img
+                          className="d-inline "
+                          src={co2img}
+                          style={{ width: 20, height: 20 }}
+                        ></img>
+                        <p className="d-inline  align-middle ">Co2</p>
+                      </>
+                    }
+                    id="nav-dropdown"
+                    className="p-0 m-0"
+                  >
+                    <NavDropdown.Item eventKey="4.1">
+                      {navLinksCo2.map(({ title, path }) => (
+                        <NavLink
+                          to={path}
+                          key={title}
+                          className=" ps-3"
+                          activeClassName="active"
+                        >
+                          <p>{title}</p>
+                        </NavLink>
+                      ))}
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link className="ps-3 pe-3 pt-1 d-flex">
+                    {navLinks.map(({ title, path, img }) => (
+                      <NavLink
+                        to={path}
+                        key={title}
+                        className="d-flex flex-row ps-5 "
+                        activeClassName="active"
+                      >
+                        <img src={img} style={{ width: 20, height: 20 }}></img>
+                        <p>{title}</p>
+                      </NavLink>
+                    ))}
+                  </Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Col>
           </Container>
         </Navbar>
       </Container>

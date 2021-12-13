@@ -1,6 +1,8 @@
 /*GLOBAL STYLING*/
 * {
   font-family: "sofia-pro", sans-serif !important;
+  padding: 0;
+  margin: 0;
 }
 Body {
   background-color: rgb(255, 255, 255);
@@ -28,15 +30,22 @@ Body {
 
 /* MENY */
 .navbar {
-  background-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
   width: 100vw !important;
   font-weight: 600;
 }
 .navbar-climate p {
-  color: #4b9aa8;
+  color: rgb(100, 97, 72);
+  opacity: 70%;
+  font-weight: 600;
 }
 .navbar-climate p:hover {
-  color: #6ec5d4;
+  opacity: 100%;
+  font-weight: 900;
+}
+.active p {
+  opacity: 100%;
+  font-weight: 900;
 }
 
 .h1-heding {
@@ -61,4 +70,38 @@ Body {
 .home-about {
   background-color: rgb(255, 255, 253);
   height: 100%;
+}
+/* Tar bort pilen i dropdownen */
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgb(255, 255, 253);
+}
+.dropdown-menu {
+  min-width: 50vw;
+}
+.dropdown-item {
+  display: flex;
+}
+
+/* overlay */
+.overlay-graf,
+.overlay-text {
+  position: absolute;
+}
+.overlay-text {
+  z-index: 10;
+}
+/* .dropdown img,
+.dropdown p {
+  display: inline !important;
+} */
+#nav-dropdown {
+  padding: 0;
+  margin: 0;
 }
