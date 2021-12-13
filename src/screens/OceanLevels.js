@@ -73,7 +73,7 @@ const OceanLevels = () => {
     Number(key),
     yearAsIntt[key],
   ]);
-  console.log(result);
+  // console.log(result);
 
   function renameKeys(result, newKeys) {
     const keyValues = Object.keys(result).map((key) => {
@@ -82,13 +82,15 @@ const OceanLevels = () => {
     });
     return Object.assign({}, ...keyValues);
   }
+  console.log(result);
+
   const newKeys = { 0: "Row", 1: "Time" };
   const renamedObj = renameKeys(result, newKeys);
-  console.log(renamedObj);
+  // console.log(renamedObj);
 
   const arrayCopy = [...fetchedData];
   arrayCopy.push(yearAsIntt);
-  console.log(arrayCopy);
+  // console.log(arrayCopy);
 
   // var res = fetchedData.map(
   //   (obj) => yearAsIntt.find((o) => o.id === obj.id) || obj
