@@ -101,10 +101,13 @@ const OceanLevels = () => {
     <>
       <Container
         fluid
-        className="data-container"
+        className="data-container p"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <Col xs={{ span: 6, offset: 1 }} className="pe-5 pt-4 overlay-text ">
+        <Col
+          xs={{ span: 6, offset: 1 }}
+          className="pe-5 mt-4 pt-5 overlay-text "
+        >
           <h1>Havsnivå</h1>
           <p>
             Klimatförändringar gör så att jordens temperatur ökar. Detta leder
@@ -116,7 +119,7 @@ const OceanLevels = () => {
             Zoom Out
           </button> */}
         </Col>
-        <div className="wrapper overlay-graf">
+        <div className="wrapper overlay-graf pt-5">
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               data={fetchedData}
