@@ -55,19 +55,9 @@ Body {
 
 .data-container {
   min-height: 100vh;
+  background-size: cover;
 }
 
-@media only screen and (min-width: 400px) {
-  .data-container {
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
-@media only screen and (min-width: 1000px) {
-  .data-container {
-    background-size: 100%;
-  }
-}
 .home-about {
   background-color: rgb(255, 255, 253);
   height: 100%;
