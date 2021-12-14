@@ -10,6 +10,7 @@ import GlobalTemp from "./screens/GlobalTemp";
 import OceanLevels from "./screens/OceanLevels";
 import Glaciers from "./screens/Glaciers";
 import Menu from "./routes/menu";
+import MobilMenu from "./routes/mobilmenu";
 import GasFlaring from "./screens/GasFlaring";
 import GasFuel from "./screens/GasFuel";
 import LiquidFuel from "./screens/LiquidFuel";
@@ -18,7 +19,6 @@ import Cement from "./screens/Cement";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  
   // Hämtar in iaf co2-datan här så inte den behöver hämtas på varje sida
   const [fetchedDataCo2, setFetchedDataCo2] = useState([]);
   useEffect(() => {
@@ -28,10 +28,10 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-
   return (
     <div className="App">
       <Menu />
+      <MobilMenu />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -62,7 +62,6 @@ function App() {
           path="/cement"
           element={<Cement fetchedData={fetchedDataCo2} />}
         ></Route>
-        
       </Routes>
     </div>
   );

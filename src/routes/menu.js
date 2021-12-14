@@ -10,7 +10,7 @@ const Menu = () => {
     <>
       <Container
         fluid
-        className="d-flex justify-content-center p-md-0 navbar-climate"
+        className="d-flex justify-content-center p-md-0 navbar-climate d-none d-md-block"
       >
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
           <Container>
