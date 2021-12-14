@@ -78,7 +78,7 @@ const Glaciers = () => {
                   dataKey="Mean cumulative mass balance"
                   stackId="1"
                   stroke="#82A1A8"
-                  fill="#82A1A8"
+                  fill="none"
                 />
               </AreaChart>
             </ResponsiveContainer>

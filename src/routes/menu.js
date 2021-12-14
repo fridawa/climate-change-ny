@@ -5,6 +5,7 @@ import navLinksCo2 from "./navlinksco2";
 import navLinks from "./navLinks";
 import co2img from "../Images/menu-co2.png";
 
+
 const Menu = () => {
   return (
     <>
@@ -29,8 +30,9 @@ const Menu = () => {
                         <img
                           className="d-inline "
                           src={co2img}
-                          style={{ width: 20, height: 20 }}
+                          style={{ width: 40, height: 40 }}
                         ></img>
+
                         <p className="d-inline  align-middle ">Co2</p>
                       </>
                     }
@@ -44,7 +46,10 @@ const Menu = () => {
                           key={title}
                           className=" ps-3"
                           activeClassName="active"
+                          
                         >
+
+                        {/* försöker style menyn*/}
                           <p>{title}</p>
                         </NavLink>
                       ))}
@@ -58,7 +63,7 @@ const Menu = () => {
                         className="d-flex flex-row ps-5 "
                         activeClassName="active"
                       >
-                        <img src={img} style={{ width: 20, height: 20 }}></img>
+                        <img src={img} style={{ width: 40, height: 40 }}></img>
                         <p>{title}</p>
                       </NavLink>
                     ))}

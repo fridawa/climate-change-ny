@@ -133,3 +133,4 @@ Body {
 }
 /*tar bort boarder från alla element (t ex menyknapparna) */
 *:focus {outline:none}
+

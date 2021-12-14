@@ -17,9 +17,6 @@ import {
 import AboutCo2Text from "../components/AboutTexts/AboutCo2Text";
 import bakgrund1 from "../Images/back-co2.png";
 
-import Table from "./TableYears";
-import FilterYears from "./FilterYear";
-
 import ModalCo2 from "../components/ModalText/ModalCo2.js";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
