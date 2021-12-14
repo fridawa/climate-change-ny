@@ -20,13 +20,16 @@ import bakgrund1 from "../Images/back-co2.png";
 import Table from "./TableYears";
 import FilterYears from "./FilterYear";
 
+import ModalCo2 from "../components/ModalText/ModalCo2.js";
+
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
   // samt en bar chart där datan staplas på varandra
 
   const [CO2Emission, setCO2Emission] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
-  
+
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
@@ -57,7 +60,6 @@ const Co2 = (props) => {
 
   return (
     <>
-      
       <Container
         fluid
         className="data-container"
@@ -65,11 +67,25 @@ const Co2 = (props) => {
       >
         <div className="pt-sm-5 mt-sm-5">
           <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
+            md={{ span: 6, offset: 1 }}
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutCo2Text />
           </Col>
+          <Col className="d-md-none mt-5 ps-2">
+            <h1>
+              Koldioxidutsläpp{" "}
+              <span
+                onClick={() => setModalShow(true)}
+                className=" p-2"
+                style={{ backgroundColor: "#ffffff" }}
+              >
+                ?
+              </span>
+              .
+            </h1>
+          </Col>
+          <ModalCo2 show={modalShow} onHide={() => setModalShow(false)} />
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <BarChart
@@ -95,16 +111,24 @@ const Co2 = (props) => {
             </ResponsiveContainer>
           </div>
         </div>
-        
       </Container>
-      
-<Container style= {{position: "absolute", marginLeft: "3em", marginTop: "60em", marginBottom: "0"}}>
-      <FilterYears onYearFilter={handleYearFilter} style= {{marginBottom:"3em"}}/>
-        <div style= {{marginTop:"3em"}} >
-       
-       <Table mydata={filtereddata}/>
-       </div>
-</Container>
+
+      <Container
+        style={{
+          position: "absolute",
+          marginLeft: "3em",
+          marginTop: "60em",
+          marginBottom: "0",
+        }}
+      >
+        <FilterYears
+          onYearFilter={handleYearFilter}
+          style={{ marginBottom: "3em" }}
+        />
+        <div style={{ marginTop: "3em" }}>
+          <Table mydata={filtereddata} />
+        </div>
+      </Container>
     </>
   );
 };
