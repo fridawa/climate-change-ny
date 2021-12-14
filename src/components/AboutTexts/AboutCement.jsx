@@ -22,6 +22,7 @@ const AboutCementText = () => {
             klimatet, eftersom en kalkrik berggrund ofta leder till värdefulla
             naturmiljöer och djurliv.
           </p>
+          <p>Utsläppen mäts i miljoner ton (förkortning MT).</p>
     </div>
 </>
 );

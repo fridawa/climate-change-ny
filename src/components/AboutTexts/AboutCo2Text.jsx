@@ -8,7 +8,8 @@ const AboutCo2Text = () => {
           <p>
             CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
             flygplan. CO2 finns också vid tillverkning av elektronik och
-            livsmedel. Utsläppen mäts i miljoner ton (förkortning MT)
+            livsmedel. 
+            <p>Grafen visar de totala utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>
           </p>
     </div>
 </>
