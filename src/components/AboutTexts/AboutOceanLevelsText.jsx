@@ -10,6 +10,9 @@ const AboutSolidFuelText = () => {
             till att glaciären och inlandsisen smälter. När isen smälter, höjs
             havsnivån.
           </p>
+          
+<p>Grafen visar förändringar i vattennivån per år, mätt i millimeter (mm)</p>
+
     </div>
 </>
 );

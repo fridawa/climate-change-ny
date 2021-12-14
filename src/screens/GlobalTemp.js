@@ -125,7 +125,7 @@ const GlobalTemp = () => {
                 type="number"
               />
               <YAxis
-                unit=" unit"
+                unit=" °C"
                 // allowDataOverflow
                 // domain={[bottom, top]}
                 // type="number"
