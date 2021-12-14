@@ -10,7 +10,6 @@ import GlobalTemp from "./screens/GlobalTemp";
 import OceanLevels from "./screens/OceanLevels";
 import Glaciers from "./screens/Glaciers";
 import Menu from "./routes/menu";
-import Zoomin2 from "./screens/zoomin2";
 import GasFlaring from "./screens/GasFlaring";
 import GasFuel from "./screens/GasFuel";
 import LiquidFuel from "./screens/LiquidFuel";
@@ -19,15 +18,7 @@ import Cement from "./screens/Cement";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [data1, setData] = useState({});
-  const [left, setLeft] = useState("dataMin");
-  const [right, setRight] = useState("dataMax");
-  const [top, setTop] = useState("dataMax+1");
-  const [bottom, setBottom] = useState("dataMin-1");
-  const [top2, setTop2] = useState("dataMax+20");
-  const [bottom2, setBottom2] = useState("dataMin-20");
-  const [refAreaLeft1, setRefAreaLeft1] = useState("");
-  const [refAreaRight1, setRefAreaRight1] = useState("");
+  
   // Hämtar in iaf co2-datan här så inte den behöver hämtas på varje sida
   const [fetchedDataCo2, setFetchedDataCo2] = useState([]);
   useEffect(() => {
@@ -37,27 +28,6 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  //zoomfunktion som just nu bara skickas till Zoomin2 för test
-  const zoom = (e) => {
-    let refAreaLeft = refAreaLeft1;
-    let refAreaRight = refAreaRight1;
-    let zoomData = e;
-
-    setRefAreaLeft1("");
-    setRefAreaRight1("");
-    setData(zoomData);
-    setLeft(refAreaLeft);
-    setRight(refAreaRight);
-  };
-
-  const zoomOut = (e) => {
-    var zoomOutData = e;
-    setData(zoomOutData);
-    setRefAreaLeft1("");
-    setRefAreaRight1("");
-    setLeft("dataMin");
-    setRight("dataMax");
-  };
 
   return (
     <div className="App">
@@ -92,25 +62,7 @@ function App() {
           path="/cement"
           element={<Cement fetchedData={fetchedDataCo2} />}
         ></Route>
-        <Route
-          path="/zoomin2"
-          element={
-            <Zoomin2
-              setRefAreaLeft1={setRefAreaLeft1}
-              setRefAreaRight1={setRefAreaRight1}
-              left={left}
-              right={right}
-              bottom={bottom}
-              top={top}
-              bottom2={bottom2}
-              top2={top2}
-              refAreaLeft1={refAreaLeft1}
-              refAreaRight1={refAreaRight1}
-              zoom={zoom}
-              zoomOut={zoomOut}
-            />
-          }
-        ></Route>
+        
       </Routes>
     </div>
   );
