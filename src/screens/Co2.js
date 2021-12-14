@@ -1,5 +1,5 @@
 //import libraries and extentions
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
 import {
@@ -21,6 +21,7 @@ import Table from "./TableYears";
 import FilterYears from "./FilterYear";
 
 import ModalCo2 from "../components/ModalText/ModalCo2.js";
+import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
@@ -30,6 +31,7 @@ const Co2 = (props) => {
   const [filtereddata, setFiltereddata] = useState([]);
 
   const [modalShow, setModalShow] = useState(false);
+  const [modalFilterShow, setFilterModalShow] = useState(false);
 
   useEffect(() => {
     const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
@@ -60,17 +62,28 @@ const Co2 = (props) => {
 
   return (
     <>
+
       <Container
         fluid
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
+    
         <div className="pt-sm-5 mt-sm-5">
           <Col
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutCo2Text />
+            
+            <Button
+                onClick={() => setFilterModalShow(true)}
+                className=" active"
+                style={{marginTop: "1em" }}
+              >
+                Sök och jämför år
+              </Button>
+
           </Col>
           <Col className="d-md-none mt-5 ps-2">
             <h1>
@@ -121,13 +134,10 @@ const Co2 = (props) => {
           marginBottom: "0",
         }}
       >
-        <FilterYears
-          onYearFilter={handleYearFilter}
-          style={{ marginBottom: "3em" }}
-        />
-        <div style={{ marginTop: "3em" }}>
-          <Table mydata={filtereddata} />
-        </div>
+
+
+<ModalFilterYears show={modalFilterShow} onHide={() => setFilterModalShow(false)}/>
+        
       </Container>
     </>
   );

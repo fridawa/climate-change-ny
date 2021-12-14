@@ -10,6 +10,7 @@ const AboutLiquidFuelText = () => {
             Exempel på flytande bränslen är till exempel etanol, bensin eller
             diesel med mera.
           </p>
+          <p>Grafen visar de totala flytande bränsle-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>
     </div>
 </>
 );

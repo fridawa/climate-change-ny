@@ -10,6 +10,7 @@ const AboutSolidFuelText = () => {
             Exempel på fasta bränslen är till exempel ved, pellets, briketter,
             spån, kol, torv med mera.
           </p>
+         <p> Grafen visar de totala fast bränsle-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>
     </div>
 </>
 );

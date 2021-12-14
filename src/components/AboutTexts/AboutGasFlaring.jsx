@@ -13,7 +13,7 @@ const AboutGasFlaringText = () => {
             Gaseldningsprocessen sker oftast enbart för att elda upp gasen.
             Värmeenergin tas alltså inte tillvara på.
           </p>
-          <p>Utsläppen mäts i miljoner ton (förkortning MT).</p>
+          <p>Grafen visar de totala gaseldning-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>
     </div>
 </>
 );

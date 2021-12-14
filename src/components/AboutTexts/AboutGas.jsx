@@ -20,7 +20,7 @@ const AboutGasFuel = () => {
             olja. Att köra bil på naturgas ger större utsläpp av växthusgaser än
             biogas men lägre än bensin och diesel.
           </p>
-          <p>Utsläppen mäts i miljoner ton (förkortning MT).</p>
+          <p>Grafen visar de totala gasbränsleutsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>
     </div>
 </>
 );
