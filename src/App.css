@@ -89,6 +89,10 @@ Body {
   z-index: 10;
 }
 
+.link-text {
+  color: blue;
+}
+
 /* @media only screen and (max-width: 767px) {
   .navbar-collapse,
   .navbar-climate {
