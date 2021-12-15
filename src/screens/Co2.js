@@ -20,6 +20,8 @@ import bakgrund1 from "../Images/back-co2.png";
 import ModalCo2 from "../components/ModalText/ModalCo2.js";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
+import { BsFillQuestionCircleFill } from "react-icons/bs";
+
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
   // samt en bar chart där datan staplas på varandra
@@ -83,15 +85,12 @@ const Co2 = (props) => {
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
             <h1>
-              Koldioxidutsläpp{" "}
-              <span
-                onClick={() => setModalShow(true)}
-                className=" p-2"
-                style={{ backgroundColor: "#ffffff" }}
-              >
-                ?
-              </span>
-              .
+              Koldioxidutsläpp
+              <sup>
+                <span onClick={() => setModalShow(true)} className=" p-2">
+                  <BsFillQuestionCircleFill />
+                </span>
+              </sup>
             </h1>
           </Col>
           <ModalCo2 show={modalShow} onHide={() => setModalShow(false)} />

@@ -9,11 +9,7 @@ const ModalCo2 = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Koldioxidutsläpp
-        </Modal.Title>
-      </Modal.Header>
+      <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
         <Row>
           <Col>
@@ -21,9 +17,6 @@ const ModalCo2 = (props) => {
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Stäng</Button>
-      </Modal.Footer>
     </Modal>
   );
 };

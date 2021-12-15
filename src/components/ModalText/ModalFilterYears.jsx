@@ -31,7 +31,6 @@ const ModalFilterYears = (props) => {
     } else if (Order === "HTL") {
       filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
     }
-
     setFiltereddata(filtereddata);
   };
 
@@ -59,9 +58,6 @@ const ModalFilterYears = (props) => {
           </div>
         </Container>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Stäng</Button>
-      </Modal.Footer>
     </Modal>
   );
 };

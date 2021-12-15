@@ -16,7 +16,7 @@ import {
 
 //import components
 import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
-import bakgrund1 from "../Images/back-globaltemp.png";
+import bakgrund1 from "../Images/back-globaltemp-copy.png";
 
 const GlobalTemp = () => {
   const [data1, setData] = useState({});
@@ -88,6 +88,7 @@ const GlobalTemp = () => {
         <div className="pt-sm-5 mt-sm-5">
           <Col
             xs={{ span: 6, offset: 1 }}
+            xl={{ span: 4, offset: 1 }}
             className="pe-5  mt-4 pt-5 overlay-text "
           >
             <AboutGlobalTempText />

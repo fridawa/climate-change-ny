@@ -10,9 +10,15 @@ const Menu = () => {
     <>
       <Container
         fluid
-        className="d-flex justify-content-center p-md-0 navbar-climate d-none d-md-block"
+        className="d-flex justify-content-center p-md-0 navbar-climate d-none d-md-block "
       >
-        <Navbar collapseOnSelect expand="md" bg="light" variant="light">
+        <Navbar
+          collapseOnSelect
+          expand="md"
+          bg="light"
+          variant="light"
+          className="pt-4"
+        >
           <Container>
             <Col md={3} xs={9}>
               <Navbar.Brand href="#/" className="d-flex ">
@@ -22,7 +28,7 @@ const Menu = () => {
             <Col md={9} xs={3}>
               <Navbar.Toggle aria-controls="responsive-navbar-nav " />
               <Navbar.Collapse id="responsive-navbar-nav ">
-                <Nav className="m-xs-0 p-xs-0 ms-md-auto pe-md-5 d-flex">
+                <Nav className="m-xs-0 p-xs-0 ms-md-auto pe-md-4 d-flex">
                   <NavDropdown
                     title={
                       <>

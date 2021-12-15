@@ -83,6 +83,8 @@ const Glaciers = () => {
                   stackId="1"
                   stroke="#82A1A8"
                   fill="none"
+                  strokeWidth={3}
+                  dot={false}
                 />
               </LineChart>
             </ResponsiveContainer>

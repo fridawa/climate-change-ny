@@ -32,9 +32,6 @@ const ModalFootprint = (props) => {
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Stäng</Button>
-      </Modal.Footer>
     </Modal>
   );
 };
