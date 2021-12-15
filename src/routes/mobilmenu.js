@@ -22,23 +22,23 @@ const MobilMenu = () => {
       >
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
           <Container className="align-items-start">
-            <Col xs={6}>
+            <Col xs={4}>
               <Navbar.Brand href="#/">
                 <Logo />
               </Navbar.Brand>
             </Col>
-            <Col xs={6}>
+            <Col xs={8}>
               <Nav className="me-auto">
                 <Row>
-                  <Col
-                    xs={3}
-                    className="dropdown-menu-mobil me-auto ps-5 pt-2 "
-                  >
+                  <Col xs={3} className="dropdown-menu-mobil me-3 ps-5 pt-2 ">
                     <Dropdown>
-                      <Dropdown.Toggle id="dropdown-basic" className="m-0 p-0 ">
+                      <Dropdown.Toggle
+                        id="dropdown-basic"
+                        className="m-0 p-0 egen-btn"
+                      >
                         <img
                           src={co2img}
-                          style={{ width: 20, height: 20 }}
+                          style={{ width: 35, height: 35 }}
                         ></img>{" "}
                       </Dropdown.Toggle>
 
@@ -64,11 +64,11 @@ const MobilMenu = () => {
                           to={path}
                           key={title}
                           activeClassName="active"
-                          className="ps-4"
+                          className="ps-2"
                         >
                           <img
                             src={img}
-                            style={{ width: 20, height: 20 }}
+                            style={{ width: 35, height: 35 }}
                           ></img>
                         </NavLink>
                       ))}
