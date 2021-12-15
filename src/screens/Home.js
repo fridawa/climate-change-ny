@@ -1,6 +1,6 @@
 //import libraries and extentions
 import AboutText from "../components/AboutTexts/AboutText";
-import EkoText from "../components/EkoText";
+import EkoText from "../components/ekoText";
 import { Container, Row, Col } from "react-bootstrap";
 
 //import components
@@ -13,7 +13,6 @@ const Home = () => {
       className="  data-container p-5 "
       style={{ backgroundImage: `url(${bakgrund1})` }}
     >
-    
       <Col
         sm={{ span: 8, offset: 2 }}
         lg={{ span: 6, offset: 3 }}

@@ -1,4 +1,5 @@
 import { Button, Modal, Col, Row } from "react-bootstrap";
+import AboutCo2Text from "../AboutTexts/AboutCo2Text";
 
 const ModalCo2 = (props) => {
   return (
@@ -16,11 +17,7 @@ const ModalCo2 = (props) => {
       <Modal.Body>
         <Row>
           <Col>
-            <p>
-              CO2 står för koldioxid. Det är utsläpp från till exempel bilar,
-              tåg, flygplan. CO2 finns också vid tillverkning av elektronik och
-              livsmedel. Utsläppen mäts i miljoner ton (förkortning MT)
-            </p>
+            <AboutCo2Text />
           </Col>
         </Row>
       </Modal.Body>
