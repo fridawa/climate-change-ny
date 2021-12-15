@@ -21,11 +21,11 @@ const Table = (props) => {
             {tabledata.map((co2)=>(
           <tr>
             <td>{co2.Year}</td>
-            <td>{co2["Total"]} MT</td>
-            <td>{co2["Gas Fuel"]} MT</td>
-            <td>{co2["Solid Fuel"]} MT</td>
-            <td>{co2.Cement} MT</td>
-            <td>{co2["Gas Flaring"]} MT</td>
+            <td>{co2["Total"]} mt</td>
+            <td>{co2["Gas Fuel"]} mt</td>
+            <td>{co2["Solid Fuel"]} mt</td>
+            <td>{co2.Cement} mt</td>
+            <td>{co2["Gas Flaring"]} mt</td>
           </tr>
             ))}
         </tbody>
