@@ -127,14 +127,8 @@ Body {
   display: flex !important;
   flex-direction: column !important;
 }
-.btn-primary {
-  background-color: rgb(255, 255, 255, 0);
-  border: none;
-}
-.show > .btn-primary.dropdown-toggle {
-  background-color: rgb(255, 255, 255, 0);
-  border: none;
-}
-/*tar bort boarder från alla element (t ex menyknapparna) */
-*:focus {outline:none}
 
+/*tar bort boarder från alla element (t ex menyknapparna) */
+*:focus {
+  outline: none;
+}
