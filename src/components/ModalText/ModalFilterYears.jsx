@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import Table from "../../screens/TableYears";
 import FilterYears from "../../screens/FilterYear";
 
-
 const ModalFilterYears = (props) => {
-
   const [CO2Emission, setCO2Emission] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
 
@@ -37,29 +35,28 @@ const ModalFilterYears = (props) => {
     setFiltereddata(filtereddata);
   };
 
-
   return (
     <Modal
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Se Co2-ustläpp i genom att söka på start- och slutår (MT = miljoner ton)
+          Se Co2-ustläpp i genom att söka på start- och slutår (MT = miljoner
+          ton)
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>
           <FilterYears
-          onYearFilter={handleYearFilter}
-          style={{ marginBottom: "3em" }}
-        />
-        <div style={{ marginTop: "3em" }}>
-          <Table mydata={filtereddata} />
-        </div>
+            onYearFilter={handleYearFilter}
+            style={{ marginBottom: "3em" }}
+          />
+          <div style={{ marginTop: "3em" }}>
+            <Table mydata={filtereddata} />
+          </div>
         </Container>
       </Modal.Body>
       <Modal.Footer>
