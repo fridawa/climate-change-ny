@@ -1,7 +1,7 @@
 //import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -19,8 +19,35 @@ import AboutCementText from "../components/AboutTexts/AboutCement";
 import ModalCement from "../components/ModalText/ModalCement";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
+import ModalFilterYears from "../components/ModalText/ModalFilterYears";
+
 const Cement = (props) => {
+
   const [modalShow, setModalShow] = useState(false);
+
+
+  const [CO2Emission, setCO2Emission] = useState([]);
+  const [filtereddata, setFiltereddata] = useState([]);
+
+  const [modalFilterShow, setFilterModalShow] = useState(false);
+
+  const handleYearFilter = (YearFrom, YearTo, Order) => {
+    let filtereddata = [...CO2Emission];
+    if (YearFrom != "" && YearTo != "") {
+      filtereddata = filtereddata.filter(
+        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
+      );
+    }
+
+    if (Order === "LTH") {
+      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+    } else if (Order === "HTL") {
+      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+    }
+
+    setFiltereddata(filtereddata);
+  };
+
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (
@@ -37,6 +64,14 @@ const Cement = (props) => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutCementText />
+
+            <Button
+              onClick={() => setFilterModalShow(true)}
+              className="searchButton"
+            >
+              Sök och jämför år
+            </Button>
+
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -81,6 +116,12 @@ const Cement = (props) => {
             </ResponsiveContainer>
           </div>
         </div>
+
+        <ModalFilterYears
+          show={modalFilterShow}
+          onHide={() => setFilterModalShow(false)}
+        />
+
       </Container>
     </>
   );

@@ -135,6 +135,7 @@ Body {
 .recharts-legend-wrapper {
   padding-top: 1.1rem !important;
 }
+
 .modal-header {
   border: none;
   padding-bottom: 0;
@@ -149,3 +150,37 @@ Body {
   background-color: rgb(255, 255, 255, 0);
   border: none;
 }
+
+tr:nth-child(even) {
+  background-color: #b9d1e4;
+}
+
+tr:nth-child(odd) {
+  background-color: #deebf8;
+}
+
+th {
+  background-color: rgb(255, 255, 253)!important;
+  color: #83a9cf;
+}
+
+h1 {
+  color: rgb(158, 145, 127);
+}
+
+.searchButton {
+  margin-top: 1em !important;
+  background-color: #95c0e4 !important;
+  border: none !important;
+  margin-top: 2em !important;
+}
+
+
+button:hover {
+  background-color: #80c7a9 !important;
+}
+
+.aboutText {
+  margin-top: 0em !important;
+}
+

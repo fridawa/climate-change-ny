@@ -13,13 +13,14 @@ const FilterYears = (props) => {
   return (
     <>
     <Container>
-      <Row>
-        <Col sm={3}>
+      <Row style= {{marginLeft:" -1.5em", marginBottom: "", marginTop: "1em"}}>
+        <Col sm={2}>
           <div className="">
             <Form.Label>Från år </Form.Label>
             <input
+            class="form-control" 
               type="text"
-              placeholder="Vilket år vill du söka från?"
+              placeholder="År..."
               style={{  }}
               onChange={(e) => setYearFrom(e.target.value)}
               value={YearFrom}
@@ -27,20 +28,22 @@ const FilterYears = (props) => {
             
           </div>
         </Col>
-        <Col sm={3}>
+        <Col sm={2} style= {{}}>
           <div className="">
             <Form.Label>Till år</Form.Label>
-            <input
+            <input 
+            class="form-control" 
               type="text"
-              placeholder="Vilket år vill du söka till?"
+              placeholder="År..."
               onChange={(e) => setYearTo(e.target.value)}
               value={YearTo}
             ></input>
-            
           </div>
         </Col>
-        <Col sm={3}>
-          <div>
+        
+        <Col sm={3} style= {{marginLeft: "-1em"}}>
+          <div style= {{marginTop: "1.5em"}}>
+          <div class="form-check">
             <input
               type="radio"
               value="LTH"
@@ -49,20 +52,25 @@ const FilterYears = (props) => {
               onChange={handleYearOrder}
               checked={Order === "LTH"}
             ></input>
-            Ordna lågt till högt
+            {" "}Ordna lågt till högt
+            </div>
+            <div class="form-check">
             <input
+            
               type="radio"
               value="HTL"
               name="rdo"
-              style={{ marginLeft: "30px" }}
+              style={{color: "black"}}
               onChange={handleYearOrder}
               checked={Order === "HTL"}
             ></input>
-            Ordna högt till lågt
+            {" "}Ordna högt till lågt
+            </div>
           </div>
         </Col>
-        <Col sm={1}>
-          <Button
+        <Col >
+          <Button 
+          style={{marginTop: "1.8em", backgroundColor:"#83a9cf", border:"none"}}
             variant="primary"
             onClick={() => props.onYearFilter(YearFrom, YearTo, Order)}
           >

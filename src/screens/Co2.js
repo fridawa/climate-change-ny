@@ -32,6 +32,7 @@ const Co2 = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
+
   useEffect(() => {
     const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
     fetch(url)
@@ -43,6 +44,7 @@ const Co2 = (props) => {
   }, []);
 
   // Filterfunktion
+
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...CO2Emission];
     if (YearFrom != "" && YearTo != "") {
@@ -73,11 +75,10 @@ const Co2 = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutCo2Text />
-            <Button
+            <AboutCo2Text/>
+            <Button className="searchButton"
               onClick={() => setFilterModalShow(true)}
-              className=" active"
-              style={{ marginTop: "1em" }}
+              className="searchButton"
             >
               Sök och jämför år
             </Button>
@@ -132,6 +133,8 @@ const Co2 = (props) => {
           marginBottom: "0",
         }}
       >
+
+      {/* modal-komponenten som hanterar sök/filterfunktion.*/}
         <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}

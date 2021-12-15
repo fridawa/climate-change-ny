@@ -1,7 +1,7 @@
 const AboutCo2Text = () => {
   return (
     <>
-      <div>
+      <div className="aboutText">
       <h1>Koldioxidutsläpp</h1>
           <p>
             CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg,
