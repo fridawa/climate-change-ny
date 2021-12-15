@@ -20,7 +20,8 @@ Body {
 
 /* LOGOTYP */
 .app-logo {
-  max-height: 5vh;
+  max-height: 7vh;
+  
 }
 .logo-container {
   width: 45vw;
@@ -170,14 +171,14 @@ h1 {
 
 .searchButton {
   margin-top: 1em !important;
-  background-color: #95c0e4 !important;
+  background-color: #80c7a9 !important;
   border: none !important;
   margin-top: 2em !important;
 }
 
 
 button:hover {
-  background-color: #80c7a9 !important;
+  background-color: #95c0e4  !important;
 }
 
 .aboutText {
