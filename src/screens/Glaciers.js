@@ -17,8 +17,12 @@ import {
 //import components
 import AboutGlaciersText from "../components/AboutTexts/AboutGlaciers";
 import bakgrund1 from "../Images/back-glaciers.png";
+import ModalGlaciers from "../components/ModalText/ModalGlaciers.js";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 const Glaciers = () => {
+  const [modalShow, setModalShow] = useState(false);
+
   const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
@@ -37,13 +41,30 @@ const Glaciers = () => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <div className="pt-sm-5 mt-sm-5">
+          {/* Syns bara i md-xl */}
           <Col
-            xs={{ span: 6, offset: 6 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
+            xs={{ span: 6, offset: 1 }}
+            xl={{ span: 4, offset: 1 }}
+            md={{ span: 6, offset: 1 }}
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutGlaciersText />
           </Col>
 
+          {/* Syns bara i xs-sm */}
+          <Col className="d-md-none mt-5 ps-2">
+            <h1>
+              Glaciärstorlek{" "}
+              <sup>
+                <span onClick={() => setModalShow(true)} className=" p-2">
+                  <BsFillQuestionCircleFill />
+                </span>
+              </sup>
+            </h1>
+          </Col>
+          <ModalGlaciers show={modalShow} onHide={() => setModalShow(false)} />
+
+          {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <LineChart

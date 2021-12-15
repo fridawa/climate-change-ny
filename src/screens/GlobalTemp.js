@@ -17,17 +17,12 @@ import {
 //import components
 import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
+
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 const GlobalTemp = () => {
-  const [data1, setData] = useState({});
-  const [left, setLeft] = useState("dataMin");
-  const [right, setRight] = useState("dataMax");
-  const [top, setTop] = useState("dataMax+1");
-  const [bottom, setBottom] = useState("dataMin-1");
-  const [top2, setTop2] = useState("dataMax+20");
-  const [bottom2, setBottom2] = useState("dataMin-20");
-  const [refAreaLeft1, setRefAreaLeft1] = useState("");
-  const [refAreaRight1, setRefAreaRight1] = useState("");
+  const [modalShow, setModalShow] = useState(false);
 
   const [fetchedData, setFetchedData] = useState([]);
 
@@ -55,28 +50,6 @@ const GlobalTemp = () => {
     }
   });
 
-  // Zoom funtkion
-  const zoom = (e) => {
-    let refAreaLeft = refAreaLeft1;
-    let refAreaRight = refAreaRight1;
-    let zoomData = e;
-
-    setRefAreaLeft1("");
-    setRefAreaRight1("");
-    setData(zoomData);
-    setLeft(refAreaLeft);
-    setRight(refAreaRight);
-  };
-
-  const zoomOut = (e) => {
-    var zoomOutData = e;
-    setData(zoomOutData);
-    setRefAreaLeft1("");
-    setRefAreaRight1("");
-    setLeft("dataMin");
-    setRight("dataMax");
-  };
-
   // Applikationens innehåll med förklarande text samt en linjegraf
   return (
     <>
@@ -85,19 +58,35 @@ const GlobalTemp = () => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-sm-5 mt-sm-5">
+        <div className="pt-3 mt-3 pt-md-5 mt-md-5">
+          {/* Syns bara i md-xl */}
+
           <Col
             xs={{ span: 6, offset: 1 }}
             xl={{ span: 4, offset: 1 }}
-            className="pe-5  mt-4 pt-5 overlay-text "
+            md={{ span: 6, offset: 1 }}
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutGlobalTempText />
-
-            {/* <button className="btn update" onClick={zoomOut}>
-            Zoom Out
-          </button> */}
           </Col>
 
+          {/* Syns bara i xs-sm */}
+          <Col className="d-md-none mt-5 ps-2">
+            <h1>
+              Global Teperatur
+              <sup>
+                <span onClick={() => setModalShow(true)} className=" p-2">
+                  <BsFillQuestionCircleFill />
+                </span>
+              </sup>
+            </h1>
+          </Col>
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
+
+          {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <LineChart
@@ -108,30 +97,10 @@ const GlobalTemp = () => {
                   left: 10,
                   bottom: 0,
                 }}
-                width={800}
-                height={400}
-                onMouseDown={(e) => {
-                  setRefAreaLeft1(e.activeLabel);
-                }}
-                onMouseMove={(e) => {
-                  setRefAreaRight1(e.activeLabel);
-                }}
-                onMouseUp={zoom}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis
-                  dataKey="Year"
-                  allowDataOverflow
-                  domain={[left, right]}
-                  type="number"
-                />
-                <YAxis
-                  unit=" °C"
-                  // allowDataOverflow
-                  // domain={[bottom, top]}
-                  // type="number"
-                  // yAxisId="1"
-                />
+                <XAxis dataKey="Year" />
+                <YAxis unit=" °C" />
                 <Tooltip />
                 <Legend />
                 <Line
@@ -143,14 +112,6 @@ const GlobalTemp = () => {
                   animationDuration={300}
                   dot={false}
                 />
-                {refAreaLeft1 && refAreaRight1 ? (
-                  <ReferenceArea
-                    yAxisId="1"
-                    x1={refAreaLeft1}
-                    x2={refAreaRight1}
-                    strokeOpacity={0.3}
-                  />
-                ) : null}
               </LineChart>
             </ResponsiveContainer>
           </div>
