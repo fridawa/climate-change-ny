@@ -64,7 +64,7 @@ const Co2 = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-sm-5 mt-sm-5">
+        <div className="pt-3 mt-3 pt-md-5 mt-md-5">
           {/* Syns bara i md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
