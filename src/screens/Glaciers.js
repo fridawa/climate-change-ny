@@ -1,7 +1,7 @@
 //import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -18,8 +18,34 @@ import {
 import AboutGlaciersText from "../components/AboutTexts/AboutGlaciers";
 import bakgrund1 from "../Images/back-glaciers.png";
 
-const Glaciers = () => {
+import ModalFilterYearsGlaciers from "../components/ModalText/ModalFilterYearsGlaciers";
+
+const Glaciers = (props) => {
   const [fetchedData, setFetchedData] = useState([]);
+
+  const [GlacierData, setGlacierData] = useState([]);
+  const [filtereddata, setFiltereddata] = useState([]);
+
+  const [modalFilterShow, setFilterModalShow] = useState(false);
+
+
+  const handleYearFilter = (YearFrom, YearTo, Order) => {
+    let filtereddata = [...GlacierData];
+    if (YearFrom != "" && YearTo != "") {
+      filtereddata = filtereddata.filter(
+        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
+      );
+    }
+
+    if (Order === "LTH") {
+      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+    } else if (Order === "HTL") {
+      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+    }
+
+    setFiltereddata(filtereddata);
+  };
+
 
   useEffect(() => {
     axios
@@ -42,6 +68,15 @@ const Glaciers = () => {
             className="pe-5  mt-4 pt-5 overlay-text "
           >
             <AboutGlaciersText />
+
+             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
+             <Button
+              onClick={() => setFilterModalShow(true)}
+              className="searchButton"
+            >
+              Sök och jämför år
+            </Button>
+
           </Col>
 
           <div className="wrapper overlay-graf pt-5">
@@ -88,6 +123,13 @@ const Glaciers = () => {
             </ResponsiveContainer>
           </div>
         </div>
+
+        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        <ModalFilterYearsGlaciers
+          show={modalFilterShow}
+          onHide={() => setFilterModalShow(false)}
+        />
+
       </Container>
     </>
   );
