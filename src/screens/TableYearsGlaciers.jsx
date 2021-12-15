@@ -10,14 +10,14 @@ const TableGlacier = (props) => {
         <thead className="thead" style= {{backgroundColor:"white"}} >
           <tr>
             <th scope="col">År</th>
-            <th scope="col">Medelmassa förändring</th>
+            <th scope="col">Massförändring (i meter vattenekvivalenter)</th>
           </tr>
         </thead>
         <tbody>
             {tabledatas.map((glacier)=>(
           <tr>
             <td>{glacier.Year}</td>
-            <td>{glacier["Mean cumulative mass balance"] }</td>
+            <td>{glacier["Mean cumulative mass balance"] } m</td>
             
           </tr>
             ))}

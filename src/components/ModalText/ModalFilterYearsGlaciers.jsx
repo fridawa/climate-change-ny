@@ -44,7 +44,7 @@ const ModalFilterYearsGlaciers = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter" style= {{}}>
-          Sök och jämför Co2-data från 1751-2014 
+          Sök och jämför glaciärdata mellan 1945-2014 
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
