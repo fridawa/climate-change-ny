@@ -59,29 +59,28 @@ const Co2 = (props) => {
 
   return (
     <>
-
       <Container
         fluid
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-    
         <div className="pt-sm-5 mt-sm-5">
+          {/* Syns bara i md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutCo2Text />
-            
             <Button
-                onClick={() => setFilterModalShow(true)}
-                className=" active"
-                style={{marginTop: "1em" }}
-              >
-                Sök och jämför år
-              </Button>
-
+              onClick={() => setFilterModalShow(true)}
+              className=" active"
+              style={{ marginTop: "1em" }}
+            >
+              Sök och jämför år
+            </Button>
           </Col>
+
+          {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
             <h1>
               Koldioxidutsläpp{" "}
@@ -96,6 +95,8 @@ const Co2 = (props) => {
             </h1>
           </Col>
           <ModalCo2 show={modalShow} onHide={() => setModalShow(false)} />
+
+          {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <BarChart
@@ -131,10 +132,10 @@ const Co2 = (props) => {
           marginBottom: "0",
         }}
       >
-
-
-<ModalFilterYears show={modalFilterShow} onHide={() => setFilterModalShow(false)}/>
-        
+        <ModalFilterYears
+          show={modalFilterShow}
+          onHide={() => setFilterModalShow(false)}
+        />
       </Container>
     </>
   );
