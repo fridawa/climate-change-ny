@@ -2,7 +2,7 @@ const Table = (props) => {
 
     let tabledata = props.mydata;
 
-    if(tabledata.length ===0) return <p>No Data!</p>;
+    if(tabledata.length ===0) return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
 
   return (
     <div style= {{}}>
