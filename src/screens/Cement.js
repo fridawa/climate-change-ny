@@ -16,8 +16,12 @@ import {
 //import components
 import bakgrund1 from "../Images/back-co2.png";
 import AboutCementText from "../components/AboutTexts/AboutCement";
+import ModalCement from "../components/ModalText/ModalCement";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 const Cement = (props) => {
+  const [modalShow, setModalShow] = useState(false);
+
   // Applikationens innehåll med förklarande text samt en line chart
   return (
     <>
@@ -27,12 +31,28 @@ const Cement = (props) => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <div className="pt-sm-5 mt-sm-5">
+          {/* Syns bara i md-xl */}
           <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5  mt-md-4 pt-5 overlay-text "
+            md={{ span: 6, offset: 1 }}
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutCementText />
           </Col>
+
+          {/* Syns bara i xs-sm */}
+          <Col className="d-md-none mt-5 ps-2">
+            <h1>
+              Cement
+              <sup>
+                <span onClick={() => setModalShow(true)} className=" p-2">
+                  <BsFillQuestionCircleFill />
+                </span>
+              </sup>
+            </h1>
+          </Col>
+          <ModalCement show={modalShow} onHide={() => setModalShow(false)} />
+
+          {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <AreaChart

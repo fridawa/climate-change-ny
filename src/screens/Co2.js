@@ -42,6 +42,7 @@ const Co2 = (props) => {
       });
   }, []);
 
+  // Filterfunktion
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...CO2Emission];
     if (YearFrom != "" && YearTo != "") {

@@ -18,7 +18,6 @@ import {
 import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
-
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 const GlobalTemp = () => {

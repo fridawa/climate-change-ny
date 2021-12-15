@@ -1,7 +1,7 @@
 //import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -17,7 +17,12 @@ import {
 import bakgrund1 from "../Images/back-co2.png";
 import AboutGasFuelText from "../components/AboutTexts/AboutGas";
 
+import ModalGas from "../components/ModalText/ModalGas";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
+
 const GasFuel = (props) => {
+  const [modalShow, setModalShow] = useState(false);
+
   // Applikationens innehåll med förklarande text samt en line chart
   return (
     <>
@@ -27,12 +32,28 @@ const GasFuel = (props) => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <div className="pt-sm-5 mt-sm-5">
+          {/* Syns bara i md-xl */}
           <Col
-            xs={{ span: 6, offset: 1 }}
-            className="pe-5 mt-md-4 pt-5 overlay-text "
+            md={{ span: 6, offset: 1 }}
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutGasFuelText />
           </Col>
+
+          {/* Syns bara i xs-sm */}
+          <Col className="d-md-none mt-5 ps-2">
+            <h1>
+              Gasbränsle
+              <sup>
+                <span onClick={() => setModalShow(true)} className=" p-2">
+                  <BsFillQuestionCircleFill />
+                </span>
+              </sup>
+            </h1>
+          </Col>
+          <ModalGas show={modalShow} onHide={() => setModalShow(false)} />
+
+          {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <AreaChart
