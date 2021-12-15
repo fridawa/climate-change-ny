@@ -132,3 +132,6 @@ Body {
 *:focus {
   outline: none;
 }
+.recharts-legend-wrapper {
+  padding-top: 1.1rem !important;
+}

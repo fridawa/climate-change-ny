@@ -4,12 +4,14 @@ import axios from "axios";
 import { Container, Col } from "react-bootstrap";
 import {
   ResponsiveContainer,
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
+  Legend,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
+  ReferenceArea,
 } from "recharts";
 
 //import components
@@ -44,7 +46,7 @@ const Glaciers = () => {
 
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
-              <AreaChart
+              <LineChart
                 data={fetchedData}
                 margin={{
                   top: 20,
@@ -73,14 +75,16 @@ const Glaciers = () => {
                   unit=" M"
                 />
                 <Tooltip />
-                <Area
+                <Legend />
+
+                <Line
                   type="monotone"
                   dataKey="Mean cumulative mass balance"
                   stackId="1"
                   stroke="#82A1A8"
                   fill="none"
                 />
-              </AreaChart>
+              </LineChart>
             </ResponsiveContainer>
           </div>
         </div>
