@@ -1,7 +1,7 @@
 //import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -19,18 +19,25 @@ import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import ModalFilterYearsTemp from "../components/ModalText/ModalFilterYearsTemp";
 
 const GlobalTemp = () => {
+  
+  //konstanter för modal (liten skärm, endast xs-sm )
   const [modalShow, setModalShow] = useState(false);
 
+  //konstanter för modal (sök/filterfunktion)
   const [fetchedData, setFetchedData] = useState([]);
+  const [modalFilterShow, setFilterModalShow] = useState(false);
 
+//fetchar in temperaturdatan så att den kan användas i komponenten
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/temp.json?key=8eb9e6f0")
       .then((res) => setFetchedData(res.data))
       .catch((err) => console.log(err));
   }, []);
+
 
   //Vänder på datan så att årtalen går i stigande ordning
   const reverseData = [...fetchedData];
@@ -67,9 +74,18 @@ const GlobalTemp = () => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutGlobalTempText />
+
+            {/* Knapp till sök/filtermodal. Vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
+            <Button
+              onClick={() => setFilterModalShow(true)}
+              className="searchButton"
+            >
+              Sök och jämför år
+            </Button>
+
           </Col>
 
-          {/* Syns bara i xs-sm */}
+          {/* Elementet/komponenten ModalGlobalTemp syns ENDAST i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
             <h1>
               Global Teperatur
@@ -85,7 +101,7 @@ const GlobalTemp = () => {
             onHide={() => setModalShow(false)}
           />
 
-          {/* Grafen */}
+          {/* Grafen som presenterar temp-datan */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
               <LineChart
@@ -115,8 +131,17 @@ const GlobalTemp = () => {
             </ResponsiveContainer>
           </div>
         </div>
+
+        {/* Modalkomponenten som hanterar sök/filterfunktion modalkomponenten <ModalFilterYearsTemp */}
+        <ModalFilterYearsTemp
+          show={modalFilterShow}
+          onHide={() => setFilterModalShow(false)}
+        />
+
       </Container>
     </>
   );
 };
+
+// exporterar komponenten till App.js
 export default GlobalTemp;

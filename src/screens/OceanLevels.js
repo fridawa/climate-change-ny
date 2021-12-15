@@ -1,7 +1,7 @@
 //import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -20,11 +20,12 @@ import bakgrund1 from "../Images/back-ocean.png";
 import ModalOcean from "../components/ModalText/ModalOcean.js";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import ModalFilterYearsOceanLev from "../components/ModalText/ModalFilterYearsOceanLev";
 
 const OceanLevels = () => {
   const [modalShow, setModalShow] = useState(false);
-
   const [fetchedData, setFetchedData] = useState([]);
+  const [modalFilterShow, setFilterModalShow] = useState(false); 
 
   useEffect(() => {
     axios
@@ -50,6 +51,15 @@ const OceanLevels = () => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             <AboutOceanLevelsText />
+
+            {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
+            <Button
+              onClick={() => setFilterModalShow(true)}
+              className="searchButton"
+            >
+              Sök och jämför år
+            </Button>
+
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -93,6 +103,13 @@ const OceanLevels = () => {
             </ResponsiveContainer>
           </div>
         </div>
+
+        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        <ModalFilterYearsOceanLev
+          show={modalFilterShow}
+          onHide={() => setFilterModalShow(false)}
+        />
+
       </Container>
     </>
   );

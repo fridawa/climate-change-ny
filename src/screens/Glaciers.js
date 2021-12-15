@@ -22,34 +22,11 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsGlaciers from "../components/ModalText/ModalFilterYearsGlaciers";
 
 
-const Glaciers = (props) => {
+const Glaciers = () => {
 
   const [modalShow, setModalShow] = useState(false);
   const [fetchedData, setFetchedData] = useState([]);
-
-  const [GlacierData, setGlacierData] = useState([]);
-  const [filtereddata, setFiltereddata] = useState([]);
-
   const [modalFilterShow, setFilterModalShow] = useState(false);
-
-
-  const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...GlacierData];
-    if (YearFrom != "" && YearTo != "") {
-      filtereddata = filtereddata.filter(
-        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
-      );
-    }
-
-    if (Order === "LTH") {
-      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-    } else if (Order === "HTL") {
-      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
-    }
-
-    setFiltereddata(filtereddata);
-  };
-
 
   useEffect(() => {
     axios

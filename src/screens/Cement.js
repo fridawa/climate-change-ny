@@ -24,30 +24,7 @@ import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 const Cement = (props) => {
 
   const [modalShow, setModalShow] = useState(false);
-
-
-  const [CO2Emission, setCO2Emission] = useState([]);
-  const [filtereddata, setFiltereddata] = useState([]);
-
   const [modalFilterShow, setFilterModalShow] = useState(false);
-
-  const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...CO2Emission];
-    if (YearFrom != "" && YearTo != "") {
-      filtereddata = filtereddata.filter(
-        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
-      );
-    }
-
-    if (Order === "LTH") {
-      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-    } else if (Order === "HTL") {
-      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
-    }
-
-    setFiltereddata(filtereddata);
-  };
-
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (

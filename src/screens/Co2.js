@@ -43,24 +43,6 @@ const Co2 = (props) => {
       });
   }, []);
 
-  // Filterfunktion
-
-  const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...CO2Emission];
-    if (YearFrom != "" && YearTo != "") {
-      filtereddata = filtereddata.filter(
-        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
-      );
-    }
-
-    if (Order === "LTH") {
-      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-    } else if (Order === "HTL") {
-      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
-    }
-
-    setFiltereddata(filtereddata);
-  };
 
   return (
     <>

@@ -23,34 +23,9 @@ import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 const GasFlaring = (props) => {
   const [modalShow, setModalShow] = useState(false);
-
-  // Applikationens innehåll med förklarande text samt en line chart
-
-  // Kod för sök- och filterfunktionmodulen
-  const [CO2Emission, setCO2Emission] = useState([]);
-  const [filtereddata, setFiltereddata] = useState([]);
-
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-  //hanterar filterfunktionton till/från
-  const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...CO2Emission];
-    if (YearFrom != "" && YearTo != "") {
-      filtereddata = filtereddata.filter(
-        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
-      );
-    }
-
-    //gör det möjligt att ändra ordningen (lågt till högt eller högt till lågt)
-    if (Order === "LTH") {
-      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-    } else if (Order === "HTL") {
-      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
-    }
-
-    setFiltereddata(filtereddata);
-  };
-
+// Applikationens innehåll med förklarande text samt en line chart
   return (
     <>
       <Container

@@ -2,14 +2,20 @@ import { useState } from "react";
 import { Row, Col, Button, Form, Container } from "react-bootstrap";
 
 const FilterYears = (props) => {
+
   const [YearFrom, setYearFrom] = useState();
   const [YearTo, setYearTo] = useState();
   const [Order, setYearOrder] = useState("LTH");
   
-
+// beroende på värdet från input från checkbox ändras ordningen på den printade datan
   const handleYearOrder = (e) => {
     setYearOrder(e.target.value);
   };
+
+  // Modalens innehåll med förklarande text, inputfält, radioknappar och "filter"-knapp
+  // onChange (setYearFrom, setYearto) fångar värdet på input och uppdaterar useState
+  // handleYearOrder sätter ordningen på datan, dvs LTH (LÅGT TILL HÖGT) eller HTL (HÖGT TILL LÅGT)
+  // knappfunktionen tar props (datan) och filtrerar denna baserat på useState för YearTo, YearFrom och Order
   return (
     <>
     <Container>
@@ -69,6 +75,7 @@ const FilterYears = (props) => {
           </div>
         </Col>
         <Col >
+
           <Button 
           style={{marginTop: "1.8em", backgroundColor:"#83a9cf", border:"none"}}
             variant="primary"
@@ -76,6 +83,7 @@ const FilterYears = (props) => {
           >
             Filtrera
           </Button>
+
         </Col>
       </Row>
       </Container>
