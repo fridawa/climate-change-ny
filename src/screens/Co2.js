@@ -22,6 +22,9 @@ import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
+import AboutAll from "../components/AboutTexts/AboutAll";
+import AboutTexts from "../routes/AboutTextArray";
+
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
   // samt en bar chart där datan staplas på varandra
@@ -55,7 +58,10 @@ const Co2 = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutCo2Text />
+            {/* <AboutCo2Text /> */}
+            <AboutAll heading= "Koldioxidutsläpp" paragraph= "CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg, flygplan. CO2 finns också vid tillverkning av elektronik och livsmedel. Grafen visar de totala utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT)." />
+
+
             <Button
               className="searchButton"
               onClick={() => setFilterModalShow(true)}
