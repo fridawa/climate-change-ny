@@ -34,6 +34,7 @@ const Co2 = (props) => {
 
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
+  const [matchedData, setMatchedData] = useState([]);
 
   useEffect(() => {
     const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
@@ -44,6 +45,17 @@ const Co2 = (props) => {
         setFiltereddata(data);
       });
   }, []);
+
+  // const match = AboutTexts.map((e) => {
+  //   if (e.heading === "Koldioxidutsläpp") {
+  //     return (
+  //       <div>
+  //         <h1> {e.heading}</h1>
+  //         <p>{e.paragraph}</p>
+  //       </div>
+  //     );
+  //   }
+  // });
 
   return (
     <>
@@ -59,8 +71,12 @@ const Co2 = (props) => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* <AboutCo2Text /> */}
-            <AboutAll heading= "Koldioxidutsläpp" paragraph= "CO2 står för koldioxid. Det är utsläpp från till exempel bilar, tåg, flygplan. CO2 finns också vid tillverkning av elektronik och livsmedel. Grafen visar de totala utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT)." />
-
+            <AboutAll
+              heading={AboutTexts[0].heading}
+              paragraph={AboutTexts[0].paragraph}
+            />
+            {/* Alternativ till texten */}
+            {/* {match} */}
 
             <Button
               className="searchButton"
