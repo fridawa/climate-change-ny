@@ -22,9 +22,8 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 const LiquidFuel = (props) => {
-
   const [modalShow, setModalShow] = useState(false);
-  const [modalFilterShow, setFilterModalShow] = useState(false); 
+  const [modalFilterShow, setFilterModalShow] = useState(false);
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (
@@ -49,7 +48,6 @@ const LiquidFuel = (props) => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -89,18 +87,18 @@ const LiquidFuel = (props) => {
                   fill="#6D4B47"
                   stroke="#6D4B47"
                   type="monotone"
+                  name="Flytande bränsle"
                 />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-         {/* modal-komponenten som hanterar sök/filterfunktion.*/}
-         <ModalFilterYears
+        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );

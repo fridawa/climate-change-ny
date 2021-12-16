@@ -106,7 +106,7 @@ const OceanLevels = () => {
                   stroke="#17A2A5"
                   strokeWidth={3}
                   dot={false}
-                  name="Custom name instead of dataKey"
+                  name="Havsnivå"
                 />
               </LineChart>
             </ResponsiveContainer>

@@ -19,21 +19,18 @@ import AboutSolidFuelText from "../components/AboutTexts/AboutSolidFuelText";
 
 import ModalFast from "../components/ModalText/ModalFast";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
- 
+
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 //här är ju redan datan importerad genom PROPS. Om vi kan istället för
 
 const SolidFuel = (props) => {
-
   const [modalShow, setModalShow] = useState(false);
   const [CO2Emission, setCO2Emission] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
 
-
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-  
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...CO2Emission];
     if (YearFrom != "" && YearTo != "") {
@@ -74,7 +71,6 @@ const SolidFuel = (props) => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -114,18 +110,18 @@ const SolidFuel = (props) => {
                   stroke="#6D4B47"
                   fill="#6D4B47"
                   type="monotone"
+                  name="Fast bränsle"
                 />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-         {/* modal-komponenten som hanterar sök/filterfunktion.*/}
-         <ModalFilterYears
+        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );

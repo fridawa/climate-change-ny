@@ -32,7 +32,6 @@ const Co2 = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-
   useEffect(() => {
     const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
     fetch(url)
@@ -42,7 +41,6 @@ const Co2 = (props) => {
         setFiltereddata(data);
       });
   }, []);
-
 
   return (
     <>
@@ -57,8 +55,9 @@ const Co2 = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutCo2Text/>
-            <Button className="searchButton"
+            <AboutCo2Text />
+            <Button
+              className="searchButton"
               onClick={() => setFilterModalShow(true)}
               className="searchButton"
             >
@@ -96,11 +95,36 @@ const Co2 = (props) => {
                 <YAxis unit=" MT" />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Gas Fuel" stackId="a" fill="#E2C7A8" />
-                <Bar dataKey="Liquid Fuel" stackId="a" fill="#C1A47E" />
-                <Bar dataKey="Solid Fuel" stackId="a" fill="#C48A7E" />
-                <Bar dataKey="Cement" stackId="a" fill="#91714D" />
-                <Bar dataKey="Gas Flaring" stackId="a" fill="#6D4B47" />
+                <Bar
+                  name="Gasbränsle"
+                  dataKey="Gas Fuel"
+                  stackId="a"
+                  fill="#E2C7A8"
+                />
+                <Bar
+                  name="Flytande bränsle"
+                  dataKey="Liquid Fuel"
+                  stackId="a"
+                  fill="#C1A47E"
+                />
+                <Bar
+                  name="Fast bränsle"
+                  dataKey="Solid Fuel"
+                  stackId="a"
+                  fill="#C48A7E"
+                />
+                <Bar
+                  name="Cement"
+                  dataKey="Cement"
+                  stackId="a"
+                  fill="#91714D"
+                />
+                <Bar
+                  name="Gaseldning"
+                  dataKey="Gas Flaring"
+                  stackId="a"
+                  fill="#6D4B47"
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -115,8 +139,7 @@ const Co2 = (props) => {
           marginBottom: "0",
         }}
       >
-
-      {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
         <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}

@@ -25,7 +25,7 @@ const GasFlaring = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-// Applikationens innehåll med förklarande text samt en line chart
+  // Applikationens innehåll med förklarande text samt en line chart
   return (
     <>
       <Container
@@ -48,7 +48,6 @@ const GasFlaring = (props) => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -88,18 +87,18 @@ const GasFlaring = (props) => {
                   fill="#6D4B47"
                   stroke="#6D4B47"
                   type="monotone"
+                  name="Gaseldning"
                 />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-{/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
         <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );

@@ -22,7 +22,6 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 const Cement = (props) => {
-
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
@@ -48,7 +47,6 @@ const Cement = (props) => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -88,6 +86,7 @@ const Cement = (props) => {
                   fill="#6D4B47"
                   stroke="#6D4B47"
                   type="monotone"
+                  name="Utsläpp cement"
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -98,7 +97,6 @@ const Cement = (props) => {
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );

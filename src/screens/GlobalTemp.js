@@ -22,7 +22,6 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsTemp from "../components/ModalText/ModalFilterYearsTemp";
 
 const GlobalTemp = () => {
-  
   //konstanter för modal (liten skärm, endast xs-sm )
   const [modalShow, setModalShow] = useState(false);
 
@@ -30,14 +29,13 @@ const GlobalTemp = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-//fetchar in temperaturdatan så att den kan användas i komponenten
+  //fetchar in temperaturdatan så att den kan användas i komponenten
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/temp.json?key=8eb9e6f0")
       .then((res) => setFetchedData(res.data))
       .catch((err) => console.log(err));
   }, []);
-
 
   //Vänder på datan så att årtalen går i stigande ordning
   const reverseData = [...fetchedData];
@@ -82,7 +80,6 @@ const GlobalTemp = () => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Elementet/komponenten ModalGlobalTemp syns ENDAST i xs-sm */}
@@ -126,6 +123,7 @@ const GlobalTemp = () => {
                   strokeWidth={3}
                   animationDuration={300}
                   dot={false}
+                  name="Global temperatur"
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -137,7 +135,6 @@ const GlobalTemp = () => {
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );

@@ -20,9 +20,7 @@ import AboutGasFuelText from "../components/AboutTexts/AboutGas";
 import ModalGas from "../components/ModalText/ModalGas";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
-
 const GasFuel = (props) => {
-
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
@@ -49,7 +47,6 @@ const GasFuel = (props) => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -89,6 +86,7 @@ const GasFuel = (props) => {
                   fill="#6D4B47"
                   stroke="#6D4B47"
                   type="monotone"
+                  name="Gasbränsle"
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -100,7 +98,6 @@ const GasFuel = (props) => {
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );

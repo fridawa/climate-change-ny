@@ -21,9 +21,7 @@ import ModalGlaciers from "../components/ModalText/ModalGlaciers.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsGlaciers from "../components/ModalText/ModalFilterYearsGlaciers";
 
-
 const Glaciers = () => {
-
   const [modalShow, setModalShow] = useState(false);
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
@@ -53,14 +51,13 @@ const Glaciers = () => {
           >
             <AboutGlaciersText />
 
-             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
-             <Button
+            {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
+            <Button
               onClick={() => setFilterModalShow(true)}
               className="searchButton"
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -118,6 +115,7 @@ const Glaciers = () => {
                   fill="none"
                   strokeWidth={3}
                   dot={false}
+                  name="Glaciärstorlek"
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -129,7 +127,6 @@ const Glaciers = () => {
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );
