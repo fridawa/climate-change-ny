@@ -59,7 +59,7 @@ const AboutTexts = [
   },
   {
     id: 4,
-    heading: `<h1>Flytande bränsle</h1>`,
+    heading: "Flytande bränsle",
     paragraph: `
       <p>Flytande bränsle innefattar bränslen i flytande form.</p>
       <p>
@@ -70,7 +70,7 @@ const AboutTexts = [
   },
   {
     id: 5,
-    heading: `<h1>Fast bränsle</h1>`,
+    heading: "Fast bränsle",
     paragraph: ` 
       <p>Fast bränsle innefattar bränslen i fast form.</p>
       <p>
@@ -81,7 +81,7 @@ const AboutTexts = [
   },
   {
     id: 6,
-    heading: `Glaciärstorlek`,
+    heading: "Glaciärstorlek",
     paragraph: `
     Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
     isbjörnar och sälar, då de är beroende av isen.
@@ -94,21 +94,18 @@ Massbalansen är ett resultat av glaciärens årliga snötillkomst och snö
     id: 7,
     heading: "Global Temperatur",
     paragraph: `
-    <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
+    Klimatförändringarna gör så att jordens temperatur ökar.</p>
 
-  <p>Grafen visar den genomsnittligliga temperatur i världen under det valda året, angivet i Celsius (°C).</p>`,
+  Grafen visar den genomsnittligliga temperatur i världen under det valda året, angivet i Celsius (°C).</p>`,
   },
   {
     id: 8,
-    heading: `<h1>Havsnivå</h1>`,
+    heading: "Havsnivå",
     paragraph: `
-    <p>
       Klimatförändringar gör så att jordens temperatur ökar. Detta leder
       till att glaciären och inlandsisen smälter. När isen smälter, höjs
       havsnivån.
-    </p>
-    
-<p>Grafen visar förändringar i vattennivån per år, mätt i millimeter (mm)</p>`,
+Grafen visar förändringar i vattennivån per år, mätt i millimeter (mm)`,
   },
 ];
 export default AboutTexts;

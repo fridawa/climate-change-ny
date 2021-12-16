@@ -1,6 +1,5 @@
 //import libraries and extentions
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
@@ -15,12 +14,12 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import AboutSolidFuelText from "../components/AboutTexts/AboutSolidFuelText";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
-import ModalFast from "../components/ModalText/ModalFast";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
+import Match from "../components/Match";
 
 //här är ju redan datan importerad genom PROPS. Om vi kan istället för
 
@@ -31,9 +30,10 @@ const SolidFuel = (props) => {
 
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
+  //Borde bryta ut
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...CO2Emission];
-    if (YearFrom != "" && YearTo != "") {
+    if (YearFrom !== "" && YearTo !== "") {
       filtereddata = filtereddata.filter(
         (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
       );
@@ -47,6 +47,9 @@ const SolidFuel = (props) => {
 
     setFiltereddata(filtereddata);
   };
+
+  // Id för att matcha infortexten
+  const idkey = "Fast bränsle";
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (
@@ -62,7 +65,8 @@ const SolidFuel = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutSolidFuelText />
+            {/* Infotext */}
+            <Match id={idkey} />
 
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button
@@ -84,8 +88,11 @@ const SolidFuel = (props) => {
               </sup>
             </h1>
           </Col>
-          <ModalFast show={modalShow} onHide={() => setModalShow(false)} />
-
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

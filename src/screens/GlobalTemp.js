@@ -1,7 +1,7 @@
 //import libraries and extentions
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
   LineChart,
@@ -11,11 +11,9 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ReferenceArea,
 } from "recharts";
 
 //import components
-import AboutGlobalTempText from "../components/AboutTexts/AboutGlobalTempText";
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
@@ -46,7 +44,7 @@ const GlobalTemp = () => {
   //pusha in filtrering i ny array
   const filteredArr = [];
   reverseData.map((n) => {
-    if (n.Source == "GISTEMP") {
+    if (n.Source === "GISTEMP") {
       // console.log(n);
       filteredArr.push(n);
       return filteredArr;
@@ -54,6 +52,8 @@ const GlobalTemp = () => {
       return null;
     }
   });
+
+  // Id för att matcha infortexten
   const idkey = "Global Temperatur";
 
   // Applikationens innehåll med förklarande text samt en linjegraf
@@ -73,7 +73,7 @@ const GlobalTemp = () => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            {/* <AboutGlobalTempText /> */}
+            {/* Infotext */}
             <Match id={idkey} />
 
             {/* Knapp till sök/filtermodal. Vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
@@ -99,6 +99,7 @@ const GlobalTemp = () => {
           <ModalGlobalTemp
             show={modalShow}
             onHide={() => setModalShow(false)}
+            id={idkey}
           />
 
           {/* Grafen som presenterar temp-datan */}

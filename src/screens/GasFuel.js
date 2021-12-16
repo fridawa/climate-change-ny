@@ -1,6 +1,5 @@
 //import libraries and extentions
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
@@ -16,13 +15,16 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import AboutGasFuelText from "../components/AboutTexts/AboutGas";
-import ModalGas from "../components/ModalText/ModalGas";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
+import Match from "../components/Match";
 
 const GasFuel = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
+
+  // Id för att matcha infortexten
+  const idkey = "Gasbränsle";
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (
@@ -38,7 +40,8 @@ const GasFuel = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutGasFuelText />
+            {/* Infotext */}
+            <Match id={idkey} />
 
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button
@@ -60,8 +63,11 @@ const GasFuel = (props) => {
               </sup>
             </h1>
           </Col>
-          <ModalGas show={modalShow} onHide={() => setModalShow(false)} />
-
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

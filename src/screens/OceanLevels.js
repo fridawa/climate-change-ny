@@ -11,16 +11,15 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ReferenceArea,
 } from "recharts";
 
 //import components
-import AboutOceanLevelsText from "../components/AboutTexts/AboutOceanLevelsText";
 import bakgrund1 from "../Images/back-ocean.png";
-import ModalOcean from "../components/ModalText/ModalOcean.js";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsOceanLev from "../components/ModalText/ModalFilterYearsOceanLev";
+import Match from "../components/Match";
 
 const OceanLevels = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -43,6 +42,9 @@ const OceanLevels = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  // Id för att matcha infortexten
+  const idkey = "Havsnivå";
+
   // Applikationens innehåll med förklarande text samt en linjegraf
   return (
     <>
@@ -59,7 +61,8 @@ const OceanLevels = () => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutOceanLevelsText />
+            {/* Infotext */}
+            <Match id={idkey} />
 
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button
@@ -81,8 +84,11 @@ const OceanLevels = () => {
               </sup>
             </h1>
           </Col>
-          <ModalOcean show={modalShow} onHide={() => setModalShow(false)} />
-
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

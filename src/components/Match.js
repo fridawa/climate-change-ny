@@ -1,4 +1,4 @@
-import AboutTexts from "../routes/AboutTextArray";
+import AboutTexts from "../components/AboutTextArray";
 
 const Match = (props) => {
   const match1 = AboutTexts.map((e) => {

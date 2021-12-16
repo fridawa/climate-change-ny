@@ -1,6 +1,5 @@
 //import libraries and extentions
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
@@ -15,15 +14,18 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import AboutCementText from "../components/AboutTexts/AboutCement";
-import ModalCement from "../components/ModalText/ModalCement";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
+import Match from "../components/Match";
 
 const Cement = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
+
+  // Id för att matcha infortexten
+  const idkey = "Cement";
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (
@@ -39,7 +41,8 @@ const Cement = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutCementText />
+            {/* Infotext */}
+            <Match id={idkey} />
 
             <Button
               onClick={() => setFilterModalShow(true)}
@@ -60,8 +63,11 @@ const Cement = (props) => {
               </sup>
             </h1>
           </Col>
-          <ModalCement show={modalShow} onHide={() => setModalShow(false)} />
-
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

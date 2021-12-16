@@ -14,16 +14,16 @@ import {
 } from "recharts";
 
 //import components
-import AboutCo2Text from "../components/AboutTexts/AboutCo2Text";
 import bakgrund1 from "../Images/back-co2.png";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
-import ModalCo2 from "../components/ModalText/ModalCo2.js";
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 import AboutAll from "../components/AboutTexts/AboutAll";
-import AboutTexts from "../routes/AboutTextArray";
+import AboutTexts from "../components/AboutTextArray";
+import Match from "../components/Match";
 
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
@@ -46,16 +46,8 @@ const Co2 = (props) => {
       });
   }, []);
 
-  // const match = AboutTexts.map((e) => {
-  //   if (e.heading === "Koldioxidutsläpp") {
-  //     return (
-  //       <div>
-  //         <h1> {e.heading}</h1>
-  //         <p>{e.paragraph}</p>
-  //       </div>
-  //     );
-  //   }
-  // });
+  // Id för att matcha infortexten
+  const idkey = "Koldioxidutsläpp";
 
   return (
     <>
@@ -75,8 +67,8 @@ const Co2 = (props) => {
               heading={AboutTexts[0].heading}
               paragraph={AboutTexts[0].paragraph}
             />
-            {/* Alternativ till texten */}
-            {/* {match} */}
+            {/* Infotext */}
+            <Match id={idkey} />
 
             <Button
               className="searchButton"
@@ -98,8 +90,11 @@ const Co2 = (props) => {
               </sup>
             </h1>
           </Col>
-          <ModalCo2 show={modalShow} onHide={() => setModalShow(false)} />
-
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

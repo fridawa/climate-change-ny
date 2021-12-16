@@ -1,7 +1,10 @@
-import { Button, Modal, Col, Row } from "react-bootstrap";
+import { Modal, Col, Row } from "react-bootstrap";
 import AboutGlobalTempText from "../AboutTexts/AboutGlobalTempText";
+import Match from "../Match";
 
 const ModalGlobalTemp = (props) => {
+  console.log(props.id);
+  const idkey = props.id;
   return (
     <Modal
       {...props}
@@ -13,7 +16,7 @@ const ModalGlobalTemp = (props) => {
       <Modal.Body>
         <Row>
           <Col>
-            <AboutGlobalTempText />
+            <Match id={idkey} />
           </Col>
         </Row>
       </Modal.Body>

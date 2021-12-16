@@ -1,6 +1,5 @@
 //import libraries and extentions
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { Container, Col, Button } from "react-bootstrap";
 import {
   ResponsiveContainer,
@@ -14,16 +13,19 @@ import {
 } from "recharts";
 
 //import components
-import AboutLiquidFuelText from "../components/AboutTexts/AboutLiquidFuelText";
 import bakgrund1 from "../Images/back-co2.png";
-import ModalFlytande from "../components/ModalText/ModalFlytande";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
+import Match from "../components/Match";
 
 const LiquidFuel = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
+
+  // Id för att matcha infortexten
+  const idkey = "Flytande bränsle";
 
   // Applikationens innehåll med förklarande text samt en line chart
   return (
@@ -39,7 +41,8 @@ const LiquidFuel = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutLiquidFuelText />
+            {/* Infotext */}
+            <Match id={idkey} />
 
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button
@@ -61,7 +64,11 @@ const LiquidFuel = (props) => {
               </sup>
             </h1>
           </Col>
-          <ModalFlytande show={modalShow} onHide={() => setModalShow(false)} />
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
 
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">

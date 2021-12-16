@@ -11,16 +11,13 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ReferenceArea,
 } from "recharts";
 
 //import components
-import AboutGlaciersText from "../components/AboutTexts/AboutGlaciers";
 import bakgrund1 from "../Images/back-glaciers.png";
-import ModalGlaciers from "../components/ModalText/ModalGlaciers.js";
+import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsGlaciers from "../components/ModalText/ModalFilterYearsGlaciers";
-import AboutTexts from "../routes/AboutTextArray";
 import Match from "../components/Match";
 
 const Glaciers = () => {
@@ -34,17 +31,9 @@ const Glaciers = () => {
       .then((res) => setFetchedData(res.data))
       .catch((err) => console.log(err));
   }, []);
+
+  // Id för att matcha infortexten
   const idkey = "Glaciärstorlek";
-  // const match = AboutTexts.map((e) => {
-  //   if (e.heading === "Glaciärstorlek") {
-  //     return (
-  //       <div>
-  //         <h1> {e.heading}</h1>
-  //         <p>{e.paragraph}</p>
-  //       </div>
-  //     );
-  //   }
-  // });
 
   // Applikationens innehåll med förklarande text samt en area graf
   return (
@@ -85,7 +74,11 @@ const Glaciers = () => {
               </sup>
             </h1>
           </Col>
-          <ModalGlaciers show={modalShow} onHide={() => setModalShow(false)} />
+          <ModalGlobalTemp
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            id={idkey}
+          />
 
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
