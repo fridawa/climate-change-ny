@@ -1,5 +1,4 @@
 import { Modal, Col, Row } from "react-bootstrap";
-import AboutGlobalTempText from "../AboutTexts/AboutGlobalTempText";
 import Match from "../Match";
 
 const ModalGlobalTemp = (props) => {

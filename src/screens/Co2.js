@@ -21,7 +21,6 @@ import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
-import AboutAll from "../components/AboutTexts/AboutAll";
 import AboutTexts from "../components/AboutTextArray";
 import Match from "../components/Match";
 
@@ -62,11 +61,6 @@ const Co2 = (props) => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            {/* <AboutCo2Text /> */}
-            <AboutAll
-              heading={AboutTexts[0].heading}
-              paragraph={AboutTexts[0].paragraph}
-            />
             {/* Infotext */}
             <Match id={idkey} />
 
