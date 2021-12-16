@@ -20,6 +20,7 @@ import bakgrund1 from "../Images/back-globaltemp-copy.png";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsTemp from "../components/ModalText/ModalFilterYearsTemp";
+import Match from "../components/Match";
 
 const GlobalTemp = () => {
   //konstanter för modal (liten skärm, endast xs-sm )
@@ -53,6 +54,7 @@ const GlobalTemp = () => {
       return null;
     }
   });
+  const idkey = "Global Temperatur";
 
   // Applikationens innehåll med förklarande text samt en linjegraf
   return (
@@ -71,7 +73,8 @@ const GlobalTemp = () => {
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            <AboutGlobalTempText />
+            {/* <AboutGlobalTempText /> */}
+            <Match id={idkey} />
 
             {/* Knapp till sök/filtermodal. Vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button

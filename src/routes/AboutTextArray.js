@@ -92,7 +92,7 @@ Massbalansen är ett resultat av glaciärens årliga snötillkomst och snö
   },
   {
     id: 7,
-    heading: `<h1>Global Temperatur</h1>`,
+    heading: "Global Temperatur",
     paragraph: `
     <p> Klimatförändringarna gör så att jordens temperatur ökar.</p>
 

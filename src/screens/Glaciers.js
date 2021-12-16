@@ -21,6 +21,7 @@ import ModalGlaciers from "../components/ModalText/ModalGlaciers.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsGlaciers from "../components/ModalText/ModalFilterYearsGlaciers";
 import AboutTexts from "../routes/AboutTextArray";
+import Match from "../components/Match";
 
 const Glaciers = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -33,17 +34,17 @@ const Glaciers = () => {
       .then((res) => setFetchedData(res.data))
       .catch((err) => console.log(err));
   }, []);
-
-  const match = AboutTexts.map((e) => {
-    if (e.heading === "Glaciärstorlek") {
-      return (
-        <div>
-          <h1> {e.heading}</h1>
-          <p>{e.paragraph}</p>
-        </div>
-      );
-    }
-  });
+  const idkey = "Glaciärstorlek";
+  // const match = AboutTexts.map((e) => {
+  //   if (e.heading === "Glaciärstorlek") {
+  //     return (
+  //       <div>
+  //         <h1> {e.heading}</h1>
+  //         <p>{e.paragraph}</p>
+  //       </div>
+  //     );
+  //   }
+  // });
 
   // Applikationens innehåll med förklarande text samt en area graf
   return (
@@ -62,7 +63,7 @@ const Glaciers = () => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Texten */}
-            {match}
+            <Match id={idkey} />
 
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button
