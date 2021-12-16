@@ -1,5 +1,5 @@
 import { Modal, Col, Row } from "react-bootstrap";
-import Match from "../Match";
+import Match from "../InfoText";
 
 const ModalGlobalTemp = (props) => {
   console.log(props.id);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalFootprint from "./ModalFootPrint";
+import ModalFootprint from "../ModalFootPrint";
 
 const EkoText = () => {
   const [modalFootprintShow, setModalFootprintShow] = useState(false);

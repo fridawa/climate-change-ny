@@ -1,4 +1,4 @@
-import { Button, Modal, Col, Row } from "react-bootstrap";
+import { Modal, Col, Row } from "react-bootstrap";
 
 const ModalFootprint = (props) => {
   return (

@@ -19,7 +19,7 @@ import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
-import Match from "../components/Match";
+import Match from "../components/InfoText";
 
 //här är ju redan datan importerad genom PROPS. Om vi kan istället för
 

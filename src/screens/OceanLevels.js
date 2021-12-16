@@ -19,7 +19,7 @@ import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsOceanLev from "../components/ModalText/ModalFilterYearsOceanLev";
-import Match from "../components/Match";
+import Match from "../components/InfoText";
 
 const OceanLevels = () => {
   const [modalShow, setModalShow] = useState(false);

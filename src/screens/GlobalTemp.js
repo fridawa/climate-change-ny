@@ -18,7 +18,7 @@ import bakgrund1 from "../Images/back-globaltemp-copy.png";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsTemp from "../components/ModalText/ModalFilterYearsTemp";
-import Match from "../components/Match";
+import Match from "../components/InfoText";
 
 const GlobalTemp = () => {
   //konstanter för modal (liten skärm, endast xs-sm )

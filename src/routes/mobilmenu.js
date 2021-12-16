@@ -13,16 +13,19 @@ const MobilMenu = () => {
         className="d-flex justify-content-center p-md-0 navbar-climate d-md-none"
       >
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
-          <Container className="align-items-start">
-            <Col xs={4}>
+          <Container fluid className="align-items-start">
+            <Col xs={6}>
               <Navbar.Brand href="#/">
                 <Logo />
               </Navbar.Brand>
             </Col>
-            <Col xs={8}>
-              <Nav className="me-auto">
+            <Col xs={6}>
+              <Nav className="me-auto mobil-menu-img">
                 <Row>
-                  <Col xs={3} className="dropdown-menu-mobil me-3 ps-5 pt-2 ">
+                  <Col
+                    xs={2}
+                    className="dropdown-menu-mobil ps-0 pe-0 pt-2 mt-0 "
+                  >
                     <Dropdown>
                       <Dropdown.Toggle
                         id="dropdown-basic"
@@ -49,18 +52,19 @@ const MobilMenu = () => {
                       </Dropdown.Menu>
                     </Dropdown>
                   </Col>
-                  <Col xs={8} className="p-0">
+                  <Col xs={10} className="p-0">
                     <Nav.Link>
                       {navLinks.map(({ title, path, img }) => (
                         <NavLink
                           to={path}
                           key={title}
                           activeClassName="active"
-                          className="ps-2"
+                          className=""
                         >
                           <img
                             src={img}
                             style={{ width: 35, height: 35 }}
+                            className="ms-3"
                           ></img>
                         </NavLink>
                       ))}

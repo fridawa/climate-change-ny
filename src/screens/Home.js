@@ -1,6 +1,6 @@
 //import libraries and extentions
 import AboutText from "../components/AboutTexts/AboutText";
-import EkoText from "../components/ekoText";
+import EkoText from "../components/AboutTexts/ekoText";
 import { Container, Row, Col } from "react-bootstrap";
 
 //import components

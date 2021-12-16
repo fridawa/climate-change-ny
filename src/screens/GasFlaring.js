@@ -18,7 +18,7 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 
 import ModalFilterYears from "../components/ModalText/ModalFilterYears";
-import Match from "../components/Match";
+import Match from "../components/InfoText";
 
 const GasFlaring = (props) => {
   const [modalShow, setModalShow] = useState(false);

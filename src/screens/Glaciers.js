@@ -18,7 +18,7 @@ import bakgrund1 from "../Images/back-glaciers.png";
 import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsGlaciers from "../components/ModalText/ModalFilterYearsGlaciers";
-import Match from "../components/Match";
+import Match from "../components/InfoText";
 
 const Glaciers = () => {
   const [modalShow, setModalShow] = useState(false);

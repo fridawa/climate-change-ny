@@ -21,7 +21,7 @@ Body {
 /* LOGOTYP */
 .app-logo {
   max-height: 7vh;
-  
+  max-width: 35vw;
 }
 .logo-container {
   width: 45vw;
@@ -161,7 +161,7 @@ tr:nth-child(odd) {
 }
 
 th {
-  background-color: rgb(255, 255, 253)!important;
+  background-color: rgb(255, 255, 253) !important;
   color: #83a9cf;
 }
 
@@ -176,12 +176,14 @@ h1 {
   margin-top: 2em !important;
 }
 
-
 button:hover {
-  background-color: #95c0e4  !important;
+  background-color: #95c0e4 !important;
 }
 
 .aboutText {
   margin-top: 0em !important;
 }
 
+.mobil-menu-img {
+  margin-left: -1em !important;
+}

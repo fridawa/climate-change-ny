@@ -21,8 +21,7 @@ import ModalFilterYears from "../components/ModalText/ModalFilterYears";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
-import AboutTexts from "../components/AboutTextArray";
-import Match from "../components/Match";
+import Match from "../components/InfoText";
 
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
