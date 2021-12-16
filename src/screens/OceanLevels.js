@@ -25,7 +25,7 @@ import ModalFilterYearsOceanLev from "../components/ModalText/ModalFilterYearsOc
 const OceanLevels = () => {
   const [modalShow, setModalShow] = useState(false);
   const [fetchedData, setFetchedData] = useState([]);
-  const [modalFilterShow, setFilterModalShow] = useState(false); 
+  const [modalFilterShow, setFilterModalShow] = useState(false);
 
   //konvertera string till int
   const yearAsIntt = fetchedData.map((n) => {
@@ -68,7 +68,6 @@ const OceanLevels = () => {
             >
               Sök och jämför år
             </Button>
-
           </Col>
 
           {/* Syns bara i xs-sm */}
@@ -107,6 +106,7 @@ const OceanLevels = () => {
                   stroke="#17A2A5"
                   strokeWidth={3}
                   dot={false}
+                  name="Custom name instead of dataKey"
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -118,7 +118,6 @@ const OceanLevels = () => {
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
         />
-
       </Container>
     </>
   );
