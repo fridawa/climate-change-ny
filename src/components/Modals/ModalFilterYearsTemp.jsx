@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import TableTemp from "../TableYearsTemp";
-import FilterYears from "../FilterYear";
+import TableTemp from "../Filterfunktionen/TableYearsTemp";
+import FilterYears from "../Filterfunktionen/FilterYear";
 
 const ModalFilterYearsTemp = (props) => {
   const [tempData, setTempData] = useState([]);

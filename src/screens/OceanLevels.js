@@ -15,11 +15,11 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-ocean.png";
-import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
+import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
-import ModalFilterYearsOceanLev from "../components/ModalText/ModalFilterYearsOceanLev";
-import Match from "../components/InfoText";
+import ModalFilterYearsOceanLev from "../components/Modals/ModalFilterYearsOceanLev";
+import InfoText from "../components/InfoText";
 
 const OceanLevels = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -62,7 +62,7 @@ const OceanLevels = () => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Infotext */}
-            <Match id={idkey} />
+            <InfoText id={idkey} />
 
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button

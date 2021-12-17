@@ -15,10 +15,10 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
-import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
+import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
-import ModalFilterYearsTemp from "../components/ModalText/ModalFilterYearsTemp";
-import Match from "../components/InfoText";
+import ModalFilterYearsTemp from "../components/Modals/ModalFilterYearsTemp";
+import InfoText from "../components/InfoText";
 
 const GlobalTemp = () => {
   //konstanter för modal (liten skärm, endast xs-sm )
@@ -74,7 +74,7 @@ const GlobalTemp = () => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Infotext */}
-            <Match id={idkey} />
+            <InfoText id={idkey} />
 
             {/* Knapp till sök/filtermodal. Vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button

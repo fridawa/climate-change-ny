@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import TableGlacier from "../TableYearsGlaciers";
-import FilterYears from "../FilterYear";
+import TableGlacier from "../Filterfunktionen/TableYearsGlaciers";
+import FilterYears from "../Filterfunktionen/FilterYear";
 
 const ModalFilterYearsGlaciers = (props) => {
   const [GlacierData, setGlacierData] = useState([]);

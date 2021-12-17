@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import TableOceanLevels from "../TableYearsOceanLevels";
-import FilterYears from "../FilterYear";
+import TableOceanLevels from "../Filterfunktionen/TableYearsOceanLevels";
+import FilterYears from "../Filterfunktionen/FilterYear";
 
 const ModalFilterYearsOceanLev = (props) => {
   const [oceanData, setOceanData] = useState([]);

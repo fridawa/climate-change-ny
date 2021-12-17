@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import Table from "../TableYears";
-import FilterYears from "../FilterYear";
+import Table from "../Filterfunktionen/TableYears";
+import FilterYears from "../Filterfunktionen/FilterYear";
 
 const ModalFilterYears = (props) => {
   const [CO2Emission, setCO2Emission] = useState([]);

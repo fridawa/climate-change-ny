@@ -1,6 +1,6 @@
 import AboutTexts from "./AboutTexts/AboutTextArray";
 
-const Match = (props) => {
+const InfoText = (props) => {
   const match1 = AboutTexts.map((e) => {
     if (e.heading === props.id) {
       return (
@@ -14,4 +14,4 @@ const Match = (props) => {
 
   return match1;
 };
-export default Match;
+export default InfoText;

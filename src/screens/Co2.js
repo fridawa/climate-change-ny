@@ -15,13 +15,13 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import ModalGlobalTemp from "../components/ModalText/ModalGlobalTemp.js";
+import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 
-import ModalFilterYears from "../components/ModalText/ModalFilterYears";
+import ModalFilterYears from "../components/Modals/ModalFilterYears";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
-import Match from "../components/InfoText";
+import InfoText from "../components/InfoText";
 
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
@@ -61,7 +61,7 @@ const Co2 = (props) => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Infotext */}
-            <Match id={idkey} />
+            <InfoText id={idkey} />
 
             <Button
               className="searchButton"
