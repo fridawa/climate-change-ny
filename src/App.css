@@ -39,6 +39,8 @@ Body {
   color: rgb(100, 97, 72);
   opacity: 70%;
   font-weight: 600;
+  font-size: 1.1rem;
+  padding-left: 0.3rem;
 }
 .navbar-climate p:hover {
   opacity: 100%;
