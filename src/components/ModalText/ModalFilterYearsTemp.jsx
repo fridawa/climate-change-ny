@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import TableTemp from "../../screens/TableYearsTemp";
-import FilterYears from "../../screens/FilterYear";
+import TableTemp from "../TableYearsTemp";
+import FilterYears from "../FilterYear";
 
 const ModalFilterYearsTemp = (props) => {
   const [tempData, setTempData] = useState([]);
@@ -43,8 +43,8 @@ const ModalFilterYearsTemp = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter" style= {{}}>
-          Sök och jämför temperaturdata mellan 1880-2016 
+        <Modal.Title id="contained-modal-title-vcenter" style={{}}>
+          Sök och jämför temperaturdata mellan 1880-2016
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

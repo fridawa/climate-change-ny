@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import Table from "../../screens/TableYears";
-import FilterYears from "../../screens/FilterYear";
+import Table from "../TableYears";
+import FilterYears from "../FilterYear";
 
 const ModalFilterYears = (props) => {
   const [CO2Emission, setCO2Emission] = useState([]);
@@ -42,8 +42,8 @@ const ModalFilterYears = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter" style= {{}}>
-          Sök och jämför Co2-data från 1751-2014 
+        <Modal.Title id="contained-modal-title-vcenter" style={{}}>
+          Sök och jämför Co2-data från 1751-2014
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

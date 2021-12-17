@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import TableGlacier from "../../screens/TableYearsGlaciers";
-import FilterYears from "../../screens/FilterYear";
+import TableGlacier from "../TableYearsGlaciers";
+import FilterYears from "../FilterYear";
 
 const ModalFilterYearsGlaciers = (props) => {
   const [GlacierData, setGlacierData] = useState([]);
@@ -43,8 +43,8 @@ const ModalFilterYearsGlaciers = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter" style= {{}}>
-          Sök och jämför glaciärdata mellan 1945-2014 
+        <Modal.Title id="contained-modal-title-vcenter" style={{}}>
+          Sök och jämför glaciärdata mellan 1945-2014
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

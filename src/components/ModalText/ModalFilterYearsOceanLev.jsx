@@ -1,8 +1,8 @@
 import { Button, Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import TableOceanLevels from "../../screens/TableYearsOceanLevels";
-import FilterYears from "../../screens/FilterYear";
+import TableOceanLevels from "../TableYearsOceanLevels";
+import FilterYears from "../FilterYear";
 
 const ModalFilterYearsOceanLev = (props) => {
   const [oceanData, setOceanData] = useState([]);
@@ -43,7 +43,7 @@ const ModalFilterYearsOceanLev = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter" style= {{}}>
+        <Modal.Title id="contained-modal-title-vcenter" style={{}}>
           Sök och jämför havsnivåökning/minskning mellan 1880-2013
         </Modal.Title>
       </Modal.Header>
