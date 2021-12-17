@@ -16,6 +16,7 @@ import {
 import bakgrund1 from "../Images/back-co2.png";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
+import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
 import InfoText from "../components/InfoText";
@@ -35,7 +36,7 @@ const GasFlaring = (props) => {
         className="data-container"
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-sm-5 mt-sm-5">
+        <div className="pt-4 mt-4 pt-md-5 mt-md-5">
           {/* Syns bara i md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
@@ -57,18 +58,19 @@ const GasFlaring = (props) => {
           <Col className="d-md-none mt-5 ps-2">
             <h1>
               Gaseldning
-              <sup>
+              {/* <sup>
                 <span onClick={() => setModalShow(true)} className=" p-2">
                   <BsFillQuestionCircleFill />
                 </span>
-              </sup>
+              </sup> */}
             </h1>
+            <InfoTextMobile id={idkey} />
           </Col>
-          <ModalGlobalTemp
+          {/* <ModalGlobalTemp
             show={modalShow}
             onHide={() => setModalShow(false)}
             id={idkey}
-          />
+          /> */}
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

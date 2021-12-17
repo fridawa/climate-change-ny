@@ -15,6 +15,7 @@ import {
 //import components
 import bakgrund1 from "../Images/back-co2.png";
 import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
+import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
@@ -59,7 +60,7 @@ const SolidFuel = (props) => {
         className="data-container "
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
-        <div className="pt-sm-5 mt-sm-5">
+        <div className="pt-4 mt-4 pt-md-5 mt-md-5">
           {/* Syns bara i md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
@@ -81,18 +82,19 @@ const SolidFuel = (props) => {
           <Col className="d-md-none mt-5 ps-2">
             <h1>
               Fast bränsle
-              <sup>
+              {/* <sup>
                 <span onClick={() => setModalShow(true)} className=" p-2">
                   <BsFillQuestionCircleFill />
                 </span>
-              </sup>
+              </sup> */}
             </h1>
+            <InfoTextMobile id={idkey} />
           </Col>
-          <ModalGlobalTemp
+          {/* <ModalGlobalTemp
             show={modalShow}
             onHide={() => setModalShow(false)}
             id={idkey}
-          />
+          /> */}
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

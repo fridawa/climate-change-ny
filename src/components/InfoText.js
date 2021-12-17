@@ -5,7 +5,7 @@ const InfoText = (props) => {
     if (e.heading === props.id) {
       return (
         <div>
-          <h1> {e.heading}</h1>
+          <h1 className="d-none d-md-block"> {e.heading}</h1>
           <p>{e.paragraph}</p>
         </div>
       );
