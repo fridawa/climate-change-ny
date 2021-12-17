@@ -20,12 +20,12 @@ const Menu = () => {
           className="pt-4"
         >
           <Container>
-            <Col md={3} xs={9}>
+            <Col md={4}>
               <Navbar.Brand href="#/" className="d-flex ">
                 <Logo />
               </Navbar.Brand>
             </Col>
-            <Col md={9} xs={3}>
+            <Col md={8}>
               <Navbar.Toggle aria-controls="responsive-navbar-nav " />
               <Navbar.Collapse id="responsive-navbar-nav ">
                 <Nav className="m-xs-0 p-xs-0 ms-md-auto pe-md-4 d-flex">

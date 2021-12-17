@@ -10,16 +10,19 @@ const InfoTextMobile = (props) => {
 
   return (
     <ShowMoreText
-      lines={2}
-      more="Show more"
-      less="Show less"
+      lines={1}
+      more="Läs mer"
+      less="Visa mindre"
       className="content-css"
       anchorClass="my-anchor-css-class"
       onClick={() => executeOnClick()}
       expanded={false}
-      width={500}
+      width={0}
       truncatedEndingComponent={"... "}
     >
+      {/* Vill få den att gömma headingen bara skicka med paragraphen
+      Förstår inte varför headingen står med, för den är
+       gömd när det fälls ut */}
       <InfoText id={idkey} />
     </ShowMoreText>
   );

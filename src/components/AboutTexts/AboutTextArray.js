@@ -46,57 +46,52 @@ const AboutTexts = [
   {
     id: 3,
     heading: `Gaseldning`,
-    paragraph: ` 
-      <p>
-        Gaseldning används i industrier där gas blir en biprodukt vid
+    paragraph: `Gaseldning används i industrier där gas blir en biprodukt vid
         tillverkning av något annat.
-      </p>
-      <p>
+     
         Gaseldningsprocessen sker oftast enbart för att elda upp gasen.
+       
         Värmeenergin tas alltså inte tillvara på.
-      </p>
-      <p>Grafen visar de totala gaseldning-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>`,
+    
+        Grafen visar de totala gaseldning-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).`,
   },
   {
     id: 4,
-    heading: "Flytande bränsle",
+    heading: `Flytande bränsle`,
     paragraph: `
-      <p>Flytande bränsle innefattar bränslen i flytande form.</p>
-      <p>
+      Flytande bränsle innefattar bränslen i flytande form.
+     
         Exempel på flytande bränslen är till exempel etanol, bensin eller
         diesel med mera.
-      </p>
-      <p>Grafen visar de totala flytande bränsle-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>`,
+     
+      Grafen visar de totala flytande bränsle-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).`,
   },
   {
     id: 5,
-    heading: "Fast bränsle",
+    heading: `Fast bränsle`,
     paragraph: ` 
-      <p>Fast bränsle innefattar bränslen i fast form.</p>
-      <p>
+      Fast bränsle innefattar bränslen i fast form.
         Exempel på fasta bränslen är till exempel ved, pellets, briketter,
         spån, kol, torv med mera.
-      </p>
-     <p> Grafen visar de totala fast bränsle-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).</p>`,
+     Grafen visar de totala fast bränsle-utsläppen för varje år, vilka mäts i miljoner ton (förkortning MT).`,
   },
   {
     id: 6,
-    heading: "Glaciärstorlek",
+    heading: `Glaciärstorlek`,
     paragraph: `
     Jordens temperatur ökar och då smälter glaciärerna. Detta påverkar
     isbjörnar och sälar, då de är beroende av isen.
-  
-  
 Massbalansen är ett resultat av glaciärens årliga snötillkomst och snöförlust. Om glaciären är i jämvikt med sitt klimat har den massbalansvärdet noll, vilket innebär att lika mycket snö försvinner som det tillkommer under året. 
   Grafen visar glaciärernas genomsnittliga massbalans per år, dvs. hur mycket glaciären har smält eller växt, och mäts i meter vattenekvivalenter (förkortning M).`,
   },
   {
     id: 7,
-    heading: "Global Temperatur",
+    heading: `Global Temperatur`,
     paragraph: `
-    Klimatförändringarna gör så att jordens temperatur ökar.</p>
+    Klimatförändringarna gör så att jordens temperatur ökar.
 
-  Grafen visar den genomsnittligliga temperatur i världen under det valda året, angivet i Celsius (°C).</p>`,
+  Grafen visar den genomsnittligliga temperatur i
+  världen under det valda året, angivet i Celsius (°C).`,
   },
   {
     id: 8,
