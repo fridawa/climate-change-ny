@@ -131,9 +131,11 @@ const Glaciers = () => {
         </div>
 
         {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        {/* Skicka med id här i props så borde ModalFilterYears kunna bli en komponent likt infotextmobile */}
         <ModalFilterYearsGlaciers
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
+          id={idkey}
         />
       </Container>
     </>
