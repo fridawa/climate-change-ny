@@ -15,13 +15,11 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-glaciers.png";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsGlaciers from "../components/Modals/ModalFilterYearsGlaciers";
 import InfoText from "../components/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
+
 const Glaciers = () => {
-  const [modalShow, setModalShow] = useState(false);
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
@@ -65,21 +63,9 @@ const Glaciers = () => {
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Glaciärstorlek{" "}
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Glaciärstorlek </h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
 
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">

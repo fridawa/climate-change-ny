@@ -1,6 +1,6 @@
 //import libraries and extentions
 import { Container, Col, Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import {
   XAxis,
@@ -15,35 +15,15 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
-
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
-
-import { BsFillQuestionCircleFill } from "react-icons/bs";
-
 import InfoText from "../components/InfoText";
 
 const Co2 = (props) => {
   // Applikationens innehåll med förklarande text
   // samt en bar chart där datan staplas på varandra
 
-  const [CO2Emission, setCO2Emission] = useState([]);
-  const [filtereddata, setFiltereddata] = useState([]);
-
-  const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
-  const [matchedData, setMatchedData] = useState([]);
-
-  useEffect(() => {
-    const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setCO2Emission(data);
-        setFiltereddata(data);
-      });
-  }, []);
 
   // Id för att matcha infortexten
   const idkey = "Koldioxidutsläpp";
@@ -75,21 +55,10 @@ const Co2 = (props) => {
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Koldioxidutsläpp
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Koldioxidutsläpp</h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
+
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

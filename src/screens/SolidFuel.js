@@ -14,10 +14,7 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
-
-import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
 import InfoText from "../components/InfoText";
@@ -25,29 +22,7 @@ import InfoText from "../components/InfoText";
 //här är ju redan datan importerad genom PROPS. Om vi kan istället för
 
 const SolidFuel = (props) => {
-  const [modalShow, setModalShow] = useState(false);
-  const [CO2Emission, setCO2Emission] = useState([]);
-  const [filtereddata, setFiltereddata] = useState([]);
-
   const [modalFilterShow, setFilterModalShow] = useState(false);
-
-  //Borde bryta ut
-  const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...CO2Emission];
-    if (YearFrom !== "" && YearTo !== "") {
-      filtereddata = filtereddata.filter(
-        (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
-      );
-    }
-
-    if (Order === "LTH") {
-      filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-    } else if (Order === "HTL") {
-      filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
-    }
-
-    setFiltereddata(filtereddata);
-  };
 
   // Id för att matcha infortexten
   const idkey = "Fast bränsle";
@@ -80,21 +55,10 @@ const SolidFuel = (props) => {
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Fast bränsle
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Fast bränsle</h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
+
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

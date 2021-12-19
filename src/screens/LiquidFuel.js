@@ -14,15 +14,12 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
 import InfoText from "../components/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const LiquidFuel = (props) => {
-  const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
   // Id för att matcha infortexten
@@ -56,21 +53,9 @@ const LiquidFuel = (props) => {
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Flytande bränsle
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Flytande bränsle</h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
 
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">

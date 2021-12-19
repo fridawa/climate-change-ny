@@ -15,16 +15,11 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsTemp from "../components/Modals/ModalFilterYearsTemp";
 import InfoText from "../components/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const GlobalTemp = () => {
-  //konstanter för modal (liten skärm, endast xs-sm )
-  const [modalShow, setModalShow] = useState(false);
-
   //konstanter för modal (sök/filterfunktion)
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
@@ -88,21 +83,9 @@ const GlobalTemp = () => {
 
           {/* Elementet/komponenten ModalGlobalTemp syns ENDAST i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Global Teperatur
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Global Teperatur</h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
 
           {/* Grafen som presenterar temp-datan */}
           <div className="wrapper overlay-graf pt-5">

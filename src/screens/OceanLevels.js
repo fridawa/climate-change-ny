@@ -15,15 +15,11 @@ import {
 
 //import components
 import bakgrund1 from "../Images/back-ocean.png";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
-
-import { BsFillQuestionCircleFill } from "react-icons/bs";
 import ModalFilterYearsOceanLev from "../components/Modals/ModalFilterYearsOceanLev";
 import InfoText from "../components/InfoText";
 
 const OceanLevels = () => {
-  const [modalShow, setModalShow] = useState(false);
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
@@ -76,21 +72,10 @@ const OceanLevels = () => {
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Havsnivå
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Havsnivå</h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
+
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">

@@ -11,17 +11,14 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 //import components
 import bakgrund1 from "../Images/back-co2.png";
-import ModalGlobalTemp from "../components/Modals/ModalGlobalTemp.js";
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
 import InfoText from "../components/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const GasFuel = (props) => {
-  const [modalShow, setModalShow] = useState(false);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
   // Id för att matcha infortexten
@@ -55,21 +52,10 @@ const GasFuel = (props) => {
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
-            <h1>
-              Gasbränsle
-              {/* <sup>
-                <span onClick={() => setModalShow(true)} className=" p-2">
-                  <BsFillQuestionCircleFill />
-                </span>
-              </sup> */}
-            </h1>
+            <h1>Gasbränsle</h1>
             <InfoTextMobile id={idkey} />
           </Col>
-          {/* <ModalGlobalTemp
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            id={idkey}
-          /> */}
+
           {/* Grafen */}
           <div className="wrapper overlay-graf pt-5">
             <ResponsiveContainer width="100%" height="80%">
