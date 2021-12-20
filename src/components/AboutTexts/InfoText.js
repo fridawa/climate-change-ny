@@ -6,7 +6,10 @@ const InfoText = (props) => {
       return (
         <div>
           <h1 className="d-none d-md-block"> {e.heading}</h1>
-          <p>{e.paragraph}</p>
+          <p>{e.paragraph1}</p>
+          <p>{e.paragraph2}</p>
+          <p>{e.paragraph3}</p>
+          <p>{e.paragraph4}</p>
         </div>
       );
     }

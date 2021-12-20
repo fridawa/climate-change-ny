@@ -30,7 +30,7 @@ const Glaciers = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // Id för att matcha infortexten
+  // Id för att matcha infotexten
   const idkey = "Glaciärstorlek";
 
   // Applikationens innehåll med förklarande text samt en area graf
@@ -50,8 +50,9 @@ const Glaciers = () => {
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Texten */}
-            <InfoText id={idkey} />
-
+            <div className="glacInfo">
+            <InfoText id={idkey}/>
+</div>
             {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
             <Button
               onClick={() => setFilterModalShow(true)}

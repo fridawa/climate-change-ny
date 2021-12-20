@@ -1,3 +1,4 @@
+
 // Tabellen innehåller data om Co2 och visas vid tryck på "Sök och jämför år" på Co2-vyn och dess subvyer
 const Table = (props) => {
   let tabledata = props.mydata;
@@ -9,7 +10,9 @@ const Table = (props) => {
   return (
     <div style={{ marginTop: "-1em" }}>
       {tabledata.length > 0 && (
-        <table className="table table-striped" style={{}}>
+
+        <div className= "table-responsive">
+        <table className="table table-striped col-sm-6" style={{}}>
           <thead className="thead" style={{ backgroundColor: "white" }}>
             <tr>
               <th scope="col">År</th>
@@ -33,6 +36,7 @@ const Table = (props) => {
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );

@@ -142,10 +142,13 @@ Body {
   padding-top: 1.1rem !important;
 }
 
+/*stylar modalheader*/
 .modal-header {
   border: none;
   padding-bottom: 0;
 }
+
+/*stylar knapp i mobilläge*/
 .egen-btn,
 .egen-btn:active,
 .egen-btn:hover {
@@ -157,6 +160,7 @@ Body {
   border: none;
 }
 
+/*stylar tabellen*/
 tr:nth-child(even) {
   background-color: #b9d1e4;
 }
@@ -170,30 +174,37 @@ th {
   color: #83a9cf;
 }
 
+/*stylar alla h1*/
 h1 {
   color: rgb(158, 145, 127);
 }
 
+/*stylar sök-knappen till filterfunktionen*/
 .searchButton {
   margin-top: 1em !important;
   background-color: #80c7a9 !important;
   border: none !important;
   margin-top: 2em !important;
+  visibility: visible!important;
 }
 
 button:hover {
   background-color: #95c0e4 !important;
 }
 
+/*stylar info-texten*/
 .aboutText {
   margin-top: 0em !important;
 }
 
+/*stylar mobilmenybild*/
 .mobil-menu-img {
   margin-left: -1em !important;
 }
 
+/*stylar länken ekoavtryck*/
 .ekoAvtLink:hover {
 color: darkgreen;
 cursor: pointer;
 }
+

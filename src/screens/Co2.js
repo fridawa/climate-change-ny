@@ -30,9 +30,9 @@ const Co2 = (props) => {
   // Id för att matcha infortexten
   const idkey = "Koldioxidutsläpp";
 
-  const errorHandler = (error, errorInfo) => {
+ /*  const errorHandler = (error, errorInfo) => {
     console.log("logging", error, errorInfo)
-  }
+  } */
 
   return (
     <>
@@ -45,18 +45,19 @@ const Co2 = (props) => {
           {/* Syns bara i md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
-            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text .d-sm-none .d-md-block d-none d-md-block d-sm-block d-sm-none"
           >
             {/* Infotext */}
             <InfoText id={idkey} />
 
+            
             <Button
               className="searchButton"
               onClick={() => setFilterModalShow(true)}
-              className="searchButton"
             >
               Sök och jämför år
             </Button>
+            
           </Col>
 
           {/* Syns bara i xs-sm */}
