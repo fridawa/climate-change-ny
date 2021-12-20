@@ -1,4 +1,4 @@
-import InfoText from "../InfoText";
+import InfoText from "./InfoText";
 import ShowMoreText from "react-show-more-text";
 
 const InfoTextMobile = (props) => {

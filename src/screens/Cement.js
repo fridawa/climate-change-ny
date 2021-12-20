@@ -15,7 +15,7 @@ import {
 //import components
 import bakgrund1 from "../Images/back-co2.png";
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
-import InfoText from "../components/InfoText";
+import InfoText from "../components/AboutTexts/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const Cement = (props) => {

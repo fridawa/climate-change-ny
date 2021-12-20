@@ -16,7 +16,7 @@ import {
 //import components
 import bakgrund1 from "../Images/back-globaltemp-copy.png";
 import ModalFilterYearsTemp from "../components/Modals/ModalFilterYearsTemp";
-import InfoText from "../components/InfoText";
+import InfoText from "../components/AboutTexts/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const GlobalTemp = () => {

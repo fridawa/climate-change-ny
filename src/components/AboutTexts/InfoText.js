@@ -1,4 +1,4 @@
-import AboutTexts from "./AboutTexts/AboutTextArray";
+import AboutTexts from "./AboutTextArray";
 
 const InfoText = (props) => {
   const match1 = AboutTexts.map((e) => {
