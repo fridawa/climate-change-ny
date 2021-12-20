@@ -1,9 +1,13 @@
+//library imports
 import { Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
+//component imports
 import TableGlacier from "../Filterfunktionen/TableYearsGlaciers";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
+//importerar glaciärdata från API och använder useState för att kunna "set" datan beroende 
+//på värdet (år) som ska filtreras till/från och visa den valda datan
 const ModalFilterYearsGlaciers = (props) => {
   const [GlacierData, setGlacierData] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
@@ -18,6 +22,7 @@ const ModalFilterYearsGlaciers = (props) => {
       });
   }, []);
 
+  //hanterar imput från användaren och genererar baserat på glaciärdatan data till/från valda år
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...GlacierData];
     if (YearFrom != "" && YearTo != "") {
@@ -26,6 +31,7 @@ const ModalFilterYearsGlaciers = (props) => {
       );
     }
 
+    //funktion kopplad till radioknappar som genererar åren lågt till högt/högt till lågt beroende på vilken knapp som väljs
     if (Order === "LTH") {
       filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
     } else if (Order === "HTL") {
@@ -37,6 +43,7 @@ const ModalFilterYearsGlaciers = (props) => {
 
   return (
     <Modal
+    //"property spread notation" refererar till alla objekt i glaciär-data
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

@@ -1,9 +1,11 @@
+// Tabellen innehåller data om Co2 och visas vid tryck på "Sök och jämför år" på Co2-vyn och dess subvyer
 const Table = (props) => {
   let tabledata = props.mydata;
 
   if (tabledata.length === 0)
     return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
 
+    //tabell
   return (
     <div style={{ marginTop: "-1em" }}>
       {tabledata.length > 0 && (

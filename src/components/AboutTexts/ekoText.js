@@ -1,6 +1,10 @@
+//import library
 import { useState } from "react";
+//import components
 import ModalFootprint from "../Modals/ModalFootPrint";
 
+//Ekotext syns på hem-vyn.
+// Vid tryck på "ekologiska fotavtryck" öppnas modalen ModalFootprint (egen komponent)
 const EkoText = () => {
   const [modalFootprintShow, setModalFootprintShow] = useState(false);
 
@@ -13,7 +17,9 @@ const EkoText = () => {
             onClick={() => setModalFootprintShow(true)}
             className="link-text fw-bold"
           >
+          <p className="ekoAvtLink">
             ekologiska fotavtryck
+            </p>
           </span>
           .
         </p>
