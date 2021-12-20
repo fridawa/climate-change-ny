@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ErrorBoundary extends Component {
+export class ErrorBoundary extends Component {
 
     constructor(props) {
         super(props)
@@ -9,29 +9,22 @@ class ErrorBoundary extends Component {
             hasError: false
         }
     }
-    
-    static getDerivedStateFromError(error) {
-        return { 
-            hasError: true 
-        }
-    }
-     
+      
     static getDerivedStateFromError(error) {
         return {
             hasError: true
         }
     }
-    componentDidCatch(error, info) {
-        console.log(error)
-        console.log(info)
+
+    componentDidCatch(error, errorInfo) {
+        console.log("logging", error, errorInfo)
     }
 
     render() {
         if (this.state.hasError) {
-            return <h1 style={{color: "red"}}>ooooops!</h1>
+            return <h1>ooooops!</h1>
         }
         return this.props.children
     }
-}
 
-export default ErrorBoundary;
+}

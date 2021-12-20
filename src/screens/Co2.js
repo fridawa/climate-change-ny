@@ -1,6 +1,8 @@
 //import libraries and extentions
 import { Container, Col, Button } from "react-bootstrap";
 import { useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import { Fallback } from "../components/Fallback";
 
 import {
   XAxis,
@@ -27,6 +29,10 @@ const Co2 = (props) => {
 
   // Id för att matcha infortexten
   const idkey = "Koldioxidutsläpp";
+
+  const errorHandler = (error, errorInfo) => {
+    console.log("logging", error, errorInfo)
+  }
 
   return (
     <>
