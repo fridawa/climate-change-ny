@@ -22,7 +22,7 @@ import InfoText from "../components/InfoText";
 const OceanLevels = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
-
+/* 
   //konvertera string till int
   const yearAsIntt = fetchedData.map((n) => {
     const yearAsString = n.Time.slice(0, 4);
@@ -31,7 +31,7 @@ const OceanLevels = () => {
   });
 
   console.log(yearAsIntt);
-
+ */
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/sealevel.json?key=8eb9e6f0")
