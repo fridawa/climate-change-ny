@@ -1,13 +1,18 @@
+//import components
 import InfoText from "../InfoText";
 import ShowMoreText from "react-show-more-text";
 
+//infotext i mobilvy, visas vid tryck på frågetecken och får sin props-data genon InfoText (komponent för sotrskärmsvy)
 const InfoTextMobile = (props) => {
+
+  //funktionen executeOnClick expanderar texten och är kopplad till onClick nedan
   function executeOnClick(isExpanded) {
     console.log(isExpanded);
   }
   console.log(props.id);
   const idkey = props.id;
 
+  //returnerar utvikbar text genom tryck på "Läs mer" som endast visas vid tryck (expanded={false})
   return (
     <ShowMoreText
       lines={1}

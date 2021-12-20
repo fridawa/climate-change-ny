@@ -28,6 +28,9 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  if (fetchedDataCo2.length === 0)
+    return <p>Sidan laddas. Tar det lång tid? Testa att uppdatera sidan!</p>;
+
   return (
     <div className="App">
       <Menu />
@@ -66,5 +69,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
