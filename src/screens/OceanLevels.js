@@ -17,12 +17,12 @@ import {
 import bakgrund1 from "../Images/back-ocean.png";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 import ModalFilterYearsOceanLev from "../components/Modals/ModalFilterYearsOceanLev";
-import InfoText from "../components/AboutTexts/InfoText";
+import InfoText from "../components/InfoText";
 
 const OceanLevels = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
-  /* 
+/* 
   //konvertera string till int
   const yearAsIntt = fetchedData.map((n) => {
     const yearAsString = n.Time.slice(0, 4);

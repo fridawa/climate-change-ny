@@ -16,7 +16,7 @@ import {
 import bakgrund1 from "../Images/back-co2.png";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 import ModalFilterYears from "../components/Modals/ModalFilterYears";
-import InfoText from "../components/AboutTexts/InfoText";
+import InfoText from "../components/InfoText";
 
 const GasFlaring = (props) => {
   const [modalFilterShow, setFilterModalShow] = useState(false);
