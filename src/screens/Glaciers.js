@@ -16,7 +16,7 @@ import {
 //import components
 import bakgrund1 from "../Images/back-glaciers.png";
 import ModalFilterYearsGlaciers from "../components/Modals/ModalFilterYearsGlaciers";
-import InfoText from "../components/InfoText";
+import InfoText from "../components/AboutTexts/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const Glaciers = () => {
