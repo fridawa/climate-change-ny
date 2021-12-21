@@ -1,8 +1,8 @@
 //import libraries and extentions
 import { Container, Col, Button } from "react-bootstrap";
 import { useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import { Fallback } from "../components/Fallback";
+// import { ErrorBoundary } from "react-error-boundary";
+// import { Fallback } from "../components/Fallback";
 
 import {
   XAxis,
@@ -30,7 +30,7 @@ const Co2 = (props) => {
   // Id för att matcha infortexten
   const idkey = "Koldioxidutsläpp";
 
- /*  const errorHandler = (error, errorInfo) => {
+  /*  const errorHandler = (error, errorInfo) => {
     console.log("logging", error, errorInfo)
   } */
 
@@ -45,29 +45,34 @@ const Co2 = (props) => {
           {/* Syns bara i md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
-            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text .d-sm-none .d-md-block d-none d-md-block d-sm-block d-sm-none"
+            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Infotext */}
             <InfoText id={idkey} />
 
-            
             <Button
               className="searchButton"
               onClick={() => setFilterModalShow(true)}
             >
               Sök och jämför år
             </Button>
-            
           </Col>
 
           {/* Syns bara i xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
             <h1>Koldioxidutsläpp</h1>
             <InfoTextMobile id={idkey} />
+
+            <Button
+              className="searchButton"
+              onClick={() => setFilterModalShow(true)}
+            >
+              Sök och jämför år
+            </Button>
           </Col>
 
           {/* Grafen */}
-          <div className="wrapper overlay-graf pt-5">
+          <div className="wrapper overlay-graf pt-2 pt-md-5">
             <ResponsiveContainer width="100%" height="80%">
               <BarChart
                 data={props.fetchedData}

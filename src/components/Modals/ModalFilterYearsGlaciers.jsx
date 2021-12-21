@@ -6,25 +6,19 @@ import { useEffect, useState } from "react";
 import TableGlacier from "../Filterfunktionen/TableYearsGlaciers";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
-//importerar glaciärdata från API och använder useState för att kunna "set" datan beroende 
+//importerar glaciärdata från API och använder useState för att kunna "set" datan beroende
 //på värdet (år) som ska filtreras till/från och visa den valda datan
 const ModalFilterYearsGlaciers = (props) => {
-  const [GlacierData, setGlacierData] = useState([]);
+  // const [GlacierData, setGlacierData] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
 
   useEffect(() => {
-    const url = "https://my.api.mockaroo.com/glaciersize.json?key=8eb9e6f0";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setGlacierData(data);
-        setFiltereddata(data);
-      });
+    setFiltereddata(props.data);
   }, []);
 
   //hanterar imput från användaren och genererar baserat på glaciärdatan data till/från valda år
   const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...GlacierData];
+    let filtereddata = [...props.data];
     if (YearFrom != "" && YearTo != "") {
       filtereddata = filtereddata.filter(
         (glacier) => glacier.Year >= YearFrom && glacier.Year <= YearTo
@@ -43,7 +37,7 @@ const ModalFilterYearsGlaciers = (props) => {
 
   return (
     <Modal
-    //"property spread notation" refererar till alla objekt i glaciär-data
+      //"property spread notation" refererar till alla objekt i glaciär-data
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

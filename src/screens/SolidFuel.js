@@ -57,10 +57,16 @@ const SolidFuel = (props) => {
           <Col className="d-md-none mt-5 ps-2">
             <h1>Fast bränsle</h1>
             <InfoTextMobile id={idkey} />
+            <Button
+              className="searchButton"
+              onClick={() => setFilterModalShow(true)}
+            >
+              Sök och jämför år
+            </Button>
           </Col>
 
           {/* Grafen */}
-          <div className="wrapper overlay-graf pt-5">
+          <div className="wrapper overlay-graf pt-2 pt-md-5">
             <ResponsiveContainer width="100%" height="80%">
               <AreaChart
                 data={props.fetchedData}
