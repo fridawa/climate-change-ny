@@ -1,10 +1,16 @@
+//import libraries and packages
 import { Container, Row, Col, Navbar, Nav, Dropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+
+//import components
 import Logo from "../components/Logo";
 import navLinksCo2 from "./navlinksco2";
 import navLinks from "./navLinks";
 import co2img from "../Images/menu-co2.png";
 
+// the mobile Menu component, found in the App.js (only shown on small screens)
+// containing navlinks (images and lables) to all of the views via paths
+// the Co2 nav is a dropdown, containing the Co2 subnavs
 const MobilMenu = () => {
   return (
     <>

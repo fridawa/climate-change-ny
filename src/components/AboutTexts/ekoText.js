@@ -3,8 +3,9 @@ import { useState } from "react";
 //import components
 import ModalFootprint from "../Modals/ModalFootPrint";
 
-//Ekotext syns på hem-vyn.
-// Vid tryck på "ekologiska fotavtryck" öppnas modalen ModalFootprint (egen komponent)
+// Ekotext component is used in Home.js
+// On click, the modal ModalFootprint will appear (will be set to true)
+
 const EkoText = () => {
   const [modalFootprintShow, setModalFootprintShow] = useState(false);
 
@@ -23,7 +24,8 @@ const EkoText = () => {
           </span>
           .
         </p>
-        {/*//popup/modal som visar hur besökaren kan påverka sitt klimatavtryck */}
+
+        {/*//modal modalFootprint */}
         <ModalFootprint
           show={modalFootprintShow}
           onHide={() => setModalFootprintShow(false)}

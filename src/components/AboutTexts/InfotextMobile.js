@@ -2,15 +2,19 @@
 import InfoText from "./InfoText";
 import ShowMoreText from "react-show-more-text";
 
-//infotext i mobilvy, visas vid tryck på frågetecken och får sin props-data genon InfoText (komponent för sotrskärmsvy)
+// the InfoTextMobile component prints the InfoText in mobile view
+// through props and idkey the InfoText component can be used in all line chart views
+// All text is visible only when "Läs mer" is clicked and the function executeOnClick makes the text expand
+
+
 const InfoTextMobile = (props) => {
-  //funktionen executeOnClick expanderar texten och är kopplad till onClick nedan
+  //executeOnClick expands the text and is connected to onClick in the ShowMoreText component below
   function executeOnClick(isExpanded) {
     console.log(isExpanded);
   }
   const idkey = props.id;
 
-  //returnerar utvikbar text genom tryck på "Läs mer" som endast visas vid tryck (expanded={false})
+  //returnes unfolded text on click, otherwise expanded={false}
   return (
     <>
       <ShowMoreText
@@ -23,10 +27,7 @@ const InfoTextMobile = (props) => {
         expanded={false}
         width={0}
         truncatedEndingComponent={"... "}
-      >
-        {/* Vill få den att gömma headingen bara skicka med paragraphen
-      Förstår inte varför headingen står med, för den är
-       gömd när det fälls ut */}
+      >   
         <InfoText id={idkey} />
       </ShowMoreText>
     </>

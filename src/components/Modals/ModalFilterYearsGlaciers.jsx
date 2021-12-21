@@ -6,43 +6,45 @@ import { useEffect, useState } from "react";
 import TableGlacier from "../Filterfunktionen/TableYearsGlaciers";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
-// FilterModalen för Glaciärdata
-//Använder useState för att kunna "set" datan beroende
-//på värdet (år) som ska filtreras till/från och visa den valda datan
+// FilterModal for Glacier data
+// Uses useState to "set" the data depending on the value of the input (years)
+// The modal contains the filter function (FilterYears.jsx) for Glaciers and the table (TableYearsGlaciers.jsx)
 const ModalFilterYearsGlaciers = (props) => {
   const [filtereddata, setFiltereddata] = useState([]);
 
-  //får datan från glaciers i props.data
+  // gets the Glaciers data from Glaciers.js (the filtered data)
   useEffect(() => {
     setFiltereddata(props.data);
   }, []);
 
-  // Funktion som hanterar de values som användaren fyller i i FilterYears.
-  // Skapar en ny variabel som är en kopia på API-arrayen för att kunna modifiera denna
-  // hanterar input från användaren och genererar baserat på glaciärdatan data till/från valda år
+  //The function handles the input values from FilterYears.
+  // Creates a new variable (filtererdata) (copy of API-data) to be modified
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...props.data];
+
+     // if YearFrom and Year to has text inputs, the data will be filtered 
     if (YearFrom != "" && YearTo != "") {
       filtereddata = filtereddata.filter(
         (glacier) => glacier.Year >= YearFrom && glacier.Year <= YearTo
       );
     }
 
-    //funktion kopplad till radioknappar som genererar åren lågt till
-    // högt/högt till lågt beroende på vilken knapp som väljs
+   //if order === LTH (value from the radio button) sort data low to high
+    //if order === HTL (value from the radio button) sort data high to low
     if (Order === "LTH") {
       filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
     } else if (Order === "HTL") {
       filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
     }
 
-    // Uppdaterar filtereddata utefter de modifieringar som gjorts
+    // Updates the filtereddata when modifcations are made
     setFiltereddata(filtereddata);
   };
 
+  // the modal containing the <FilterYears> component and the <TableGlacier> component from FilterYear.jsx and TableYearsGlacier.jsx
   return (
     <Modal
-      //"property spread notation" refererar till alla objekt i glaciär-data
+      //"property spread notation" refers to all objectt i glacier data
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -55,15 +57,15 @@ const ModalFilterYearsGlaciers = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Container>
-          {/* Skickar funktionen handleYearFilter så att
-          FilterYears kommer åt denna vid knappklick */}
+           {/* Sends the function handleYearFilter so that the
+          FilterYears component is connected on click*/}
           <FilterYears
             onYearFilter={handleYearFilter}
             style={{ marginBottom: "3em" }}
           />
           <div style={{ marginTop: "3em" }}>
-            {/* Skickar både filtereddata samt ursrpungliga datan
-            för att kunna ge felmeddelanden om datan inte finns */}
+            {/* Sends both filtereddata and the original data
+            to be able to give error messange if the data is not existing */}
             <TableGlacier myFilteredData={filtereddata} myData={props.data} />
           </div>
         </Container>

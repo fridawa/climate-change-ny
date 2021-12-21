@@ -1,6 +1,11 @@
+//internal image imports 
+
 import havimg from "../Images/menu-ocean.png";
 import solimg from "../Images/menu-globaltemp.png";
 import isimg from "../Images/menu-glaciers.png";
+
+// array of the navigation links for Global Temp, Glaciers and Ocean Levels (images)
+// used in menu.js and mobilmenu.js
 const navLinks = [
   {
     id: 1,

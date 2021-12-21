@@ -1,3 +1,5 @@
+// the AboutText component printed on the homepage (in component Home.js)
+
 const AboutText = () => {
   return (
     <>

@@ -1,3 +1,5 @@
+// the AboutTexts array used to print the info texts in each line chart
+
 const AboutTexts = [
   {
     id: 0,

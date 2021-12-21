@@ -199,6 +199,9 @@ button:hover {
   margin-left: -1em !important;
 }
 
+.ekoAvtLink {
+  color: #61b491;
+}
 /*stylar länken ekoavtryck*/
 .ekoAvtLink:hover {
   color: darkgreen;

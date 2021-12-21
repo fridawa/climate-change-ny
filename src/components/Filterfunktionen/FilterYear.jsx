@@ -1,28 +1,30 @@
-//import library
+//import libraries
 import { useState } from "react";
 import { Row, Col, Button, Form, Container } from "react-bootstrap";
 
+// Component that allows the user to input years and filter data. Is shown in each ModalFilterYears
 const FilterYears = (props) => {
 
   const [YearFrom, setYearFrom] = useState();
   const [YearTo, setYearTo] = useState();
   const [Order, setYearOrder] = useState("LTH");
   
-// beroende på värdet från input från checkbox ändras ordningen på den printade datan
+// depending on which radio button is clicked, the order of the data will be changed
   const handleYearOrder = (e) => {
     setYearOrder(e.target.value);
   };
 
-  // Modalens innehåll med förklarande text, inputfält, radioknappar och "filter"-knapp
-  // onChange (setYearFrom, setYearto) fångar värdet på input och uppdaterar useState
-  // handleYearOrder sätter ordningen på datan, dvs LTH (LÅGT TILL HÖGT) eller HTL (HÖGT TILL LÅGT)
-  // knappfunktionen tar props (datan) och filtrerar denna baserat på useState för YearTo, YearFrom och Order
+  // Contains the content of the modal
+  // onChange (setYearFrom, setYearto), the value is captured and the useState updated
+  // handleYearOrder sets the order - LTH (Low to High) or HTL (High to Low)
+  // the button takes props (data) and filter it beased on useState for YearTo, YearFrom och Order
   return (
     <>
     <Container>
       <Row style= {{marginLeft:" -1.5em", marginBottom: "", marginTop: "1em"}}>
         <Col sm={2}>
-          <div className="">
+          <div>
+          {/* form for "year from" */}
             <Form.Label>Från år </Form.Label>
             <input
             class="form-control" 
@@ -32,11 +34,12 @@ const FilterYears = (props) => {
               onChange={(e) => setYearFrom(e.target.value)}
               value={YearFrom}
             ></input>
-            
           </div>
         </Col>
+
         <Col sm={2} style= {{}}>
-          <div className="">
+          <div>
+          {/* form for "year from"*/}
             <Form.Label>Till år</Form.Label>
             <input 
             class="form-control" 
@@ -50,6 +53,7 @@ const FilterYears = (props) => {
         
         <Col sm={3} style= {{marginLeft: "-1em"}}>
           <div style= {{marginTop: "1.5em"}}>
+          {/*Radio Button LTH*/}
           <div class="form-check">
             <input
               type="radio"
@@ -61,9 +65,9 @@ const FilterYears = (props) => {
             ></input>
             {" "}Ordna lågt till högt
             </div>
+            {/*Radio Button HTL*/}
             <div class="form-check">
             <input
-            
               type="radio"
               value="HTL"
               name="rdo"
@@ -77,6 +81,7 @@ const FilterYears = (props) => {
         </Col>
         <Col >
 
+       {/*"button that triggers the filter funtion and returns the input years and selected order "*/}
           <Button 
           style={{marginTop: "1.8em", backgroundColor:"#83a9cf", border:"none"}}
             variant="primary"

@@ -1,5 +1,9 @@
+// import components
 import AboutTexts from "./AboutTextArray";
 
+// the InfoText component maps over About texts in the AboutTextArray 
+// and prints out the objects in each line chart
+// through props and idkey the InfoText component can be used in all line charts
 const InfoText = (props) => {
   const match1 = AboutTexts.map((e) => {
     if (e.heading === props.id) {

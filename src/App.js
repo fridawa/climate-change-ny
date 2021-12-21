@@ -17,7 +17,7 @@ import LiquidFuel from "./screens/LiquidFuel";
 import SolidFuel from "./screens/SolidFuel";
 import Cement from "./screens/Cement";
 import { Routes, Route } from "react-router-dom";
-
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -42,15 +42,19 @@ function App() {
 //   else {"logging the error"}
 //   alert ("something happend")
 // }
+
+// if statement that alerts the user id the data can not be fetched by any reason
+
 // FATTAR INTE VARFÖR INTE DET SKRIVS UT DET SOM STÅR I ERROR
  if (fetchedDataCo2.length === 0) {
   //  throw new Error ("Åh nej, sidan kan inte laddas. Försök igen om en liten stund!");
    return <p>Sidan laddas. Tar det lång tid? Testa att uppdatera sidan!</p>;
  }  
   
-
- 
+ // app component containing all the climare view components, meues and footer
+ // Routes and path makes the navigation possible
   return (
+   <>
     <div className="App">
     
       <Menu />
@@ -85,11 +89,11 @@ function App() {
           element={<Cement fetchedData={fetchedDataCo2} />}
         ></Route>
       </Routes>
-      
     </div>
-    
+    <Footer />
+    </>
   );
 }
 
-
+// exported to be rendered in the root 
 export default App;
