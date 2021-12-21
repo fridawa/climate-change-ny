@@ -21,10 +21,11 @@ import InfoText from "../components/AboutTexts/InfoText";
 const GasFlaring = (props) => {
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-  // Id för att matcha infortexten
+  // Id to match the info text (printed on the chart)
   const idkey = "Gaseldning";
 
-  // Applikationens innehåll med förklarande text samt en line chart
+  // The content off the app viev (Gas Flaring) with info text and a line chart
+  // the component is imported and used in the App.js component
   return (
     <>
       <Container
@@ -33,15 +34,15 @@ const GasFlaring = (props) => {
         style={{ backgroundImage: `url(${bakgrund1})` }}
       >
         <div className="pt-4 mt-4 pt-md-5 mt-md-5">
-          {/* Syns bara i md-xl */}
+          {/* Only visible in  md-xl */}
           <Col
             md={{ span: 6, offset: 1 }}
             className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
           >
-            {/* Infotext */}
+            {/* Info text */}
             <InfoText id={idkey} />
 
-            {/* vid tryck på knappen visas modalen (setFilterModalShow blir true) */}
+            {/* The modal is shown on click (setFilterModalShow sets to true) */}
             <Button
               onClick={() => setFilterModalShow(true)}
               className="searchButton"
@@ -50,7 +51,7 @@ const GasFlaring = (props) => {
             </Button>
           </Col>
 
-          {/* Syns bara i xs-sm */}
+          {/* Only visible in xs-sm */}
           <Col className="d-md-none mt-5 ps-2">
             <h1>Gaseldning</h1>
             <InfoTextMobile id={idkey} />
@@ -62,7 +63,7 @@ const GasFlaring = (props) => {
             </Button>
           </Col>
 
-          {/* Grafen */}
+          {/* The graph. Using the fetched Co2 data */}
           <div className="wrapper overlay-graf pt-2 pt-md-5">
             <ResponsiveContainer width="100%" height="80%">
               <AreaChart
@@ -103,7 +104,7 @@ const GasFlaring = (props) => {
           </div>
         </div>
 
-        {/* modal-komponenten som hanterar sök/filterfunktion.*/}
+        {/* Modal with data table and filter function. Uses the fetched data via props */}
         <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}

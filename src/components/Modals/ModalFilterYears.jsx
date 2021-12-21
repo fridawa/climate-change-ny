@@ -1,39 +1,47 @@
+//import libraries
 import { Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
+//import components
 import Table from "../Filterfunktionen/TableYears";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
-// FilterModalen för Co2 och alla subdata för co2
+// FilterModal for Co2 data
+// Uses useState to "set" the data depending on the value of the input (years)
+// The modal contains the filter function (FilterYears.jsx) for Co2 and co2 subdata and the table (TableYears.jsx)
 const ModalFilterYears = (props) => {
   const [filtereddata, setFiltereddata] = useState([]);
 
-  //får datan från co2/gasflaring/cement i props.data
+// gets the Co2 data from Co2.js (the filtered data)
   useEffect(() => {
     setFiltereddata(props.data);
   }, []);
 
-  //Funktion som hanterar de values som användaren fyller i i FilterYears.
-  // Skapar en ny variabel som är en kopia på API-arrayen för att kunna modifiera denna
+  //The function handles the input values from FilterYears.
+  // Creates a new variable (filtererdata) (copy of API-data) to be modified
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...props.data];
 
+  // if YearFrom and Year to has text inputs, the data will be filtered 
     if (YearFrom != "" && YearTo != "") {
       filtereddata = filtereddata.filter(
         (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
       );
     }
 
+    //if order === LTH (value from the radio button) sort data low to high
+    //if order === HTL (value from the radio button) sort data high to low
     if (Order === "LTH") {
       filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
     } else if (Order === "HTL") {
       filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
     }
 
-    // Uppdaterar filtereddata utefter de modifieringar som gjorts
+    // Updates the filtereddata when modifcations are made
     setFiltereddata(filtereddata);
   };
 
+  // the modal containing the <FilterYears> component and the <Table> component from FilterYear.jsx and TableYears.jsx
   return (
     <Modal
       {...props}
@@ -48,15 +56,15 @@ const ModalFilterYears = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Container>
-          {/* Skickar funktionen handleYearFilter så att
-          FilterYears kommer åt denna vid knappklick */}
+          {/* Sends the function handleYearFilter so that the
+          FilterYears component is connected on click*/}
           <FilterYears
             onYearFilter={handleYearFilter}
             style={{ marginBottom: "3em" }}
           />
           <div style={{ marginTop: "3em" }}>
-            {/* Skickar både filtereddata samt ursrpungliga datan
-            för att kunna ge felmeddelanden om datan inte finns */}
+            {/* Sends both filtereddata and the original data
+            to be able to give error messange if the data is not existing */}
             <Table myFilteredData={filtereddata} myData={props.data} />
           </div>
         </Container>

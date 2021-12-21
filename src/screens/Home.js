@@ -6,6 +6,8 @@ import { Container, Row, Col } from "react-bootstrap";
 //import components
 import bakgrund1 from "../Images/back-index.png";
 
+// Home component rendered in the App.js component
+// containing the <AboutText> component and the <EkoText> component
 const Home = () => {
   return (
     <Container
@@ -26,4 +28,6 @@ const Home = () => {
     </Container>
   );
 };
+
+// exporting the component so that it can be used in the App.js component
 export default Home;

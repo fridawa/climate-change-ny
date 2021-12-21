@@ -1,23 +1,24 @@
+// import libraries
 import { Modal, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
+//import components
 import TableTemp from "../Filterfunktionen/TableYearsTemp";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
-// FilterModalen för Global Temp
-//Använder useState för att kunna "set" datan beroende
-//på värdet (år) som ska filtreras till/från och visa den valda datan
+// FilterModal for Global temperature data
+// Uses useState to "set" the data depending on the value of the input (years)
+// The modal contains the filter function (FilterYears.jsx) for Global temp and the table (TableYearsTemp.jsx)
 const ModalFilterYearsTemp = (props) => {
   const [filtereddata, setFiltereddata] = useState([]);
 
-  //får datan från global temp i props.data
+  // gets the Temperatures data via props from GlobalTemp.js (the filtered data)
   useEffect(() => {
     setFiltereddata(props.data);
   }, []);
 
-  // Funktion som hanterar de values som användaren fyller i i FilterYears.
-  // Skapar en ny variabel som är en kopia på API-arrayen för att kunna modifiera denna
-  // hanterar input från användaren och genererar baserat på glaciärdatan data till/från valda år
+  // The function handles the input values from FilterYears.
+  // Creates a new variable (filtererdata) (copy of API-data) to be modified
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...props.data];
     if (YearFrom != "" && YearTo != "") {
@@ -26,14 +27,14 @@ const ModalFilterYearsTemp = (props) => {
       );
     }
 
-    //funktion kopplad till radioknappar som genererar åren lågt till högt/högt
-    // till lågt beroende på vilken knapp som väljs
+   //if order === LTH (value from the radio button) sort data low to high
+    //if order === HTL (value from the radio button) sort data high to low
     if (Order === "LTH") {
       filtereddata.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
     } else if (Order === "HTL") {
       filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
     }
-    // Uppdaterar filtereddata utefter de modifieringar som gjorts
+    // Updates the filtereddata when modifcations are made
     setFiltereddata(filtereddata);
   };
 
@@ -51,15 +52,15 @@ const ModalFilterYearsTemp = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Container>
-          {/* Skickar funktionen handleYearFilter så att
-          FilterYears kommer åt denna vid knappklick */}
+           {/* Sends the function handleYearFilter so that the
+          FilterYears component is connected on click*/}
           <FilterYears
             onYearFilter={handleYearFilter}
             style={{ marginBottom: "3em" }}
           />
           <div style={{ marginTop: "3em" }}>
-            {/* Skickar både filtereddata samt ursrpungliga datan
-            för att kunna ge felmeddelanden om datan inte finns */}
+            {/* Sends both filtereddata and the original data
+            to be able to give error messange if the data is not existing */}
             <TableTemp myFilteredData={filtereddata} myData={props.data} />
           </div>
         </Container>

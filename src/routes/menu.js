@@ -1,10 +1,16 @@
+// import libraies
 import { Container, Col, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+
+//import components
 import Logo from "../components/Logo";
 import navLinksCo2 from "./navlinksco2";
 import navLinks from "./navLinks";
 import co2img from "../Images/menu-co2.png";
 
+// the standars Menu component, found in the App.js
+// containing navlinks (images and lables) to all of the views via paths
+// the Co2 nav is a dropdown, containing the Co2 subnavs
 const Menu = () => {
   return (
     <>

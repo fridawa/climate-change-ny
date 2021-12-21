@@ -1,3 +1,5 @@
+// array of the navigation links for Global Temp, Glaciers and Ocean Levels (images)
+// used in menu.js and mobilmenu.js
 const navLinksCo2 = [
   {
     id: 0,

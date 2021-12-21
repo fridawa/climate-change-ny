@@ -1,5 +1,7 @@
+// import libraries
 import { Modal, Col, Row } from "react-bootstrap";
 
+// the ModalFootprint is shown on click on "ekologiska fotavtryck" in the EkoText component
 const ModalFootprint = (props) => {
   return (
     <Modal
