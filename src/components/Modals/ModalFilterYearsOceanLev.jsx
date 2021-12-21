@@ -41,6 +41,7 @@ const ModalFilterYearsOceanLev = (props) => {
 
   return (
     <Modal
+      //"property spread notation" refererar till alla objekt i ocean level-data
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
