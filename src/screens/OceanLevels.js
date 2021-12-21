@@ -40,7 +40,7 @@ const OceanLevels = () => {
   };
 
   // Applikationens innehåll med förklarande text samt en linjegraf
-   // The content off the app viev (Ocean levels) with info text and a line chart
+  // The content off the app viev (Ocean levels) with info text and a line chart
   // the component is imported and used in the App.js component
   return (
     <>
