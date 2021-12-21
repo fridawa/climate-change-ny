@@ -23,16 +23,6 @@ const OceanLevels = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
-  //  // konvertera string till int
-  // function xAxisTickFormatter() {
-  //   fetchedData.map((n) => {
-  //     const yearAsString = n.Time.slice(0, 4);
-  //     return yearAsString;
-  //   });
-  // }
-
-  //   console.log(yearAsIntt);
-
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/sealevel.json?key=8eb9e6f0")
@@ -43,6 +33,7 @@ const OceanLevels = () => {
   // Id för att matcha infortexten
   const idkey = "Havsnivå";
 
+  // Funktion med moment formatter för årtal ist för datum
   const xAxisTickFormatter = (Time) => {
     return moment(Time).format("YYYY");
   };
