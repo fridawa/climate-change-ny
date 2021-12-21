@@ -106,15 +106,15 @@ const GlobalTemp = () => {
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Year" />
-                <YAxis unit=" °C" />
+                <XAxis dataKey="Year" tick={{ fill: "#646143" }} />
+                <YAxis unit=" °C" tick={{ fill: "#646143" }} />
                 <Tooltip />
                 <Legend />
                 <Line
                   type="monotone"
                   dataKey="Mean"
                   stackId="1"
-                  stroke="#EA733D"
+                  stroke="#EC9731"
                   strokeWidth={3}
                   animationDuration={300}
                   dot={false}

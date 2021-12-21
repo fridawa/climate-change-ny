@@ -73,9 +73,25 @@ const Cement = (props) => {
                   bottom: 0,
                 }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Year" />
-                <YAxis unit=" MT" />
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  vertical={true}
+                  horizontal={true}
+                  stroke="#D2CBBA"
+                />
+                <XAxis
+                  dataKey="Year"
+                  tickLine={false}
+                  tick={{ fill: "#646143" }}
+                  stroke="#D2CBBA"
+                  interval={10}
+                />
+                <YAxis
+                  unit=" MT"
+                  tickLine={false}
+                  tick={{ fill: "#646143" }}
+                  stroke="#D2CBBA"
+                />
                 <Tooltip />
                 <Legend />
 

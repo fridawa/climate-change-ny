@@ -78,8 +78,12 @@ const SolidFuel = (props) => {
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Year" />
-                <YAxis unit=" MT" />
+                <XAxis
+                  dataKey="Year"
+                  tick={{ fill: "#646143" }}
+                  stroke="#efefef"
+                />
+                <YAxis unit=" MT" tick={{ fill: "#646143" }} stroke="#efefef" />
                 <Tooltip />
                 <Legend />
 

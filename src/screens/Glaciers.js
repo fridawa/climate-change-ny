@@ -97,12 +97,13 @@ const Glaciers = () => {
                   tickLine={false}
                   tick={{ fill: "#82A1A8" }}
                   stroke="#efefef"
-                  interval={5}
+                  interval={8}
                 />
                 <YAxis
                   tickLine={false}
                   tick={{ fill: "#82A1A8" }}
                   stroke="#efefef"
+                  interval={1}
                   unit=" M"
                 />
                 <Tooltip />

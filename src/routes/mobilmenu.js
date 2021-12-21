@@ -53,6 +53,7 @@ const MobilMenu = () => {
                       </Dropdown.Menu>
                     </Dropdown>
                   </Col>
+
                   <Col xs={10} className="p-0">
                     <Nav.Link>
                       {navLinks.map(({ title, path, img }) => (

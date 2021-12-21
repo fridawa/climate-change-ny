@@ -95,8 +95,12 @@ const OceanLevels = () => {
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Time" />
-                <YAxis unit=" MM" />
+                <XAxis
+                  dataKey="Time"
+                  tick={{ fill: "#646143" }}
+                  stroke="#efefef"
+                />
+                <YAxis unit=" MM" tick={{ fill: "#646143" }} stroke="#efefef" />
                 <Tooltip />
                 <Legend />
                 <Line
