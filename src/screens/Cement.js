@@ -97,7 +97,7 @@ const Cement = (props) => {
                 <Area
                   dataKey="Cement"
                   stackId="a"
-                  fill="#6D4B47"
+                  fill="#645C43"
                   stroke="#645C43"
                   type="monotone"
                   name="Utsläpp cement"

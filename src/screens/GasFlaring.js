@@ -77,13 +77,13 @@ const GasFlaring = (props) => {
                 <CartesianGrid strokeDasharray="3 3" stroke="#E4D5BE" />
                 <XAxis
                   dataKey="Year"
-                  tick={{ fill: "#5B2711" }}
+                  tick={{ fill: "#646143" }}
                   tickLine={false}
                   stroke="#E4D5BE"
                 />
                 <YAxis
                   unit=" MT"
-                  tick={{ fill: "#5B2711" }}
+                  tick={{ fill: "#646143" }}
                   tickLine={false}
                   stroke="#E4D5BE"
                 />
@@ -93,8 +93,8 @@ const GasFlaring = (props) => {
                 <Area
                   dataKey="Gas Flaring"
                   stackId="a"
-                  fill="#6D4B47"
-                  stroke="#6D4B47"
+                  fill="#645C43"
+                  stroke="#645C43"
                   type="monotone"
                   name="Gaseldning"
                 />
