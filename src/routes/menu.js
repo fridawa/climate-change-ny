@@ -36,6 +36,7 @@ const Menu = () => {
                           className="d-inline "
                           src={co2img}
                           style={{ width: 40, height: 40 }}
+                          alt="Co2"
                         ></img>
 
                         <p className="d-inline  align-middle ">Co2</p>
@@ -50,7 +51,7 @@ const Menu = () => {
                           to={path}
                           key={title}
                           className=" ps-3"
-                          activeClassName="active"
+                          activeclassname="active"
                         >
                           {/* försöker style menyn*/}
                           <p>{title}</p>
@@ -64,9 +65,13 @@ const Menu = () => {
                         to={path}
                         key={title}
                         className="d-flex flex-row ps-5 "
-                        activeClassName="active"
+                        activeclassname="active"
                       >
-                        <img src={img} style={{ width: 40, height: 40 }}></img>
+                        <img
+                          src={img}
+                          style={{ width: 40, height: 40 }}
+                          alt={title}
+                        ></img>
                         <p className="align-self-center ">{title}</p>
                       </NavLink>
                     ))}

@@ -17,6 +17,7 @@ const ModalFilterYears = (props) => {
   // Skapar en ny variabel som är en kopia på API-arrayen för att kunna modifiera denna
   const handleYearFilter = (YearFrom, YearTo, Order) => {
     let filtereddata = [...props.data];
+
     if (YearFrom != "" && YearTo != "") {
       filtereddata = filtereddata.filter(
         (co2) => co2.Year >= YearFrom && co2.Year <= YearTo

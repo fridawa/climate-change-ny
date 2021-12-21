@@ -34,6 +34,7 @@ const MobilMenu = () => {
                         <img
                           src={co2img}
                           style={{ width: 35, height: 35 }}
+                          alt="Co2"
                         ></img>{" "}
                       </Dropdown.Toggle>
 
@@ -43,7 +44,7 @@ const MobilMenu = () => {
                             <NavLink
                               to={path}
                               key={title}
-                              activeClassName="active"
+                              activeclassname="active"
                             >
                               <p>{title}</p>
                             </NavLink>
@@ -58,13 +59,14 @@ const MobilMenu = () => {
                         <NavLink
                           to={path}
                           key={title}
-                          activeClassName="active"
+                          activeclassname="active"
                           className=""
                         >
                           <img
                             src={img}
                             style={{ width: 35, height: 35 }}
                             className="ms-3"
+                            alt={title}
                           ></img>
                         </NavLink>
                       ))}
