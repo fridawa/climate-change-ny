@@ -1,12 +1,12 @@
 const TableGlacier = (props) => {
   let tabledatas = props.myDataGlacier;
-
+  let filteredData = props.myFilteredDataGlacier;
   if (tabledatas.length === 0)
     return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
 
   return (
     <div style={{ marginTop: "-1em" }}>
-      {tabledatas.length > 0 && (
+      {filteredData.length > 0 && (
         <table className="table table-striped" style={{}}>
           <thead className="thead" style={{ backgroundColor: "white" }}>
             <tr>
@@ -15,7 +15,7 @@ const TableGlacier = (props) => {
             </tr>
           </thead>
           <tbody>
-            {tabledatas.map((glacier) => (
+            {filteredData.map((glacier) => (
               <tr>
                 <td>{glacier.Year}</td>
                 <td>{glacier["Mean cumulative mass balance"]} m</td>
