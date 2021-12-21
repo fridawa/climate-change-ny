@@ -1,12 +1,13 @@
 const TableOceanLevels = (props) => {
-  let tabledatas = props.mydataOceanLev;
+  let tabledatas = props.myData;
+  let filteredData = props.myFilteredData;
 
   if (tabledatas.length === 0)
     return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
 
   return (
     <div style={{ marginTop: "-1em" }}>
-      {tabledatas.length > 0 && (
+      {filteredData.length > 0 && (
         <table className="table table-striped" style={{}}>
           <thead className="thead" style={{ backgroundColor: "white" }}>
             <tr>
@@ -15,9 +16,9 @@ const TableOceanLevels = (props) => {
             </tr>
           </thead>
           <tbody>
-            {tabledatas.map((oceLev) => (
+            {filteredData.map((oceLev) => (
               <tr>
-                <td>{oceLev["Time"]}</td>
+                <td>{oceLev["Time"].slice(0, 4)}</td>
                 <td>{oceLev["GMSL"]} mm</td>
               </tr>
             ))}

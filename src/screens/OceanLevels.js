@@ -133,6 +133,7 @@ const OceanLevels = () => {
         <ModalFilterYearsOceanLev
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
+          data={fetchedData}
         />
       </Container>
     </>

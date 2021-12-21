@@ -129,6 +129,7 @@ const GlobalTemp = () => {
         <ModalFilterYearsTemp
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
+          data={fetchedData}
         />
       </Container>
     </>
