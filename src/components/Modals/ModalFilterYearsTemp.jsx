@@ -5,21 +5,14 @@ import TableTemp from "../Filterfunktionen/TableYearsTemp";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
 const ModalFilterYearsTemp = (props) => {
-  const [tempData, setTempData] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
 
   useEffect(() => {
-    const url = "https://my.api.mockaroo.com/temp.json?key=8eb9e6f0";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setTempData(data);
-        setFiltereddata(data);
-      });
+    setFiltereddata(props.data);
   }, []);
 
   const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...tempData];
+    let filtereddata = [...props.data];
     if (YearFrom != "" && YearTo != "") {
       filtereddata = filtereddata.filter(
         (temp) => temp.Year >= YearFrom && temp.Year <= YearTo
@@ -54,7 +47,7 @@ const ModalFilterYearsTemp = (props) => {
             style={{ marginBottom: "3em" }}
           />
           <div style={{ marginTop: "3em" }}>
-            <TableTemp mydataTemp={filtereddata} />
+            <TableTemp myFilteredData={filtereddata} myData={props.data} />
           </div>
         </Container>
       </Modal.Body>

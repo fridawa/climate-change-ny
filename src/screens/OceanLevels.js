@@ -32,6 +32,23 @@ const OceanLevels = () => {
 
   console.log(yearAsIntt);
  */
+
+  // let nydata = [...fetchedData];
+
+  // const newdata = nydata.map((e) => {
+  //   return e.Time;
+  // });
+  // console.log(newdata);
+
+  // //arr
+
+  // const Year = fetchedData.map((n) => {
+  //   const yearAsString = n.Time.slice(0, 4);
+  //   const yearAsInt = parseInt(yearAsString);
+  //   return yearAsInt;
+  // });
+  // console.log(Year);
+
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/sealevel.json?key=8eb9e6f0")
