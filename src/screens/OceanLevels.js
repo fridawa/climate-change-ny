@@ -12,7 +12,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
+import moment from "moment";
 //import components
 import bakgrund1 from "../Images/back-ocean.png";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
@@ -24,11 +24,12 @@ const OceanLevels = () => {
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
   //  // konvertera string till int
-  //   const yearAsIntt = fetchedData.map((n) => {
+  // function xAxisTickFormatter() {
+  //   fetchedData.map((n) => {
   //     const yearAsString = n.Time.slice(0, 4);
-  //     const yearAsInt = parseInt(yearAsString);
-  //     return yearAsInt;
+  //     return yearAsString;
   //   });
+  // }
 
   //   console.log(yearAsIntt);
 
@@ -41,6 +42,10 @@ const OceanLevels = () => {
 
   // Id för att matcha infortexten
   const idkey = "Havsnivå";
+
+  const xAxisTickFormatter = (Time) => {
+    return moment(Time).format("YYYY");
+  };
 
   // Applikationens innehåll med förklarande text samt en linjegraf
   return (
@@ -104,6 +109,7 @@ const OceanLevels = () => {
                   tickLine={false}
                   tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
+                  tickFormatter={xAxisTickFormatter}
                 />
                 <YAxis
                   unit=" MM"
