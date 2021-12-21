@@ -100,6 +100,7 @@ const SolidFuel = (props) => {
         <ModalFilterYears
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
+          data={props.fetchedData}
         />
       </Container>
     </>

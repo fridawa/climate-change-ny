@@ -2,6 +2,7 @@ const TableOceanLevels = (props) => {
   let tabledatas = props.myData;
   let filteredData = props.myFilteredData;
 
+  // Felmeddelande om datan inte skulle finnas
   if (tabledatas.length === 0)
     return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
 
@@ -18,6 +19,7 @@ const TableOceanLevels = (props) => {
           <tbody>
             {filteredData.map((oceLev) => (
               <tr>
+                {/* En slice för att inte visa hela datumet */}
                 <td>{oceLev["Time"].slice(0, 4)}</td>
                 <td>{oceLev["GMSL"]} mm</td>
               </tr>

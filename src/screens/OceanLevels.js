@@ -22,32 +22,15 @@ import InfoText from "../components/AboutTexts/InfoText";
 const OceanLevels = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
-  /* 
-  //konvertera string till int
-  const yearAsIntt = fetchedData.map((n) => {
-    const yearAsString = n.Time.slice(0, 4);
-    const yearAsInt = parseInt(yearAsString);
-    return yearAsInt;
-  });
 
-  console.log(yearAsIntt);
- */
+  //  // konvertera string till int
+  //   const yearAsIntt = fetchedData.map((n) => {
+  //     const yearAsString = n.Time.slice(0, 4);
+  //     const yearAsInt = parseInt(yearAsString);
+  //     return yearAsInt;
+  //   });
 
-  // let nydata = [...fetchedData];
-
-  // const newdata = nydata.map((e) => {
-  //   return e.Time;
-  // });
-  // console.log(newdata);
-
-  // //arr
-
-  // const Year = fetchedData.map((n) => {
-  //   const yearAsString = n.Time.slice(0, 4);
-  //   const yearAsInt = parseInt(yearAsString);
-  //   return yearAsInt;
-  // });
-  // console.log(Year);
+  //   console.log(yearAsIntt);
 
   useEffect(() => {
     axios

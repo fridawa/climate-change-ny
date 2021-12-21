@@ -4,22 +4,19 @@ import { useEffect, useState } from "react";
 import Table from "../Filterfunktionen/TableYears";
 import FilterYears from "../Filterfunktionen/FilterYear";
 
+// FilterModalen för Co2 och alla subdata för co2
 const ModalFilterYears = (props) => {
-  const [CO2Emission, setCO2Emission] = useState([]);
   const [filtereddata, setFiltereddata] = useState([]);
 
+  //får datan från co2/gasflaring/cement i props.data
   useEffect(() => {
-    const url = "https://my.api.mockaroo.com/co2.json?key=8eb9e6f0";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setCO2Emission(data);
-        setFiltereddata(data);
-      });
+    setFiltereddata(props.data);
   }, []);
 
+  //Funktion som hanterar de values som användaren fyller i i FilterYears.
+  // Skapar en ny variabel som är en kopia på API-arrayen för att kunna modifiera denna
   const handleYearFilter = (YearFrom, YearTo, Order) => {
-    let filtereddata = [...CO2Emission];
+    let filtereddata = [...props.data];
     if (YearFrom != "" && YearTo != "") {
       filtereddata = filtereddata.filter(
         (co2) => co2.Year >= YearFrom && co2.Year <= YearTo
@@ -31,6 +28,8 @@ const ModalFilterYears = (props) => {
     } else if (Order === "HTL") {
       filtereddata.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
     }
+
+    // Uppdaterar filtereddata utefter de modifieringar som gjorts
     setFiltereddata(filtereddata);
   };
 
@@ -48,12 +47,16 @@ const ModalFilterYears = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Container>
+          {/* Skickar funktionen handleYearFilter så att
+          FilterYears kommer åt denna vid knappklick */}
           <FilterYears
             onYearFilter={handleYearFilter}
             style={{ marginBottom: "3em" }}
           />
           <div style={{ marginTop: "3em" }}>
-            <Table mydata={filtereddata} />
+            {/* Skickar både filtereddata samt ursrpungliga datan
+            för att kunna ge felmeddelanden om datan inte finns */}
+            <Table myFilteredData={filtereddata} myData={props.data} />
           </div>
         </Container>
       </Modal.Body>

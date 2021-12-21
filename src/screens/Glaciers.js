@@ -128,7 +128,6 @@ const Glaciers = () => {
         <ModalFilterYearsGlaciers
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
-          id={idkey}
           data={fetchedData}
         />
       </Container>

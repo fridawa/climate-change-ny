@@ -2,6 +2,7 @@ const TableTemp = (props) => {
   let tabledatas = props.myData;
   let filteredData = props.myFilteredData;
 
+  // Felmeddelande om datan inte skulle finnas
   if (tabledatas.length === 0)
     return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
 
