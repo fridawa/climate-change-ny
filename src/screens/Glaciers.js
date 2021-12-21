@@ -44,10 +44,9 @@ const Glaciers = () => {
         <div className="pt-4 mt-4 pt-md-5 mt-md-5">
           {/* Syns bara i md-xl */}
           <Col
-            xs={{ span: 6, offset: 1 }}
-            xl={{ span: 4, offset: 1 }}
-            md={{ span: 6, offset: 1 }}
-            className="mt-5 ps-5 ps-md-0 pe-md-5 pt-md-5 overlay-text d-none d-md-block"
+            md={{ span: 6, offset: 5 }}
+            lg={{ span: 5, offset: 6 }}
+            className="mt-3 ps-5 ps-md-0 pe-md-2 pt-md-5 overlay-text d-none d-md-block"
           >
             {/* Texten */}
             <div className="glacInfo">
@@ -90,20 +89,19 @@ const Glaciers = () => {
                   strokeDasharray="3 3"
                   vertical={true}
                   horizontal={true}
-                  stroke="#d3eafc"
+                  stroke="#efefef"
                 />
                 <XAxis
                   dataKey="Year"
                   tickLine={false}
-                  tick={{ fill: "#82A1A8" }}
+                  tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
                   interval={8}
                 />
                 <YAxis
                   tickLine={false}
-                  tick={{ fill: "#82A1A8" }}
+                  tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
-                  interval={1}
                   unit=" M"
                 />
                 <Tooltip />
@@ -113,7 +111,7 @@ const Glaciers = () => {
                   type="monotone"
                   dataKey="Mean cumulative mass balance"
                   stackId="1"
-                  stroke="#82A1A8"
+                  stroke="#3F8190"
                   fill="none"
                   strokeWidth={3}
                   dot={false}

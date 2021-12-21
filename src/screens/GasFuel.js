@@ -74,21 +74,27 @@ const GasFuel = (props) => {
                   bottom: 0,
                 }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E4D5BE" />
                 <XAxis
                   dataKey="Year"
                   tick={{ fill: "#646143" }}
-                  stroke="#efefef"
+                  tickLine={false}
+                  stroke="#E4D5BE"
                 />
-                <YAxis unit=" MT" tick={{ fill: "#646143" }} stroke="#efefef" />
+                <YAxis
+                  unit=" MT"
+                  tick={{ fill: "#646143" }}
+                  tickLine={false}
+                  stroke="#E4D5BE"
+                />
                 <Tooltip />
                 <Legend />
 
                 <Area
                   dataKey="Gas Fuel"
                   stackId="a"
-                  fill="#6D4B47"
-                  stroke="#6D4B47"
+                  fill="#645C43"
+                  stroke="#645C43"
                   type="monotone"
                   name="Gasbränsle"
                 />

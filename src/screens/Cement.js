@@ -77,20 +77,19 @@ const Cement = (props) => {
                   strokeDasharray="3 3"
                   vertical={true}
                   horizontal={true}
-                  stroke="#D2CBBA"
+                  stroke="#E4D5BE"
                 />
                 <XAxis
                   dataKey="Year"
-                  tickLine={false}
                   tick={{ fill: "#646143" }}
-                  stroke="#D2CBBA"
-                  interval={10}
+                  tickLine={false}
+                  stroke="#E4D5BE"
                 />
                 <YAxis
                   unit=" MT"
-                  tickLine={false}
                   tick={{ fill: "#646143" }}
-                  stroke="#D2CBBA"
+                  tickLine={false}
+                  stroke="#E4D5BE"
                 />
                 <Tooltip />
                 <Legend />
@@ -99,7 +98,7 @@ const Cement = (props) => {
                   dataKey="Cement"
                   stackId="a"
                   fill="#6D4B47"
-                  stroke="#6D4B47"
+                  stroke="#645C43"
                   type="monotone"
                   name="Utsläpp cement"
                 />

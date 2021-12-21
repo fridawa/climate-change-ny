@@ -96,31 +96,31 @@ const Co2 = (props) => {
                   name="Gasbränsle"
                   dataKey="Gas Fuel"
                   stackId="a"
-                  fill="#E2C7A8"
+                  fill="#D0B66A"
                 />
                 <Bar
                   name="Flytande bränsle"
                   dataKey="Liquid Fuel"
                   stackId="a"
-                  fill="#C1A47E"
+                  fill="#877B4A"
                 />
                 <Bar
                   name="Fast bränsle"
                   dataKey="Solid Fuel"
                   stackId="a"
-                  fill="#C48A7E"
+                  fill="#765537"
                 />
                 <Bar
                   name="Cement"
                   dataKey="Cement"
                   stackId="a"
-                  fill="#91714D"
+                  fill="#483E2E"
                 />
                 <Bar
                   name="Gaseldning"
                   dataKey="Gas Flaring"
                   stackId="a"
-                  fill="#6D4B47"
+                  fill="#251B0B"
                 />
               </BarChart>
             </ResponsiveContainer>

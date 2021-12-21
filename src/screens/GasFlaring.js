@@ -74,13 +74,19 @@ const GasFlaring = (props) => {
                   bottom: 0,
                 }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E4D5BE" />
                 <XAxis
                   dataKey="Year"
-                  tick={{ fill: "#646143" }}
-                  stroke="#efefef"
+                  tick={{ fill: "#5B2711" }}
+                  tickLine={false}
+                  stroke="#E4D5BE"
                 />
-                <YAxis unit=" MT" tick={{ fill: "#646143" }} stroke="#efefef" />
+                <YAxis
+                  unit=" MT"
+                  tick={{ fill: "#5B2711" }}
+                  tickLine={false}
+                  stroke="#E4D5BE"
+                />
                 <Tooltip />
                 <Legend />
 

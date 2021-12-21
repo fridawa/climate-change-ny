@@ -94,19 +94,29 @@ const OceanLevels = () => {
                   bottom: 0,
                 }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="#efefef"
+                  tickLine={false}
+                />
                 <XAxis
                   dataKey="Time"
-                  tick={{ fill: "#646143" }}
+                  tickLine={false}
+                  tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
                 />
-                <YAxis unit=" MM" tick={{ fill: "#646143" }} stroke="#efefef" />
+                <YAxis
+                  unit=" MM"
+                  tickLine={false}
+                  tick={{ fill: "#3F8190" }}
+                  stroke="#efefef"
+                />
                 <Tooltip />
                 <Legend />
                 <Line
                   type="monotone"
                   dataKey="GMSL"
-                  stroke="#17A2A5"
+                  stroke="#3F8190"
                   strokeWidth={3}
                   dot={false}
                   name="Havsnivå"
