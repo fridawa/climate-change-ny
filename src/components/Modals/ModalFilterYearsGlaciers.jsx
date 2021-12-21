@@ -55,7 +55,10 @@ const ModalFilterYearsGlaciers = (props) => {
             style={{ marginBottom: "3em" }}
           />
           <div style={{ marginTop: "3em" }}>
-            <TableGlacier mydataGlacier={filtereddata} />
+            <TableGlacier
+              myFilteredDataGlacier={filtereddata}
+              myDataGlacier={props.data}
+            />
           </div>
         </Container>
       </Modal.Body>

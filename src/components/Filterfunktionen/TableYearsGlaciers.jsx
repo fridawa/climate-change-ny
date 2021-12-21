@@ -1,5 +1,5 @@
 const TableGlacier = (props) => {
-  let tabledatas = props.mydataGlacier;
+  let tabledatas = props.myDataGlacier;
 
   if (tabledatas.length === 0)
     return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
