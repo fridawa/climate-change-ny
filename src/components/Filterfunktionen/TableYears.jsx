@@ -5,8 +5,8 @@ const Table = (props) => {
   let filteredData = props.myFilteredData;
 
   // Error message is shown if data cannot be shown ( if there is no length to the data )
-  if (tabledatas.length === 0)
-    return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>;
+  /* if (tabledatas.length === 0)
+    return <p>Åh nej! Datan kunde inte visas. Testa igen!</p>; */
 
   //the table component is found in the ModalFilterYears component
   //the thead is static and the tbody is mapping over the objects in the filtered data (props) 

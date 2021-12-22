@@ -1,8 +1,7 @@
 //import libraries and extentions
 import { Container, Col, Button } from "react-bootstrap";
 import { useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import { Fallback } from "../components/Fallback";
+
 
 import {
   XAxis,
@@ -28,9 +27,6 @@ const [modalFilterShow, setFilterModalShow] = useState(false);
    // Id to match the info text (printed on the chart)
   const idkey = "Koldioxidutsläpp";
 
-  const errorHandler = (error, errorInfo) => {
-    console.log("logging", error, errorInfo)
-  }
 
   // The content off the app viev (Co2) with info text and a line chart
   // the component is imported and used in the App.js component
