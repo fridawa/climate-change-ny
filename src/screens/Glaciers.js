@@ -28,7 +28,7 @@ const Glaciers = () => {
     axios
       .get("https://my.api.mockaroo.com/glaciersize.json?key=8eb9e6f0")
       .then((res) => setFetchedData(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Åh nej, datan kunde inte laddas, försök"));
   }, []);
 
   // Id to match the info text (printed on the chart)

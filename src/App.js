@@ -24,23 +24,15 @@ function App() {
   const [fetchedDataCo2, setFetchedDataCo2] = useState([]);
 
   //try and catch tries the code and catch any errors. Alert will then be shown 
-  try{
 
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/co2.json?key=8eb9e6f0")
       .then((res) => setFetchedDataCo2(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Åh nej, datan kunde inte laddas, försök"));
   }, []);
 
-   } catch(ex) {
-   if(ex.response && ex.respone.status === 404) {
-      alert("Åh nej, datan kunde inte hämtas.. Testa igen!")
-   }
-    else {
-       alert("Åh nej, något gick snett.. Testa igen!")
-  } 
-}
+  
 
   // if statement that alerts the user id the data can not be fetched by any reason
 

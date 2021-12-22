@@ -28,7 +28,7 @@ const GlobalTemp = () => {
     axios
       .get("https://my.api.mockaroo.com/temp.json?key=8eb9e6f0")
       .then((res) => setFetchedData(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Åh nej, datan kunde inte laddas, försök"));
   }, []);
 
   //Changes the order on the fetched data (high to low)
