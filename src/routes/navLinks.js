@@ -1,4 +1,4 @@
-//internal image imports 
+//internal image imports
 
 import havimg from "../Images/menu-ocean.png";
 import solimg from "../Images/menu-globaltemp.png";

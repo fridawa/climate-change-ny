@@ -14,13 +14,12 @@ import {
 } from "recharts";
 
 //import components
-import bakgrund1 from "../Images/back-globaltemp-copy.png";
+import bakgrund1 from "../Images/back-globaltemp.png";
 import ModalFilterYearsTemp from "../components/Modals/ModalFilterYearsTemp";
 import InfoText from "../components/AboutTexts/InfoText";
 import InfoTextMobile from "../components/AboutTexts/InfotextMobile";
 
 const GlobalTemp = () => {
-
   const [fetchedData, setFetchedData] = useState([]);
   const [modalFilterShow, setFilterModalShow] = useState(false);
 
@@ -52,7 +51,7 @@ const GlobalTemp = () => {
   // Id to match the info text (printed on the chart)
   const idkey = "Global Temperatur";
 
-   // The content off the app viev (Global Temp) with info text and a line chart
+  // The content off the app viev (Global Temp) with info text and a line chart
   // the component is imported and used in the App.js component
   return (
     <>
