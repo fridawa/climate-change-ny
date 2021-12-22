@@ -4,12 +4,12 @@
   padding: 0;
   margin: 0;
 }
-Body {
+/* Body {
   background-color: rgb(255, 255, 255);
   background-size: 100%;
   background-position: top;
   background-repeat: no-repeat;
-}
+} */
 
 /* WRAPPER FÖR GRAFER */
 .wrapper {
@@ -56,9 +56,17 @@ Body {
   font-weight: 400;
 }
 
-.data-container {
-  min-height: 100vh;
-  background-size: cover;
+@media only screen and (max-width: 768px) {
+  .data-container {
+    min-height: 130vh;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .data-container {
+    min-height: 113vh;
+    background-size: cover;
+  }
 }
 
 .home-about {
