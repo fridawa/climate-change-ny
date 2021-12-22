@@ -88,7 +88,7 @@ const LiquidFuel = (props) => {
                   stroke="#E4D5BE"
                 />
                 <YAxis
-                  unit=" MT"
+                  unit=" mt"
                   tick={{ fill: "#646143" }}
                   tickLine={false}
                   stroke="#E4D5BE"
@@ -98,6 +98,7 @@ const LiquidFuel = (props) => {
 
                 <Area
                   dataKey="Liquid Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#645C43"
                   stroke="#645C43"

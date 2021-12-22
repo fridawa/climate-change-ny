@@ -126,6 +126,7 @@ const GlobalTemp = () => {
                 <Line
                   type="monotone"
                   dataKey="Mean"
+                  unit=" °C"
                   stroke="#645C43"
                   strokeWidth={3}
                   dot={false}

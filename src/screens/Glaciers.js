@@ -107,7 +107,7 @@ const Glaciers = () => {
                   tickLine={false}
                   tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
-                  unit=" M"
+                  unit=" m"
                 />
                 <Tooltip />
                 <Legend />
@@ -115,6 +115,7 @@ const Glaciers = () => {
                 <Line
                   type="monotone"
                   dataKey="Mean cumulative mass balance"
+                  unit=" m"
                   stackId="1"
                   stroke="#3F8190"
                   fill="none"

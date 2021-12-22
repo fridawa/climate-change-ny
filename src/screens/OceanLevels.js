@@ -110,7 +110,7 @@ const OceanLevels = () => {
                   tickFormatter={xAxisTickFormatter}
                 />
                 <YAxis
-                  unit=" MM"
+                  unit=" mm"
                   tickLine={false}
                   tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
@@ -120,6 +120,7 @@ const OceanLevels = () => {
                 <Line
                   type="monotone"
                   dataKey="GMSL"
+                  unit=" mm"
                   stroke="#3F8190"
                   strokeWidth={3}
                   dot={false}

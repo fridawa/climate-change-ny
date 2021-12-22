@@ -86,36 +86,41 @@ const [modalFilterShow, setFilterModalShow] = useState(false);
                   tick={{ fill: "#646143" }}
                   stroke="#efefef"
                 />
-                <YAxis unit=" MT" tick={{ fill: "#646143" }} stroke="#efefef" />
+                <YAxis unit=" mt" tick={{ fill: "#646143" }} stroke="#efefef" />
                 <Tooltip />
                 <Legend />
                 <Bar
                   name="Gasbränsle"
                   dataKey="Gas Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#D0B66A"
                 />
                 <Bar
                   name="Flytande bränsle"
                   dataKey="Liquid Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#877B4A"
                 />
                 <Bar
                   name="Fast bränsle"
                   dataKey="Solid Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#765537"
                 />
                 <Bar
                   name="Cement"
                   dataKey="Cement"
+                  unit=" mt"
                   stackId="a"
                   fill="#483E2E"
                 />
                 <Bar
                   name="Gaseldning"
                   dataKey="Gas Flaring"
+                  unit=" mt"
                   stackId="a"
                   fill="#251B0B"
                 />

@@ -83,7 +83,7 @@ const GasFlaring = (props) => {
                   stroke="#E4D5BE"
                 />
                 <YAxis
-                  unit=" MT"
+                  unit=" mt"
                   tick={{ fill: "#646143" }}
                   tickLine={false}
                   stroke="#E4D5BE"
@@ -93,6 +93,7 @@ const GasFlaring = (props) => {
 
                 <Area
                   dataKey="Gas Flaring"
+                  unit=" mt"
                   stackId="a"
                   fill="#645C43"
                   stroke="#645C43"
