@@ -213,3 +213,10 @@ button:hover {
   color: darkgreen;
   cursor: pointer;
 }
+
+.filterButton {
+  margin-top: 1.8em;
+  background-color: #80c7a9;
+  border: none;
+}
+

@@ -14,7 +14,7 @@ const TableOceanLevels = (props) => {
   return (
     <div style={{ marginTop: "-1em" }}>
       {filteredData.length > 0 && (
-        <table className="table table-striped" style={{}}>
+        <table className="table table-striped">
           <thead className="thead" style={{ backgroundColor: "white" }}>
             <tr>
               <th scope="col">År</th>

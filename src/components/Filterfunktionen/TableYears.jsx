@@ -15,7 +15,7 @@ const Table = (props) => {
     <div style={{ marginTop: "-1em" }}>
       {filteredData.length > 0 && (
         <div className="table-responsive">
-          <table className="table table-striped col-sm-6" style={{}}>
+          <table className="table table-striped col-sm-6">
             <thead className="thead" style={{ backgroundColor: "white" }}>
               <tr>
                 <th scope="col">År</th>
