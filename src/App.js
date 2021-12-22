@@ -35,10 +35,10 @@ function App() {
 
    } catch(ex) {
    if(ex.response && ex.respone.status === 404) {
-      alert("noooo")
+      alert("Åh nej, datan kunde inte hämtas.. Testa igen!")
    }
     else {
-       alert("Åh nej, datan kunde inte hämtas.. Testa igen!")
+       alert("Åh nej, något gick snett.. Testa igen!")
   } 
 }
 
