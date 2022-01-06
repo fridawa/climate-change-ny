@@ -28,7 +28,7 @@ const Glaciers = () => {
     axios
       .get("https://my.api.mockaroo.com/glaciersize.json?key=8eb9e6f0")
       .then((res) => setFetchedData(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err));
   }, []);
 
   // Id to match the info text (printed on the chart)
@@ -68,8 +68,7 @@ const Glaciers = () => {
           <Col className="d-md-none mt-5 ps-2">
             <h1>Glaciärstorlek </h1>
             <InfoTextMobile id={idkey} />
-            
-            
+
             <Button
               className="searchButton"
               onClick={() => setFilterModalShow(true)}
@@ -127,7 +126,7 @@ const Glaciers = () => {
           </div>
         </div>
 
-      {/* Modal with data table and filter function. Uses the fetched data via props */}
+        {/* Modal with data table and filter function. Uses the fetched data via props */}
         <ModalFilterYearsGlaciers
           show={modalFilterShow}
           onHide={() => setFilterModalShow(false)}
