@@ -1,8 +1,7 @@
 //import libraries and extentions
 import { Container, Col, Button } from "react-bootstrap";
 import { useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import { Fallback } from "../components/Fallback";
+
 
 import {
   XAxis,
@@ -28,9 +27,6 @@ const [modalFilterShow, setFilterModalShow] = useState(false);
    // Id to match the info text (printed on the chart)
   const idkey = "Koldioxidutsläpp";
 
-  const errorHandler = (error, errorInfo) => {
-    console.log("logging", error, errorInfo)
-  }
 
   // The content off the app viev (Co2) with info text and a line chart
   // the component is imported and used in the App.js component
@@ -90,36 +86,41 @@ const [modalFilterShow, setFilterModalShow] = useState(false);
                   tick={{ fill: "#646143" }}
                   stroke="#efefef"
                 />
-                <YAxis unit=" MT" tick={{ fill: "#646143" }} stroke="#efefef" />
+                <YAxis unit=" mt" tick={{ fill: "#646143" }} stroke="#efefef" />
                 <Tooltip />
                 <Legend />
                 <Bar
                   name="Gasbränsle"
                   dataKey="Gas Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#D0B66A"
                 />
                 <Bar
                   name="Flytande bränsle"
                   dataKey="Liquid Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#877B4A"
                 />
                 <Bar
                   name="Fast bränsle"
                   dataKey="Solid Fuel"
+                  unit=" mt"
                   stackId="a"
                   fill="#765537"
                 />
                 <Bar
                   name="Cement"
                   dataKey="Cement"
+                  unit=" mt"
                   stackId="a"
                   fill="#483E2E"
                 />
                 <Bar
                   name="Gaseldning"
                   dataKey="Gas Flaring"
+                  unit=" mt"
                   stackId="a"
                   fill="#251B0B"
                 />

@@ -28,7 +28,7 @@ const Glaciers = () => {
     axios
       .get("https://my.api.mockaroo.com/glaciersize.json?key=8eb9e6f0")
       .then((res) => setFetchedData(res.data))
-      .catch((err) => alert(err));
+      .catch((err) => alert("Åh nej, datan kunde inte laddas, försök"));
   }, []);
 
   // Id to match the info text (printed on the chart)
@@ -106,7 +106,7 @@ const Glaciers = () => {
                   tickLine={false}
                   tick={{ fill: "#3F8190" }}
                   stroke="#efefef"
-                  unit=" M"
+                  unit=" m"
                 />
                 <Tooltip />
                 <Legend />
@@ -114,6 +114,7 @@ const Glaciers = () => {
                 <Line
                   type="monotone"
                   dataKey="Mean cumulative mass balance"
+                  unit=" m"
                   stackId="1"
                   stroke="#3F8190"
                   fill="none"

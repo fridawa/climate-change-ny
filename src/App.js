@@ -23,30 +23,25 @@ function App() {
   // Hämtar in iaf co2-datan här så inte den behöver hämtas på varje sida
   const [fetchedDataCo2, setFetchedDataCo2] = useState([]);
 
-  // try{
+  //try and catch tries the code and catch any errors. Alert will then be shown 
 
   useEffect(() => {
     axios
       .get("https://my.api.mockaroo.com/co2.json?key=8eb9e6f0")
       .then((res) => setFetchedDataCo2(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Åh nej, datan kunde inte laddas, försök"));
   }, []);
 
-  // } catch(ex) {
-  //   if(ex.response && ex.respone.status === 404) {
-  //     alert("noooo")
-  //   }
-  //   else {"logging the error"}
-  //   alert ("something happend")
-  // }
+  
 
   // if statement that alerts the user id the data can not be fetched by any reason
 
   // FATTAR INTE VARFÖR INTE DET SKRIVS UT DET SOM STÅR I ERROR
-  if (fetchedDataCo2.length === 0) {
+  /* if (fetchedDataCo2.length === 0) {
     //  throw new Error ("Åh nej, sidan kan inte laddas. Försök igen om en liten stund!");
     return <p>Sidan laddas. Tar det lång tid? Testa att uppdatera sidan!</p>;
-  }
+  } */
+
 
   // app component containing all the climare view components, meues and footer
   // Routes and path makes the navigation possible

@@ -83,7 +83,7 @@ const FilterYears = (props) => {
 
        {/*"button that triggers the filter funtion and returns the input years and selected order "*/}
           <Button 
-          style={{marginTop: "1.8em", backgroundColor:"#83a9cf", border:"none"}}
+          className="filterButton"
             variant="primary"
             onClick={() => props.onYearFilter(YearFrom, YearTo, Order)}
           >

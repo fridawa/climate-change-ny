@@ -21,7 +21,6 @@
 .app-logo {
   max-height: 7vh;
   max-width: 35vw;
-  margin-left: -0.4em;
 }
 .logo-container {
   width: 45vw;
@@ -214,3 +213,10 @@ button:hover {
   color: darkgreen;
   cursor: pointer;
 }
+
+.filterButton {
+  margin-top: 1.8em;
+  background-color: #80c7a9;
+  border: none;
+}
+

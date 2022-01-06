@@ -16,11 +16,9 @@ const EkoText = () => {
           Du kan påverka klimatförändringarna genom att minska ditt{" "}
           <span
             onClick={() => setModalFootprintShow(true)}
-            className="link-text fw-bold"
+            className="link-text fw-bold ekoAvtLink"
           >
-          <p className="ekoAvtLink">
             ekologiska fotavtryck
-            </p>
           </span>
           .
         </p>
